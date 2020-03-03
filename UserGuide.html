@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 3 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>NusProductivity</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 3 - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>NusProductivity</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team W16-4</code>      Since: <code>Mar 2020</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -14,19 +14,23 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.9. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#adding-a-person-code-addcontact-code">3.2. Adding a person: <code>addContact</code></a></li>
+<li><a href="#listing-all-persons-contactlist">3.3. Listing all persons : contactList</a></li>
+<li><a href="#editing-a-person-contactedit">3.4. Editing a person : contactEdit</a></li>
+<li><a href="#locating-persons-by-name-contactfind">3.5. Locating persons by name: contactFind</a></li>
+<li><a href="#deleting-a-person-contactdelete">3.6. Deleting a person : contactDelete</a></li>
+<li><a href="#clearing-all-entries-contactclear">3.7. Clearing all entries : contactClear</a></li>
+<li><a href="#exiting-the-program-exit">3.8. Exiting the program : exit</a></li>
+<li><a href="#view-cap-summary-cap">3.9. View CAP summary : cap</a></li>
+<li><a href="#view-module-requirement-modreq">3.10. View module requirement: modreq</a></li>
+<li><a href="#module-information-module">3.11. Module information: module</a></li>
+<li><a href="#diary-diary">3.12. Diary: diary</a></li>
+<li><a href="#todo-list-todo">3.13. Todo list: todo</a></li>
+<li><a href="#deadline-deadline">3.14. Deadline: deadline</a></li>
+<li><a href="#module-planning-mymodplan">3.15. Module planning: mymodplan</a></li>
+<li><a href="#command-summary">3.16. Command Summary</a></li>
 </ul>
 </li>
-<li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -34,7 +38,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook Level 3 (AB3) is for those who <strong>prefer to use a desktop app for managing contacts</strong>. More importantly, AB3 is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>NusProductivity is an application for better management of your school work. The app will allow you to keep track of the modules you have taken, allow you to map your module out to plan for future modules. More importantly, NusProductivity is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
 </div>
 </div>
 </div>
@@ -123,10 +127,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
+<h3 id="adding-a-person-code-addcontact-code"><a class="link" href="#adding-a-person-code-addcontact-code">3.2. Adding a person: <code>addContact</code></a></h3>
 <div class="paragraph">
 <p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>addContact n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -155,212 +159,239 @@ A person can have any number of tags (including 0)
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></h3>
+<h3 id="listing-all-persons-contactlist"><a class="link" href="#listing-all-persons-contactlist">3.3. Listing all persons : contactList</a></h3>
 <div class="paragraph">
-<p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
+<p>Shows a list of all persons in the address book.</p>
+</div>
+<div class="paragraph">
+<p>Format: contactList</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></h3>
+<h3 id="editing-a-person-contactedit"><a class="link" href="#editing-a-person-contactedit">3.4. Editing a person : contactEdit</a></h3>
 <div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+<p>Edits an existing person in the address book.</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
+<div class="paragraph">
+<p>Format: contactEdit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
+•	Edits the person at the specified INDEX. The index refers to the index number shown in the displayed person list. The index must be a positive integer 1, 2, 3, …
+•	At least one of the optional fields must be provided.
+•	Existing values will be updated to the input values.
+•	When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
+•	You can remove all the person’s tags by typing t/ without specifying any tags after it.</p>
+</div>
+<div class="paragraph">
+<p>Examples:
+•	edit 1 p/91234567 e/johndoe@example.com
+ Edits the phone number and email address of the 1st person to be 91234567 and <a href="mailto:johndoe@example.com">johndoe@example.com</a> respectively.
+•	edit 2 n/Betsy Crower t/
+ Edits the name of the 2nd person to be Betsy Crower and clears all existing tags.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-persons-by-name-contactfind"><a class="link" href="#locating-persons-by-name-contactfind">3.5. Locating persons by name: contactFind</a></h3>
+<div class="paragraph">
+<p>Finds persons whose names contain any of the given keywords.</p>
+</div>
+<div class="paragraph">
+<p>Format: contactFind KEYWORD [MORE_KEYWORDS]
+•	The search is case insensitive. e.g hans will match Hans
+•	The order of the keywords does not matter. e.g. Hans Bo will match Bo Hans
+•	Only the name is searched.
+•	Only full words will be matched e.g. Han will not match Hans
+•	Persons matching at least one keyword will be returned (i.e. OR search). e.g. Hans Bo will return Hans Gruber, Bo Yang</p>
+</div>
+<div class="paragraph">
+<p>Examples:
+•	find John
+ Returns john and John Doe
+•	find Betsy Tim John
+ Returns any person having names Betsy, Tim, or John</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-person-contactdelete"><a class="link" href="#deleting-a-person-contactdelete">3.6. Deleting a person : contactDelete</a></h3>
+<div class="paragraph">
+<p>Deletes the specified person from the address book.</p>
+</div>
+<div class="paragraph">
+<p>Format: contactDelete INDEX
+•	Deletes the person at the specified INDEX.
+•	The index refers to the index number shown in the displayed person list.
+•	The index must be a positive integer 1, 2, 3, …</p>
+</div>
+<div class="paragraph">
+<p>Examples:
+•	list
+ delete 2
+ Deletes the 2nd person in the address book.
+•	find Betsy
+ delete 1
+ Deletes the 1st person in the results of the find command.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-entries-contactclear"><a class="link" href="#clearing-all-entries-contactclear">3.7. Clearing all entries : contactClear</a></h3>
+<div class="paragraph">
+<p>Clears all entries from the address book.</p>
+</div>
+<div class="paragraph">
+<p>Format: clear</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-exit"><a class="link" href="#exiting-the-program-exit">3.8. Exiting the program : exit</a></h3>
+<div class="paragraph">
+<p>Exits the program.</p>
+</div>
+<div class="paragraph">
+<p>Format: exit</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-cap-summary-cap"><a class="link" href="#view-cap-summary-cap">3.9. View CAP summary : cap</a></h3>
+<div class="paragraph">
+<p>Shows the current cap of the individual. If only cap is specified, it will only show the MCs taken up to the point and the CAP.</p>
+</div>
+<div class="paragraph">
+<p>Format: cap {breakdown}
+If cap breakdown is inputted, it will show a breakdown of all the modules and grades that is tagged to the module.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-module-requirement-modreq"><a class="link" href="#view-module-requirement-modreq">3.10. View module requirement: modreq</a></h3>
+<div class="paragraph">
+<p>Shows the modules requirement for the major specified.</p>
+</div>
+<div class="paragraph">
+<p>Format: modreq {/MAJOR}
+Example: modreq computer science</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="module-information-module"><a class="link" href="#module-information-module">3.11. Module information: module</a></h3>
+<div class="paragraph">
+<p>Shows basic information about the module, such as time of lecture, tutorial, exam venues and professor’s contact associated with the module.</p>
+</div>
+<div class="paragraph">
+<p>Format: module {/MODULE CODE}
+Example: module CS2103T</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="diary-diary"><a class="link" href="#diary-diary">3.12. Diary: diary</a></h3>
+<div class="paragraph">
+<p>Format:
+a.	diary log {Limit} : shows the most recent few amount of diary specified in limit, if no limit is specified, it will be limited to the most recent 10.
+b.	diary {DD-MM-YYYY} : shows the diary entry at the specified date if there is any
+c.	diary add {ENTRY} : Adds the specific entry to the diary log, date and time will be logged automatically
+d.	diary delete {ENTRY ID} : Deletes the specified diary ID’s entry.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="todo-list-todo"><a class="link" href="#todo-list-todo">3.13. Todo list: todo</a></h3>
+<div class="paragraph">
+<p>Shows the list of tasks that are scheduled for the week with the deadline.</p>
+</div>
+<div class="paragraph">
+<p>Format: todo</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deadline-deadline"><a class="link" href="#deadline-deadline">3.14. Deadline: deadline</a></h3>
+<div class="paragraph">
+<p>Adds a new task to the todo list. The deadline will be shown alongside the task description.</p>
+</div>
+<div class="paragraph">
+<p>Format: deadline {/Description} /by {DD-MM-YYYY} {HHMM}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="module-planning-mymodplan"><a class="link" href="#module-planning-mymodplan">3.15. Module planning: mymodplan</a></h3>
+<div class="paragraph">
+<p>Shows list of modules taken/to be taken to fulfill major requirements.</p>
+</div>
+<div class="paragraph">
+<p>Format:
+a.	mymodplan: shows module planning list
+b.	mymodplan add {/MODULE CODE}: adds a module to the module plan
+c.	mymodplan done {/MODULE CODE}: marks a module as taken/done</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="command-summary"><a class="link" href="#command-summary">3.16. Command Summary</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed person list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>contactAdd contactAdd n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…
+e.g. contactAdd n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</p>
 </li>
 <li>
-<p>At least one of the optional fields must be provided.</p>
+<p>contactClear : contactClear</p>
 </li>
 <li>
-<p>Existing values will be updated to the input values.</p>
+<p>contactDelete : contactDelete INDEX
+e.g. delete 3</p>
 </li>
 <li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
+<p>contactEdit : contactEdit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…
+e.g. edit 2 n/James Lee e/jameslee@example.com</p>
 </li>
 <li>
-<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+<p>contactFind : contactFind KEYWORD [MORE_KEYWORDS]
+e.g. find James Jake</p>
+</li>
+<li>
+<p>addressbooklist: list</p>
+</li>
+<li>
+<p>cap : cap {breakdown}</p>
+</li>
+<li>
+<p>modreq : modreq {\MAJOR}
+e.g. modreq computer science</p>
+</li>
+<li>
+<p>todo: todo</p>
+</li>
+<li>
+<p>help : help</p>
+</li>
+<li>
+<p>diary :</p>
+</li>
+<li>
+<p>diary log {Limit}</p>
+</li>
+<li>
+<p>diary {DD-MM-YYYY}</p>
+</li>
+<li>
+<p>diary add {ENTRY}</p>
+</li>
+<li>
+<p>diary delete {ENTRY ID}</p>
+</li>
+<li>
+<p>reminders : reminders</p>
+</li>
+<li>
+<p>deadline : deadline {/Description} /by {DD-MM-YYYY} {HHMM}</p>
+</li>
+<li>
+<p>mymodplan:</p>
+</li>
+<li>
+<p>mymodplan</p>
+</li>
+<li>
+<p>mymodplan add {/MODULE CODE}</p>
+</li>
+<li>
+<p>mymodplan done {/MODULE CODE}</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
-</li>
-<li>
-<p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></h3>
-<div class="paragraph">
-<p>Finds persons whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
-</li>
-<li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
-</li>
-<li>
-<p>Only the name is searched.</p>
-</li>
-<li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
-</li>
-<li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
-</li>
-<li>
-<p><code>find Betsy Tim John</code><br>
-Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></h3>
-<div class="paragraph">
-<p>Deletes the specified person from the address book.<br>
-Format: <code>delete INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the person at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed person list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd person in the address book.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></h3>
-<div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></h3>
-<div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.9. Saving the data</a></h3>
-<div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
-There is no need to save manually.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></h3>
-<div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
-</li>
-<li>
-<p><strong>Clear</strong> : <code>clear</code></p>
-</li>
-<li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
-</li>
-<li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
-</li>
-<li>
-<p><strong>List</strong> : <code>list</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 06:05:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 08:28:43 UTC</div></div></div></body></html>

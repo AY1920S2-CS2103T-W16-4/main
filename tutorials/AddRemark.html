@@ -231,10 +231,6 @@ While this is not a replacement for tests, it is an obvious way to tell if our c
 <div class="paragraph">
 <p>Now let&#8217;s move on to writing a parser that will extract the index and remark from the input provided by the user.</p>
 </div>
-<div class="paragraph">
-<p>Create a <code>RemarkCommandParser</code> class in the <code>seedu.address.logic.parser</code> package.
-The class must extend the <code>Parser</code> interface.</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/add-remark/ParserInterface.png" alt="ParserInterface">
@@ -299,23 +295,7 @@ But what about the Index? Taking a quick peek at existing an <code>Command</code
 <div class="listingblock">
 <div class="title">RemarkCommandParser.java</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> RemarkCommand parse(<span class="predefined-type">String</span> args) <span class="directive">throws</span> <span class="exception">ParseException</span> {
-    requireNonNull(args);
-    ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args,
-        PREFIX_REMARK);
-
-    Index index;
-    <span class="keyword">try</span> {
-        index = ParserUtil.parseIndex(argMultimap.getPreamble());
-    } <span class="keyword">catch</span> (IllegalValueException ive) {
-        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">ParseException</span>(<span class="predefined-type">String</span>.format(MESSAGE_INVALID_COMMAND_FORMAT,
-            RemarkCommand.MESSAGE_USAGE), ive);
-    }
-
-    <span class="predefined-type">String</span> remark = argMultimap.getValue(PREFIX_REMARK).orElse(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>);
-
-    <span class="keyword">return</span> <span class="keyword">new</span> RemarkCommand(index, remark);
-}</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"></code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -616,4 +596,4 @@ In this case, <code>CommandTestUtil#assertCommandSuccess</code> is the best fit 
 <p>This concludes the tutorial for adding a new <code>Command</code> to AddressBook.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 06:05:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 08:28:43 UTC</div></div></div></body></html>
