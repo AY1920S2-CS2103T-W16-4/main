@@ -19,32 +19,6 @@
 <li><a href="#parse-user-input">Parse user input</a></li>
 </ul>
 </li>
-<li><a href="#add-code-remark-code-to-the-model">Add <code>Remark</code> to the model</a>
-<ul class="sectlevel2">
-<li><a href="#add-a-new-code-remark-code-class">Add a new <code>Remark</code> class</a></li>
-<li><a href="#make-use-of-code-remark-code">Make use of <code>Remark</code></a></li>
-</ul>
-</li>
-<li><a href="#add-a-placeholder-element-for-remark-to-the-ui">Add a placeholder element for remark to the UI</a></li>
-<li><a href="#modify-code-person-code-to-support-a-code-remark-code-field">Modify <code>Person</code> to support a <code>Remark</code> field</a>
-<ul class="sectlevel2">
-<li><a href="#modify-code-person-code">Modify <code>Person</code></a></li>
-<li><a href="#update-other-usages-of-code-person-code">Update other usages of <code>Person</code></a></li>
-</ul>
-</li>
-<li><a href="#updating-storage">Updating Storage</a></li>
-<li><a href="#finalizing-the-ui">Finalizing the UI</a></li>
-<li><a href="#putting-everything-together">Putting everything together</a>
-<ul class="sectlevel2">
-<li><a href="#update-code-remarkcommand-code-and-code-remarkcommandparser-code">Update <code>RemarkCommand</code> and <code>RemarkCommandParser</code></a></li>
-</ul>
-</li>
-<li><a href="#writing-tests">Writing tests</a>
-<ul class="sectlevel2">
-<li><a href="#automagically-generating-tests">Automagically generating tests</a></li>
-</ul>
-</li>
-<li><a href="#conclusion">Conclusion</a></li>
 </ul>
 </div>
 </div>
@@ -231,6 +205,12 @@ While this is not a replacement for tests, it is an obvious way to tell if our c
 <div class="paragraph">
 <p>Now let&#8217;s move on to writing a parser that will extract the index and remark from the input provided by the user.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Create a <code>RemarkCommandParser</code> class in the <code>seedu.address.logic.parser</code> package.
+The class must implement the <code>Parser</code> interface.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/add-remark/ParserInterface.png" alt="ParserInterface">
@@ -313,20 +293,18 @@ Don&#8217;t forget to update <code>AddressBookParser</code> to use our new <code
 <div class="paragraph">
 <p>If you are stuck, check out the sample <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/efdcdf0e80cec9489f7b47e3f65824f4688ad8f7#diff-fc19ecee89c3732a62fbc8c840250508">here</a>.</p>
 </div>
+<div class="paragraph">
+<p>== Add <code>Remark</code> to the model</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="add-code-remark-code-to-the-model"><a class="link" href="#add-code-remark-code-to-the-model">Add <code>Remark</code> to the model</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Now that we have all the information that we need, let&#8217;s lay the groundwork for some <em>persistent</em> changes.
 We achieve that by working with the <code>Person</code> model.
 Each field in a Person is implemented as a separate class (e.g. a <code>Name</code> object represents the person&#8217;s name).
 That means we should add a <code>Remark</code> class so that we can use a <code>Remark</code> object to represent a remark given to a person.</p>
 </div>
-<div class="sect2">
-<h3 id="add-a-new-code-remark-code-class"><a class="link" href="#add-a-new-code-remark-code-class">Add a new <code>Remark</code> class</a></h3>
+<div class="paragraph">
+<p>=== Add a new <code>Remark</code> class</p>
+</div>
 <div class="paragraph">
 <p>Create a new <code>Remark</code> in <code>seedu.address.model.person</code>. Since a <code>Remark</code> is a field that is similar to <code>Address</code>, we can reuse a significant bit of code.</p>
 </div>
@@ -334,19 +312,16 @@ That means we should add a <code>Remark</code> class so that we can use a <code>
 <p>A copy-paste and search-replace later, you should have something like <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/b7a47c50c8e5f0430d343a23d2863446b6ce9298#diff-af2f075d24dfcd333876f0fbce321f25">this</a>.
 Note how <code>Remark</code> has no constrains and thus does not require input validation.</p>
 </div>
+<div class="paragraph">
+<p>=== Make use of <code>Remark</code></p>
 </div>
-<div class="sect2">
-<h3 id="make-use-of-code-remark-code"><a class="link" href="#make-use-of-code-remark-code">Make use of <code>Remark</code></a></h3>
 <div class="paragraph">
 <p>Let&#8217;s change <code>RemarkCommand</code> and <code>RemarkCommandParser</code> to use the new <code>Remark</code> class instead of plain <code>String</code>.
 These should be relatively simple changes.</p>
 </div>
+<div class="paragraph">
+<p>== Add a placeholder element for remark to the UI</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="add-a-placeholder-element-for-remark-to-the-ui"><a class="link" href="#add-a-placeholder-element-for-remark-to-the-ui">Add a placeholder element for remark to the UI</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Without getting too deep into <code>fxml</code>, let&#8217;s go on a 5 minute adventure to get some placeholder text to show up for each person.</p>
 </div>
@@ -385,23 +360,22 @@ It might sound like Greek to you right now, don&#8217;t worry&#8201;&#8212;&#820
 </div>
 <div class="title">Figure 4. $remark shows up in each entry</div>
 </div>
+<div class="paragraph">
+<p>== Modify <code>Person</code> to support a <code>Remark</code> field</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="modify-code-person-code-to-support-a-code-remark-code-field"><a class="link" href="#modify-code-person-code-to-support-a-code-remark-code-field">Modify <code>Person</code> to support a <code>Remark</code> field</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Since <code>PersonCard</code> displays data from a <code>Person</code>, we need to update <code>Person</code> to get our <code>Remark</code> displayed!</p>
 </div>
-<div class="sect2">
-<h3 id="modify-code-person-code"><a class="link" href="#modify-code-person-code">Modify <code>Person</code></a></h3>
+<div class="paragraph">
+<p>=== Modify <code>Person</code></p>
+</div>
 <div class="paragraph">
 <p>We change the constructor of <code>Person</code> to take a <code>Remark</code>.
 We will also need to define new fields and accessors accordingly to store our new addition.</p>
 </div>
+<div class="paragraph">
+<p>=== Update other usages of <code>Person</code></p>
 </div>
-<div class="sect2">
-<h3 id="update-other-usages-of-code-person-code"><a class="link" href="#update-other-usages-of-code-person-code">Update other usages of <code>Person</code></a></h3>
 <div class="paragraph">
 <p>Unfortunately, a change to <code>Person</code> will cause other commands to break, you will have to modify these commands to use the updated <code>Person</code>!</p>
 </div>
@@ -420,12 +394,9 @@ Use the <code>Find Usages</code> feature in IntelliJ IDEA on the <code>Person</c
 <div class="paragraph">
 <p>Refer to <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/b241ef8526bd4e8a6ad94b8118b7fc3441ec8fa3#diff-3462fc1118b9872387a01b41157b0402">this commit</a> and check that you have got everything in order!</p>
 </div>
+<div class="paragraph">
+<p>== Updating Storage</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="updating-storage"><a class="link" href="#updating-storage">Updating Storage</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>AddressBook stores data by serializing <code>JsonAdaptedPerson</code> into <code>json</code> with the help of an external library&#8201;&#8212;&#8201;Jackson.
 Let&#8217;s update <code>JsonAdaptedPerson</code> to work with our new <code>Person</code>!</p>
@@ -449,11 +420,9 @@ Not doing so will cause AddressBook to default to an empty address book!
 <div class="paragraph">
 <p>Check out <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/ce4f9b70f524d2395948861d80d57fda9ae6e82e#diff-07708562699e2436c717f3330bafae1e">this commit</a> to see what the changes entail.</p>
 </div>
+<div class="paragraph">
+<p>== Finalizing the UI</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="finalizing-the-ui"><a class="link" href="#finalizing-the-ui">Finalizing the UI</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Now that we have finalized the <code>Person</code> class and its dependencies, we can now bind the <code>Remark</code> field to the UI.</p>
 </div>
@@ -475,17 +444,16 @@ Not doing so will cause AddressBook to default to an empty address book!
 </div>
 <div class="title">Figure 5. The remark label is bound properly!</div>
 </div>
+<div class="paragraph">
+<p>== Putting everything together</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="putting-everything-together"><a class="link" href="#putting-everything-together">Putting everything together</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>After the previous step, we notice a peculiar regression&#8201;&#8212;&#8201;we went from displaying something to nothing at all.
 However, this is expected behavior as we have never changed <code>RemarkCommand</code> at all!</p>
 </div>
-<div class="sect2">
-<h3 id="update-code-remarkcommand-code-and-code-remarkcommandparser-code"><a class="link" href="#update-code-remarkcommand-code-and-code-remarkcommandparser-code">Update <code>RemarkCommand</code> and <code>RemarkCommandParser</code></a></h3>
+<div class="paragraph">
+<p>=== Update <code>RemarkCommand</code> and <code>RemarkCommandParser</code></p>
+</div>
 <div class="paragraph">
 <p>In this last step, we modify <code>RemarkCommand#execute()</code> to change the <code>Remark</code> of a <code>Person</code>.
 Since all fields in a <code>Person</code> are immutable, we create a new instance of a <code>Person</code> with the values that we want and save it with <code>Model#setPerson()</code>.</p>
@@ -534,12 +502,9 @@ Since all fields in a <code>Person</code> are immutable, we create a new instanc
 </div>
 <div class="title">Figure 6. Congratulations!</div>
 </div>
+<div class="paragraph">
+<p>== Writing tests</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="writing-tests"><a class="link" href="#writing-tests">Writing tests</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Tests are crucial to ensuring that bugs don&#8217;t slip into the codebase unnoticed. This is especially true for large
 code bases where a change might lead to unintended behavior.</p>
@@ -547,8 +512,9 @@ code bases where a change might lead to unintended behavior.</p>
 <div class="paragraph">
 <p>Let&#8217;s verify the correctness of our code by writing some tests!</p>
 </div>
-<div class="sect2">
-<h3 id="automagically-generating-tests"><a class="link" href="#automagically-generating-tests">Automagically generating tests</a></h3>
+<div class="paragraph">
+<p>=== Automagically generating tests</p>
+</div>
 <div class="paragraph">
 <p>The goal is to write effective and efficient tests to ensure that <code>RemarkCommand#execute()</code> behaves as expected.</p>
 </div>
@@ -586,14 +552,14 @@ In this case, <code>CommandTestUtil#assertCommandSuccess</code> is the best fit 
 <p>You should end up with a test that looks something like
 <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/b3307d7a42acb613a8f1d36979a7f547abcf6623#diff-d749de38392f7ea504da7824641ba8d9">this</a>.</p>
 </div>
+<div class="paragraph">
+<p>== Conclusion</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="conclusion"><a class="link" href="#conclusion">Conclusion</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>This concludes the tutorial for adding a new <code>Command</code> to AddressBook.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-16 09:21:18 UTC</div></div></div></body></html>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-16 10:26:27 UTC</div></div></div></body></html>
