@@ -14,12 +14,12 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-addcontact-code">3.2. Adding a person: <code>addContact</code></a></li>
-<li><a href="#listing-all-persons-code-contactlist-code">3.3. Listing all persons : <code>contactList</code></a></li>
-<li><a href="#editing-a-person-code-contactedit-code">3.4. Editing a person : <code>contactEdit</code></a></li>
-<li><a href="#locating-persons-by-name-contactfind">3.5. Locating persons by name: contactFind</a></li>
-<li><a href="#deleting-a-person-code-contactdelete-code">3.6. Deleting a person : <code>contactDelete</code></a></li>
-<li><a href="#clearing-all-entries-code-contactclear-code">3.7. Clearing all entries : <code>contactClear</code></a></li>
+<li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
+<li><a href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></li>
+<li><a href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></li>
+<li><a href="#locating-persons-by-name-find">3.5. Locating persons by name: find</a></li>
+<li><a href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></li>
 <li><a href="#view-cap-summary-code-cap-code">3.9. View CAP summary : <code>cap</code></a></li>
 <li><a href="#view-module-requirement-code-modreq-code">3.10. View module requirement: <code>modreq</code></a></li>
@@ -29,7 +29,8 @@
 <li><a href="#deadline-code-deadline-code">3.14. Deadline: <code>deadline</code></a></li>
 <li><a href="#event-code-event-code">3.15. Event: <code>event</code></a></li>
 <li><a href="#module-planning-code-mymodplan-code">3.16. Module planning: <code>mymodplan</code></a></li>
-<li><a href="#command-summary">3.17. Command Summary</a></li>
+<li><a href="#note-taking-code-notes-code">3.17. Note Taking: <code>notes</code></a></li>
+<li><a href="#command-summary">3.18. Command Summary</a></li>
 </ul>
 </li>
 </ul>
@@ -77,7 +78,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>list</code></strong> : lists all contacts</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com ` : adds a contact named `John Doe</code> to the Address Book.</p>
 </li>
 <li>
 <p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
@@ -132,12 +133,12 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-person-code-addcontact-code"><a class="link" href="#adding-a-person-code-addcontact-code">3.2. Adding a person: <code>addContact</code></a></h3>
+<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
 <p>Adds a person to the address book<br>
-Format: <code>addContact n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]&#8230;&#8203;</code></p>
 </li>
 </ul>
 </div>
@@ -160,10 +161,10 @@ A person can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
+<p><code>add n/John Doe p/98765432 e/johnd@example.com</code></p>
 </li>
 <li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com p/1234567 t/criminal</code></p>
 </li>
 </ul>
 </div>
@@ -172,27 +173,27 @@ A person can have any number of tags (including 0)
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-persons-code-contactlist-code"><a class="link" href="#listing-all-persons-code-contactlist-code">3.3. Listing all persons : <code>contactList</code></a></h3>
+<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
 <p>Shows a list of all persons in the address book.</p>
 </li>
 <li>
-<p>Format: <code>contactList</code></p>
+<p>Format: <code>list</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-person-code-contactedit-code"><a class="link" href="#editing-a-person-code-contactedit-code">3.4. Editing a person : <code>contactEdit</code></a></h3>
+<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
 <p>Edits an existing person in the address book.</p>
 </li>
 <li>
-<p>Format: <code>contactEdit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…</code></p>
+<p>Format: <code>contactEdit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]…</code></p>
 </li>
 </ul>
 </div>
@@ -240,14 +241,14 @@ Edits the name of the <code>2nd person</code> to be <code>Betsy Crower</code> an
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-persons-by-name-contactfind"><a class="link" href="#locating-persons-by-name-contactfind">3.5. Locating persons by name: contactFind</a></h3>
+<h3 id="locating-persons-by-name-find"><a class="link" href="#locating-persons-by-name-find">3.5. Locating persons by name: find</a></h3>
 <div class="ulist">
 <ul>
 <li>
 <p>Finds persons whose names contain any of the given keywords.</p>
 </li>
 <li>
-<p>Format: <code>contactFind KEYWORD [MORE_KEYWORDS]</code></p>
+<p>Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </li>
 </ul>
 </div>
@@ -291,14 +292,14 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person-code-contactdelete-code"><a class="link" href="#deleting-a-person-code-contactdelete-code">3.6. Deleting a person : <code>contactDelete</code></a></h3>
+<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
 <p>Deletes the specified person from the address book.</p>
 </li>
 <li>
-<p>Format: <code>contactDelete INDEX</code></p>
+<p>Format: <code>delete INDEX</code></p>
 </li>
 </ul>
 </div>
@@ -342,7 +343,7 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-contactclear-code"><a class="link" href="#clearing-all-entries-code-contactclear-code">3.7. Clearing all entries : <code>contactClear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -443,7 +444,7 @@ professor’s contact associated with the module.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>`diary log {Limit}: Shows the most recent diary entry IDs. The number of entry IDs is capped at limit. If no limit
+<p><code>diary log {Limit}</code>: Shows the most recent diary entry IDs. The number of entry IDs is capped at limit. If no limit
 is given, shows the most recent 10 diary entry IDs.</p>
 </li>
 <li>
@@ -546,7 +547,34 @@ is given, shows the most recent 10 diary entry IDs.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="command-summary"><a class="link" href="#command-summary">3.17. Command Summary</a></h3>
+<h3 id="note-taking-code-notes-code"><a class="link" href="#note-taking-code-notes-code">3.17. Note Taking: <code>notes</code></a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows for users to create documents for notes, organise their notes in folders.
+Default location is set to user&#8217;s desktop.</p>
+</li>
+<li>
+<p>Format: notes ops/{COMMAND} loc/{DIRECTORY}</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>notes ops/list loc/NUS/</code>: shows content in usr/Desktop/NUS/ folder, content will be updated in the UI</p>
+</li>
+<li>
+<p><code>notes ops/open loc/test.doc</code>: Opens the file test.doc at usr/Desktop, if file is not present, error message will be shown.</p>
+</li>
+<li>
+<p><code>notes ops/create loc/test.doc</code>: Creates the file test.doc at usr/Desktop, if file is already present, error message will be shown.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="command-summary"><a class="link" href="#command-summary">3.18. Command Summary</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -643,8 +671,24 @@ e.g. <code>modreq computer science</code></p>
 <li>
 <p>mymodplan done {/MODULE CODE}</p>
 </li>
+<li>
+<p>notes :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>notes ops/open loc/{DIRECTORY}</p>
+</li>
+<li>
+<p>notes ops/create loc/{DIRECTORY}</p>
+</li>
+<li>
+<p>notes ops/list loc/{DIRECTORY}</p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-18 06:55:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 12:47:21 UTC</div></div></div></body></html>
