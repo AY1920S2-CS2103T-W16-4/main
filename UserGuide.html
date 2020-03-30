@@ -13,26 +13,15 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></li>
-<li><a href="#locating-persons-by-name-find">3.5. Locating persons by name: find</a></li>
-<li><a href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></li>
-<li><a href="#view-cap-summary-code-cap-code">3.9. View CAP summary : <code>cap</code></a></li>
-<li><a href="#view-module-requirement-code-modreq-code">3.10. View module requirement: <code>modreq</code></a></li>
-<li><a href="#module-information-code-module-code">3.11. Module information: <code>module</code></a></li>
-<li><a href="#diary-code-diary-code">3.12. Diary: <code>diary</code></a></li>
-<li><a href="#todo-list-code-todo-code">3.13. Todo list: <code>todo</code></a></li>
-<li><a href="#deadline-code-deadline-code">3.14. Deadline: <code>deadline</code></a></li>
-<li><a href="#event-code-event-code">3.15. Event: <code>event</code></a></li>
-<li><a href="#module-planning-code-mymodplan-code">3.16. Module planning: <code>mymodplan</code></a></li>
-<li><a href="#note-taking-code-notes-code">3.17. Note Taking: <code>notes</code></a></li>
-<li><a href="#command-summary">3.18. Command Summary</a></li>
+<li><a href="#general">3.1. General</a></li>
+<li><a href="#address-book">3.2. Address Book</a></li>
+<li><a href="#profile">3.3. Profile</a></li>
+<li><a href="#diary">3.4. Diary</a></li>
+<li><a href="#calender">3.5. Calender</a></li>
+<li><a href="#notes">3.6. Notes</a></li>
 </ul>
 </li>
+<li><a href="#command-summary">4. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -53,10 +42,10 @@
 <p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/se-edu/addressbook-level3/releases">here</a>.</p>
+<p>Download the latest <code>NUSProductivity.jar</code> <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
+<p>Copy the file to the folder you want to use as the home folder for NUSProductivity.</p>
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
@@ -123,7 +112,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
+<h3 id="general"><a class="link" href="#general">3.1. General</a></h3>
+<div class="sect3">
+<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1.1. Viewing help : <code>help</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -132,13 +123,31 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
+<div class="sect3">
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.1.2. Exiting the program : <code>exit</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]&#8230;&#8203;</code></p>
+<p>Exits the program.</p>
+</li>
+<li>
+<p>Format: <code>exit</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="address-book"><a class="link" href="#address-book">3.2. Address Book</a></h3>
+<div class="sect3">
+<h4 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2.1. Adding a person: <code>add</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a person to the address book.</p>
+</li>
+<li>
+<p>Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]&#8230;&#8203;</code></p>
 </li>
 </ul>
 </div>
@@ -172,8 +181,8 @@ A person can have any number of tags (including 0)
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></h3>
+<div class="sect3">
+<h4 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.2.2. Listing all persons : <code>list</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -185,8 +194,8 @@ A person can have any number of tags (including 0)
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></h3>
+<div class="sect3">
+<h4 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.2.3. Editing a person : <code>edit</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -211,7 +220,7 @@ A person can have any number of tags (including 0)
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
+<p>When editing tags, the existing tags of the person will be removed i.e. adding of tags is not cumulative.</p>
 </li>
 <li>
 <p>You can remove all the person’s tags by typing t/ without specifying any tags after it.</p>
@@ -240,8 +249,8 @@ Edits the name of the <code>2nd person</code> to be <code>Betsy Crower</code> an
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="locating-persons-by-name-find"><a class="link" href="#locating-persons-by-name-find">3.5. Locating persons by name: find</a></h3>
+<div class="sect3">
+<h4 id="locating-persons-by-name-find"><a class="link" href="#locating-persons-by-name-find">3.2.4. Locating persons by name: find</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -257,7 +266,7 @@ Edits the name of the <code>2nd person</code> to be <code>Betsy Crower</code> an
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g hans will match Hans</p>
+<p>The search is case insensitive. e.g. hans will match Hans</p>
 </li>
 <li>
 <p>The order of the keywords does not matter. e.g. Hans Bo will match Bo Hans</p>
@@ -275,9 +284,10 @@ Edits the name of the <code>2nd person</code> to be <code>Betsy Crower</code> an
 </div>
 </div>
 </div>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p>Examples:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -290,9 +300,12 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </li>
 </ul>
 </div>
+</li>
+</ul>
 </div>
-<div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></h3>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.2.5. Deleting a person : <code>delete</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -342,8 +355,8 @@ Deletes the 1st person in the results of the find command.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></h3>
+<div class="sect3">
+<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.2.6. Clearing all entries : <code>clear</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -355,28 +368,18 @@ Deletes the 1st person in the results of the find command.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Exits the program.</p>
-</li>
-<li>
-<p>Format: <code>exit</code></p>
-</li>
-</ul>
-</div>
 </div>
 <div class="sect2">
-<h3 id="view-cap-summary-code-cap-code"><a class="link" href="#view-cap-summary-code-cap-code">3.9. View CAP summary : <code>cap</code></a></h3>
+<h3 id="profile"><a class="link" href="#profile">3.3. Profile</a></h3>
+<div class="sect3">
+<h4 id="view-cap-summary-code-cap-code"><a class="link" href="#view-cap-summary-code-cap-code">3.3.1. View CAP summary : <code>cap</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
 <p>Shows the current cap of the individual. If only cap is specified, it will only show the MCs taken up to the point and the CAP.</p>
 </li>
 <li>
-<p>Format: <code>cap {breakdown}</code></p>
+<p>Format: <code>cap BREAKDOWN</code></p>
 </li>
 </ul>
 </div>
@@ -388,15 +391,15 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="view-module-requirement-code-modreq-code"><a class="link" href="#view-module-requirement-code-modreq-code">3.10. View module requirement: <code>modreq</code></a></h3>
+<div class="sect3">
+<h4 id="view-module-requirement-code-modreq-code"><a class="link" href="#view-module-requirement-code-modreq-code">3.3.2. View module requirement: <code>modreq</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
 <p>Shows the modules requirement for the major specified.</p>
 </li>
 <li>
-<p>Format: <code>modreq {/MAJOR}</code></p>
+<p>Format: <code>modreq MAJOR</code></p>
 </li>
 <li>
 <p>Example:</p>
@@ -411,8 +414,8 @@ Deletes the 1st person in the results of the find command.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="module-information-code-module-code"><a class="link" href="#module-information-code-module-code">3.11. Module information: <code>module</code></a></h3>
+<div class="sect3">
+<h4 id="module-information-code-module-code"><a class="link" href="#module-information-code-module-code">3.3.3. Module information: <code>module</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -420,7 +423,7 @@ Deletes the 1st person in the results of the find command.</p>
 professor’s contact associated with the module.</p>
 </li>
 <li>
-<p>Format: <code>module {/MODULE CODE}</code></p>
+<p>Format: <code>module MODULE CODE</code></p>
 </li>
 <li>
 <p>Example:</p>
@@ -435,93 +438,8 @@ professor’s contact associated with the module.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="diary-code-diary-code"><a class="link" href="#diary-code-diary-code">3.12. Diary: <code>diary</code></a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Format:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><code>diary log {Limit}</code>: Shows the most recent diary entry IDs. The number of entry IDs is capped at limit. If no limit
-is given, shows the most recent 10 diary entry IDs.</p>
-</li>
-<li>
-<p><code>diary show {ENTRY ID}</code> : Shows the diary entry for the specified entry ID.</p>
-</li>
-<li>
-<p><code>diary show {DD-MM-YYYY}</code> : Shows the diary entry at the specified date if there is any</p>
-</li>
-<li>
-<p><code>diary add {ENTRY}</code> : Adds the specific entry to the diary book, date and time will be logged automatically</p>
-</li>
-<li>
-<p><code>diary delete {ENTRY ID}</code> : Deletes the specified diary ID’s entry.</p>
-</li>
-<li>
-<p><code>diary weather {ID} {Weather}</code> :  tag the diary with the specific ID with a specific weather (e.g. sunny, cloudy)</p>
-</li>
-<li>
-<p><code>diary emotion {ID} {Emotion}</code> :  tag the diary with the specific ID with a specific emotion (e.g. happy, blue)</p>
-</li>
-</ol>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="todo-list-code-todo-code"><a class="link" href="#todo-list-code-todo-code">3.13. Todo list: <code>todo</code></a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Shows the list of tasks that are scheduled for the week with the deadline.</p>
-</li>
-<li>
-<p>Format: <code>todo</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deadline-code-deadline-code"><a class="link" href="#deadline-code-deadline-code">3.14. Deadline: <code>deadline</code></a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Adds a new task to the todo list. The deadline will be shown alongside the task description.</p>
-</li>
-<li>
-<p>Format: <code>deadline {/Description} /by {DD-MM-YYYY} {HHMM}</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="event-code-event-code"><a class="link" href="#event-code-event-code">3.15. Event: <code>event</code></a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Adds a new task to the todo list. The date of the event will be shown alongside the task description.</p>
-</li>
-<li>
-<p>Format:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><code>event {/Description} /at {DD-MM-YYYY} {HHMM}</code></p>
-</li>
-<li>
-<p><code>event {ID} {name of participant}</code> : add the contact card of the specific participant to the event</p>
-</li>
-</ol>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="module-planning-code-mymodplan-code"><a class="link" href="#module-planning-code-mymodplan-code">3.16. Module planning: <code>mymodplan</code></a></h3>
+<div class="sect3">
+<h4 id="module-planning-code-mymodplan-code"><a class="link" href="#module-planning-code-mymodplan-code">3.3.4. Module planning: <code>mymodplan</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -535,10 +453,10 @@ is given, shows the most recent 10 diary entry IDs.</p>
 <p><code>mymodplan</code>: shows module planning list</p>
 </li>
 <li>
-<p><code>mymodplan add {/MODULE CODE}</code>: adds a module to the module plan</p>
+<p><code>mymodplan add MODULE CODE</code>: adds a module to the module plan</p>
 </li>
 <li>
-<p><code>mymodplan done {/MODULE CODE}</code>: marks a module as taken/done</p>
+<p><code>mymodplan done MODULE CODE</code>: marks a module as taken/done</p>
 </li>
 </ol>
 </div>
@@ -546,8 +464,157 @@ is given, shows the most recent 10 diary entry IDs.</p>
 </ul>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="note-taking-code-notes-code"><a class="link" href="#note-taking-code-notes-code">3.17. Note Taking: <code>notes</code></a></h3>
+<h3 id="diary"><a class="link" href="#diary">3.4. Diary</a></h3>
+<div class="sect3">
+<h4 id="adding-an-diary-entry-code-diaryadd-code"><a class="link" href="#adding-an-diary-entry-code-diaryadd-code">3.4.1. Adding an diary entry: <code>diaryAdd</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a diary entry to the diary book.</p>
+</li>
+<li>
+<p>Format: <code>diaryAdd ec/ENTRY_CONTENT</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="showing-diary-logs-code-diaryshow-code"><a class="link" href="#showing-diary-logs-code-diaryshow-code">3.4.2. Showing diary logs: <code>diaryShow</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows all diary entry IDs.</p>
+</li>
+<li>
+<p>Format: `diaryLog `</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="showing-diary-entries-with-specified-entry-id-code-diaryshow-code"><a class="link" href="#showing-diary-entries-with-specified-entry-id-code-diaryshow-code">3.4.3. Showing diary entries with specified entry ID: <code>diaryShow</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the diary entry for the specified entry ID.</p>
+</li>
+<li>
+<p>Format: <code>diaryShow id/ENTRY_ID</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="showing-diary-entries-with-specified-date-code-diaryshow-code"><a class="link" href="#showing-diary-entries-with-specified-date-code-diaryshow-code">3.4.4. Showing diary entries with specified date: <code>diaryShow</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the diary entry at the specified date if there is any, date needs to be in DD-MM-YYYY.</p>
+</li>
+<li>
+<p>Format: <code>diaryShow date/DATE</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-an-diary-entry-code-diarydelete-code"><a class="link" href="#deleting-an-diary-entry-code-diarydelete-code">3.4.5. Deleting an diary entry: <code>diaryDelete</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the specified diary ID’s entry.</p>
+</li>
+<li>
+<p>Format: <code>diaryDelete id/ENTRY_ID</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tagging-weather-code-diaryweather-code"><a class="link" href="#tagging-weather-code-diaryweather-code">3.4.6. Tagging weather: <code>diaryWeather</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Tags the diary with the specific ID with a specific weather (e.g. sunny, cloudy)</p>
+</li>
+<li>
+<p>Format: <code>diaryWeather id/ENTRY_ID w/WEATHER</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tagging-mood-code-diarymood-code"><a class="link" href="#tagging-mood-code-diarymood-code">3.4.7. Tagging mood: <code>diaryMood</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Tags the diary with the specific ID with a specific mood (e.g. happy, stressed)</p>
+</li>
+<li>
+<p>Format: <code>diaryMood id/ENTRY_ID m/MOOD</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calender"><a class="link" href="#calender">3.5. Calender</a></h3>
+<div class="sect3">
+<h4 id="todo-list-code-todo-code"><a class="link" href="#todo-list-code-todo-code">3.5.1. Todo list: <code>todo</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the list of tasks that are scheduled for the week with the deadline.</p>
+</li>
+<li>
+<p>Format: <code>todo</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deadline-code-deadline-code"><a class="link" href="#deadline-code-deadline-code">3.5.2. Deadline: <code>deadline</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a new task to the todo list. The deadline will be shown alongside the task description.</p>
+</li>
+<li>
+<p>Format: <code>deadline DESCRIPTION /by DD-MM-YYYY HHMM</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="event-code-event-code"><a class="link" href="#event-code-event-code">3.5.3. Event: <code>event</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a new task to the todo list. The date of the event will be shown alongside the task description.</p>
+</li>
+<li>
+<p>Format:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>event DESCRIPTION /at DD-MM-YYYY HHMM</code></p>
+</li>
+<li>
+<p><code>event ID NAME_OF_PARTICIPANT</code> : add the contact card of the specific participant to the event</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="notes"><a class="link" href="#notes">3.6. Notes</a></h3>
+<div class="sect3">
+<h4 id="note-taking-code-notes-code"><a class="link" href="#note-taking-code-notes-code">3.6.1. Note Taking: <code>notes</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -555,7 +622,7 @@ is given, shows the most recent 10 diary entry IDs.</p>
 Default location is set to user&#8217;s desktop.</p>
 </li>
 <li>
-<p>Format: notes ops/{COMMAND} loc/{DIRECTORY}</p>
+<p>Format: notes ops/COMMAND loc/DIRECTORY</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -573,31 +640,35 @@ Default location is set to user&#8217;s desktop.</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="command-summary"><a class="link" href="#command-summary">3.18. Command Summary</a></h3>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">4. Command Summary</a></h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>contactAdd contactAdd n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…<br>
-e.g. <code>contactAdd n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
+<p>add  n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…<br>
+e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com t/friend t/colleague</code></p>
 </li>
 <li>
-<p>contactClear : contactClear</p>
+<p>clear : clear</p>
 </li>
 <li>
-<p>contactDelete : contactDelete INDEX<br>
+<p>delete : delete INDEX<br>
 e.g. <code>delete 3</code></p>
 </li>
 <li>
-<p>contactEdit : contactEdit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…<br>
+<p>edit : edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG]…<br>
 e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
 </li>
 <li>
-<p>contactFind : contactFind KEYWORD [MORE_KEYWORDS]<br>
+<p>find : find KEYWORD [MORE_KEYWORDS]<br>
 e.g. <code>find James Jake</code></p>
 </li>
 <li>
-<p>addressbooklist: list</p>
+<p>list: list</p>
 </li>
 <li>
 <p>cap : cap {breakdown}</p>
@@ -617,78 +688,74 @@ e.g. <code>modreq computer science</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>diary log {Limit}</p>
+<p>diary log LIMIT</p>
 </li>
 <li>
-<p>diary show {ENTRY ID}</p>
+<p>diary show ENTRY ID</p>
 </li>
 <li>
-<p>diary show {DD-MM-YYYY}</p>
+<p>diary show DD-MM-YYYY</p>
 </li>
 <li>
-<p>diary add {ENTRY}</p>
+<p>diary add ENTRY</p>
 </li>
 <li>
-<p>diary delete {ENTRY ID}</p>
+<p>diary delete ENTRY ID</p>
 </li>
 <li>
-<p>diary weather {ID} {Weather}</p>
+<p>diary weather ID WEATHER</p>
 </li>
 <li>
-<p>diary emotion {ID} {Emotion}</p>
-</li>
-</ul>
-</div>
+<p>diary emotion ID EMOTION</p>
 </li>
 <li>
 <p>reminders : reminders</p>
 </li>
 <li>
-<p>deadline : deadline {/Description} /by {DD-MM-YYYY} {HHMM}</p>
+<p>deadline : deadline DESCRIPTION /by DD-MM-YYYY HHMM</p>
 </li>
 <li>
 <p>event :</p>
+</li>
+<li>
+<p>event DESCRIPTION /at DD-MM-YYYY HHMM</p>
+</li>
+<li>
+<p>event ID NAME_OF_PARTICIPANT</p>
+</li>
+<li>
+<p>mymodplan: mymodplan</p>
 <div class="ulist">
 <ul>
 <li>
-<p>event {/Description} /at {DD-MM-YYYY} {HHMM}</p>
+<p>mymodplan add MODULE CODE</p>
 </li>
 <li>
-<p>event {ID} {name of participant}</p>
+<p>mymodplan done MODULE CODE</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>mymodplan:</p>
-</li>
-<li>
-<p>mymodplan</p>
-</li>
-<li>
-<p>mymodplan add {/MODULE CODE}</p>
-</li>
-<li>
-<p>mymodplan done {/MODULE CODE}</p>
-</li>
-<li>
-<p>notes :</p>
+<p>notes : notes</p>
 <div class="ulist">
 <ul>
 <li>
-<p>notes ops/open loc/{DIRECTORY}</p>
+<p>notes ops/open loc/DIRECTORY</p>
 </li>
 <li>
-<p>notes ops/create loc/{DIRECTORY}</p>
+<p>notes ops/create loc/DIRECTORY</p>
 </li>
 <li>
-<p>notes ops/list loc/{DIRECTORY}</p>
+<p>notes ops/list loc/DIRECTORY</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
+</li>
+</ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 14:21:56 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 01:12:47 UTC</div></div></div></body></html>
