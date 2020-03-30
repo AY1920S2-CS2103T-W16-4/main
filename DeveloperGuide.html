@@ -23,10 +23,11 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#module-search">3.1. Module Search</a></li>
-<li><a href="#diary">3.2. Diary</a></li>
-<li><a href="#proposed-pathing">3.3. [Proposed] Pathing</a></li>
-<li><a href="#logging">3.4. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
+<li><a href="#module-planning">3.2. Module Planning</a></li>
+<li><a href="#diary">3.3. Diary</a></li>
+<li><a href="#proposed-pathing">3.4. [Proposed] Pathing</a></li>
+<li><a href="#logging">3.5. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -356,7 +357,80 @@ This allows user to plan for module if they have queried the module before witho
 </div>
 </div>
 <div class="sect2">
-<h3 id="diary"><a class="link" href="#diary">3.2. Diary</a></h3>
+<h3 id="module-planning"><a class="link" href="#module-planning">3.2. Module Planning</a></h3>
+<div class="sect3">
+<h4 id="adds-nus-modules"><a class="link" href="#adds-nus-modules">3.2.1. Adds NUS modules</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>This module planning feature enables users to store any module they have taken or are taking now in NUS.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementation: Modules are created with <code>moduleAdd</code> command, followed by the module code and grade (if applicable)
+Our program will check if the module code is valid by using the search feature above.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="update-your-grades"><a class="link" href="#update-your-grades">3.2.2. Update your grades</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>For modules that you have taken, users can store their grade in our application.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementation: if user didn&#8217;t state their grade for any module when they first add in the module or they need to change their grade,
+Users can use <code>grade</code> command, followed by the module code and the grade in order to update their grade for that module.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cap-calculation"><a class="link" href="#cap-calculation">3.2.3. CAP calculation</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Based on the grades users have stored, users can get their current CAP immediately.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementation: check current CAP using <code>cap</code> command</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proposed-module-tasks"><a class="link" href="#proposed-module-tasks">3.2.4. [proposed] Module Tasks</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Users can view the tasks related to each module separately.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementation:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="diary"><a class="link" href="#diary">3.3. Diary</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -385,12 +459,12 @@ This allows user to plan for module if they have queried the module before witho
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-pathing"><a class="link" href="#proposed-pathing">3.3. [Proposed] Pathing</a></h3>
+<h3 id="proposed-pathing"><a class="link" href="#proposed-pathing">3.4. [Proposed] Pathing</a></h3>
 <div class="paragraph">
 <p>Given below is the consideration and proposed implementation for pathing in the future versions.</p>
 </div>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">3.3.1. Current Implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">3.4.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The Path interface in java allows for 2 implementation of pathing namely:</p>
 </div>
@@ -418,7 +492,7 @@ This allows user to plan for module if they have queried the module before witho
 </div>
 </div>
 <div class="sect3">
-<h4 id="absolutepath"><a class="link" href="#absolutepath">3.3.2. AbsolutePath:</a></h4>
+<h4 id="absolutepath"><a class="link" href="#absolutepath">3.4.2. AbsolutePath:</a></h4>
 <div class="paragraph">
 <p>Benefits:</p>
 </div>
@@ -433,7 +507,7 @@ This allows user to plan for module if they have queried the module before witho
 </div>
 </div>
 <div class="sect3">
-<h4 id="relativepath"><a class="link" href="#relativepath">3.3.3. RelativePath:</a></h4>
+<h4 id="relativepath"><a class="link" href="#relativepath">3.4.3. RelativePath:</a></h4>
 <div class="paragraph">
 <p>Benefits:</p>
 </div>
@@ -449,14 +523,14 @@ This allows user to plan for module if they have queried the module before witho
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -487,7 +561,7 @@ This allows user to plan for module if they have queried the module before witho
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.5. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1024,4 +1098,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 12:44:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 15:10:52 UTC</div></div></div></body></html>
