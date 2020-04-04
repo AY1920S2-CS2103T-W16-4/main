@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>NusProductivity</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>NUSProductivity</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">NUSProductivity</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>NusProductivity</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">NUSProductivity</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>NUSProductivity</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team W16-4</code>      Since: <code>Mar 2020</code>      Licence: <code>MIT</code></p>
@@ -17,7 +17,7 @@
 <li><a href="#address-book">3.2. Address Book</a></li>
 <li><a href="#profile">3.3. Profile</a></li>
 <li><a href="#diary">3.4. Diary</a></li>
-<li><a href="#calender">3.5. Calender</a></li>
+<li><a href="#calendar">3.5. Calendar</a></li>
 <li><a href="#notes">3.6. Notes</a></li>
 </ul>
 </li>
@@ -29,26 +29,29 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>NusProductivity is an application for better management of your school work. The app is set out to enhance your productivity in school through 5 main features, allowing you to plan module, keep track of your cap, note taking, todo list planning and allowing you to log down your thoughts for each day through a diary. This app is designed mainly for NUS students with the possibility to customise it for students from other University in the future. More importantly, NusProductivity is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
+<p>NUSProductivity is an application designed to let you better manage your school work. The app is set out to enhance your productivity in school through 5 main features, module planning, CAP (cumulative average point) tracking, note taking, deadline and task listing, and finally, diary logging. This app is designed mainly for NUS students with the possibility to customise it for students from other universities in the future. More importantly, NUSProductivity is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). Read on to get you started on using the application!</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section allows you to start up NUSProductivity with ease. Detailed steps are listed below.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
+<p>Ensure you have Java <code>11</code> or above installed on your computer.</p>
 </li>
 <li>
-<p>Download the latest <code>NUSProductivity.jar</code> <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/releases">here</a>.</p>
+<p>Download the latest version of <code>NUSProductivity.jar</code> <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for NUSProductivity.</p>
 </li>
 <li>
-<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+<p>Double-click the file to start the app. The GUI should appear in a few seconds (screenshot of GUI shown below).</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/Ui.png" alt="Ui" width="790">
@@ -64,13 +67,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
+<p><strong><code>search</code></strong><code>CS2103T</code> : searches for the module <code>CS2103T</code></p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com ` : adds a contact named `John Doe</code> to the Address Book.</p>
+<p><strong><code>deadlineAdd desc/Finish homework by/30-04-2020 cat/School</code></strong> : schedules a deadline on the calendar for you to finish your homework</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong><code>cap</code></strong> : calculates your CAP</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -88,6 +91,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="sect1">
 <h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section shows the detailed list of usable commands.</p>
+</div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -490,7 +496,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-diary-logs-code-diaryshow-code"><a class="link" href="#viewing-diary-logs-code-diaryshow-code">3.4.2. Viewing diary logs: <code>diaryShow</code></a></h4>
+<h4 id="viewing-diary-logs-code-diarylog-code"><a class="link" href="#viewing-diary-logs-code-diarylog-code">3.4.2. Viewing diary logs: <code>diaryLog</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -569,55 +575,32 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="calender"><a class="link" href="#calender">3.5. Calender</a></h3>
+<h3 id="calendar"><a class="link" href="#calendar">3.5. Calendar</a></h3>
 <div class="paragraph">
-<p>A calender in the app that allows you to schedule and set deadline for important tasks such as project or assignment deadlines.</p>
+<p>A calendar in the app that allows you to schedule and set deadline for important tasks such as project or assignment deadlines.</p>
 </div>
 <div class="sect3">
-<h4 id="todo-list-code-todo-code"><a class="link" href="#todo-list-code-todo-code">3.5.1. Todo list: <code>todo</code></a></h4>
+<h4 id="adding-deadline-code-deadlineadd-code"><a class="link" href="#adding-deadline-code-deadlineadd-code">3.5.1. Adding Deadline: <code>deadlineAdd</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Shows the list of tasks that are scheduled for the week with the deadline.</p>
+<p>Schedules a task tagged with a deadline to the calendar. A dot will be shown to indicate there is a deadline to be met on that day</p>
 </li>
 <li>
-<p>Format: <code>todo</code></p>
+<p>Format: <code>deadlineAdd desc/DESCRIPTION by/DD-MM-YYYY cat/CATEGORY</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deadline-code-deadline-code"><a class="link" href="#deadline-code-deadline-code">3.5.2. Deadline: <code>deadline</code></a></h4>
+<h4 id="removing-deadline-code-deadlinedelete-code"><a class="link" href="#removing-deadline-code-deadlinedelete-code">3.5.2. Removing Deadline: <code>deadlineDelete</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Adds a new task to the todo list. The deadline will be shown alongside the task description.</p>
+<p>Deletes a deadline from the deadline list, marking the deadline as done</p>
 </li>
 <li>
-<p>Format: <code>deadline DESCRIPTION /by DD-MM-YYYY HHMM</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="event-code-event-code"><a class="link" href="#event-code-event-code">3.5.3. Event: <code>event</code></a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Adds a new task to the todo list. The date of the event will be shown alongside the task description.</p>
-</li>
-<li>
-<p>Format:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><code>event DESCRIPTION /at DD-MM-YYYY HHMM</code></p>
-</li>
-<li>
-<p><code>event ID NAME_OF_PARTICIPANT</code> : add the contact card of the specific participant to the event</p>
-</li>
-</ol>
-</div>
+<p>Format: <code>deadlineDelete index/INDEX</code></p>
 </li>
 </ul>
 </div>
@@ -637,7 +620,7 @@ professor’s contact associated with the module.</p>
 Default location is set to user&#8217;s desktop.</p>
 </li>
 <li>
-<p>Format: notes ops/COMMAND loc/DIRECTORY</p>
+<p>Format: <code>notes ops/COMMAND loc/DIRECTORY</code></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -661,6 +644,9 @@ Default location is set to user&#8217;s desktop.</p>
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">4. Command Summary</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section summarizes the list of commands.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -686,14 +672,11 @@ e.g. <code>find James Jake</code></p>
 <p>list: list</p>
 </li>
 <li>
-<p>cap : cap {breakdown}</p>
+<p>cap : cap {BREAKDOWN}</p>
 </li>
 <li>
 <p>modreq : modreq {\MAJOR}<br>
 e.g. <code>modreq computer science</code></p>
-</li>
-<li>
-<p>todo: todo</p>
 </li>
 <li>
 <p>help : help</p>
@@ -731,21 +714,12 @@ e.g. <code>diary weather 1 SUNNY</code></p>
 e.g. <code>diary emotion 1 HAPPY</code></p>
 </li>
 <li>
-<p>reminders : reminders</p>
+<p>todo : todo DESCRIPTION
+e.g. <code>todo water plants</code></p>
 </li>
 <li>
 <p>deadline : deadline DESCRIPTION /by DD-MM-YYYY HHMM
 e.g. <code>deadline Finish homework /by 30-03-2020 1800</code></p>
-</li>
-<li>
-<p>event :</p>
-</li>
-<li>
-<p>event DESCRIPTION /at DD-MM-YYYY HHMM
-e.g. <code>event Prom /at 30-03-2020 1800</code></p>
-</li>
-<li>
-<p>event ID NAME_OF_PARTICIPANT</p>
 </li>
 <li>
 <p>mymodplan: mymodplan</p>
@@ -787,4 +761,4 @@ e.g. <code>notes ops/list loc/Desktop/</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 10:31:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-04 14:45:13 UTC</div></div></div></body></html>
