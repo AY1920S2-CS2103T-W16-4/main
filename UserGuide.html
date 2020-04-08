@@ -10,15 +10,20 @@
 <div id="toctitle"></div>
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#quick-start">2. Quick Start</a></li>
+<li><a href="#quick-start">2. Quick Start</a>
+<ul class="sectlevel3">
+<li><a href="#commonly-used-symbols">2.1. Commonly Used Symbols</a></li>
+</ul>
+</li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#general">3.1. General</a></li>
-<li><a href="#address-book">3.2. Address Book</a></li>
-<li><a href="#profile">3.3. Profile</a></li>
-<li><a href="#diary">3.4. Diary</a></li>
-<li><a href="#calendar">3.5. Calendar</a></li>
-<li><a href="#notes">3.6. Notes</a></li>
+<li><a href="#switching-tabs-code-calendar-code-code-diary-code-code-modplan-code-code-addressbook-code-code-notes-code-code-profile-code">3.2. Switching Tabs : <code>calendar</code>, <code>diary</code>, <code>modplan</code>, <code>addressbook</code>, <code>notes</code>, <code>profile</code></a></li>
+<li><a href="#address-book">3.3. Address Book</a></li>
+<li><a href="#profile">3.4. Profile</a></li>
+<li><a href="#diary">3.5. Diary</a></li>
+<li><a href="#calendar">3.6. Calendar</a></li>
+<li><a href="#notes">3.7. Notes</a></li>
 </ul>
 </li>
 <li><a href="#command-summary">4. Command Summary</a></li>
@@ -57,6 +62,9 @@
 <img src="images/Ui.png" alt="Ui" width="790">
 </div>
 </div>
+<div class="paragraph">
+<p>Figure 1. NUSProductivity calendar tab</p>
+</div>
 </li>
 <li>
 <p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
@@ -85,6 +93,45 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
 </li>
 </ol>
+</div>
+<div class="sect3">
+<h4 id="commonly-used-symbols"><a class="link" href="#commonly-used-symbols">2.1. Commonly Used Symbols</a></h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This symbol indicates something you should take note of.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This symbol indicates a tip that you could use.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+This symbol indicates an aspect that should be used with caution.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -144,12 +191,33 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="address-book"><a class="link" href="#address-book">3.2. Address Book</a></h3>
+<h3 id="switching-tabs-code-calendar-code-code-diary-code-code-modplan-code-code-addressbook-code-code-notes-code-code-profile-code"><a class="link" href="#switching-tabs-code-calendar-code-code-diary-code-code-modplan-code-code-addressbook-code-code-notes-code-code-profile-code">3.2. Switching Tabs : <code>calendar</code>, <code>diary</code>, <code>modplan</code>, <code>addressbook</code>, <code>notes</code>, <code>profile</code></a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Switches to the respective tab</p>
+</li>
+<li>
+<p>Format: <code>calendar</code>, <code>diary</code>, <code>modplan</code>, <code>addressbook</code>, <code>notes</code>, <code>profile</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/switching_tabs.png" alt="switching tabs" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 2.Switching tabs</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="address-book"><a class="link" href="#address-book">3.3. Address Book</a></h3>
 <div class="paragraph">
 <p>The address book allows you to add other individuals, such as professors and fellow classmates to your addressbook. Information such as phone number and email of the person will be saved into the address book for easier communication for projects or to schedule consultation relating to the module.</p>
 </div>
 <div class="sect3">
-<h4 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2.1. Adding a person: <code>add</code></a></h4>
+<h4 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.3.1. Adding a person: <code>add</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -191,7 +259,7 @@ A person can have any number of tags (including 0)
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.2.2. Listing all persons : <code>list</code></a></h4>
+<h4 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3.2. Listing all persons : <code>list</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -204,7 +272,7 @@ A person can have any number of tags (including 0)
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.2.3. Editing a person : <code>edit</code></a></h4>
+<h4 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.3.3. Editing a person : <code>edit</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -259,7 +327,7 @@ Edits the name of the <code>2nd person</code> to be <code>Betsy Crower</code> an
 </div>
 </div>
 <div class="sect3">
-<h4 id="locating-persons-by-name-find"><a class="link" href="#locating-persons-by-name-find">3.2.4. Locating persons by name: find</a></h4>
+<h4 id="locating-persons-by-name-find"><a class="link" href="#locating-persons-by-name-find">3.3.4. Locating persons by name: find</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -289,6 +357,9 @@ Edits the name of the <code>2nd person</code> to be <code>Betsy Crower</code> an
 <li>
 <p>Persons matching at least one keyword will be returned (i.e. OR search). e.g. Hans Bo will return Hans Gruber, Bo Yang</p>
 </li>
+<li>
+<p>After a find operation, use <code>list</code> to get back the original list for address book.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -314,7 +385,7 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.2.5. Deleting a person : <code>delete</code></a></h4>
+<h4 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.3.5. Deleting a person : <code>delete</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -365,7 +436,7 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.2.6. Clearing all entries : <code>clear</code></a></h4>
+<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.3.6. Clearing all entries : <code>clear</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -379,12 +450,12 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="profile"><a class="link" href="#profile">3.3. Profile</a></h3>
+<h3 id="profile"><a class="link" href="#profile">3.4. Profile</a></h3>
 <div class="paragraph">
 <p>This feature allows individuals to see their own profile, their target cap, their current cap and the all modules that the individual have taken.</p>
 </div>
 <div class="sect3">
-<h4 id="view-cap-summary-code-cap-code"><a class="link" href="#view-cap-summary-code-cap-code">3.3.1. View CAP summary : <code>cap</code></a></h4>
+<h4 id="view-cap-summary-code-cap-code"><a class="link" href="#view-cap-summary-code-cap-code">3.4.1. View CAP summary : <code>cap</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -404,7 +475,7 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="view-module-requirement-code-modreq-code"><a class="link" href="#view-module-requirement-code-modreq-code">3.3.2. View module requirement: <code>modreq</code></a></h4>
+<h4 id="view-module-requirement-code-modreq-code"><a class="link" href="#view-module-requirement-code-modreq-code">3.4.2. View module requirement: <code>modreq</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -427,7 +498,7 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="module-information-code-module-code"><a class="link" href="#module-information-code-module-code">3.3.3. Module information: <code>module</code></a></h4>
+<h4 id="module-information-code-module-code"><a class="link" href="#module-information-code-module-code">3.4.3. Module information: <code>module</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -451,7 +522,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="module-planning-code-mymodplan-code"><a class="link" href="#module-planning-code-mymodplan-code">3.3.4. Module planning: <code>mymodplan</code></a></h4>
+<h4 id="module-planning-code-mymodplan-code"><a class="link" href="#module-planning-code-mymodplan-code">3.4.4. Module planning: <code>mymodplan</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -478,12 +549,12 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="diary"><a class="link" href="#diary">3.4. Diary</a></h3>
+<h3 id="diary"><a class="link" href="#diary">3.5. Diary</a></h3>
 <div class="paragraph">
 <p>The diary feature allows you to jot down any thoughts, be it for your personal life or for school work, or just a concept that you may not understand that you will have to revisit in the future.</p>
 </div>
 <div class="sect3">
-<h4 id="adding-an-diary-entry-code-diaryadd-code"><a class="link" href="#adding-an-diary-entry-code-diaryadd-code">3.4.1. Adding an diary entry: <code>diaryAdd</code></a></h4>
+<h4 id="adding-an-diary-entry-code-diaryadd-code"><a class="link" href="#adding-an-diary-entry-code-diaryadd-code">3.5.1. Adding an diary entry: <code>diaryAdd</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -496,7 +567,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-diary-logs-code-diarylog-code"><a class="link" href="#viewing-diary-logs-code-diarylog-code">3.4.2. Viewing diary logs: <code>diaryLog</code></a></h4>
+<h4 id="viewing-diary-logs-code-diarylog-code"><a class="link" href="#viewing-diary-logs-code-diarylog-code">3.5.2. Viewing diary logs: <code>diaryLog</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -509,7 +580,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-diary-entries-with-specified-entry-id-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-entry-id-code-diaryshow-code">3.4.3. Viewing diary entries with specified entry ID: <code>diaryShow</code></a></h4>
+<h4 id="viewing-diary-entries-with-specified-entry-id-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-entry-id-code-diaryshow-code">3.5.3. Viewing diary entries with specified entry ID: <code>diaryShow</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -522,7 +593,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-diary-entries-with-specified-date-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-date-code-diaryshow-code">3.4.4. Viewing diary entries with specified date: <code>diaryShow</code></a></h4>
+<h4 id="viewing-diary-entries-with-specified-date-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-date-code-diaryshow-code">3.5.4. Viewing diary entries with specified date: <code>diaryShow</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -535,7 +606,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-an-diary-entry-code-diarydelete-code"><a class="link" href="#deleting-an-diary-entry-code-diarydelete-code">3.4.5. Deleting an diary entry: <code>diaryDelete</code></a></h4>
+<h4 id="deleting-an-diary-entry-code-diarydelete-code"><a class="link" href="#deleting-an-diary-entry-code-diarydelete-code">3.5.5. Deleting an diary entry: <code>diaryDelete</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -548,7 +619,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tagging-weather-code-diaryweather-code"><a class="link" href="#tagging-weather-code-diaryweather-code">3.4.6. Tagging weather: <code>diaryWeather</code></a></h4>
+<h4 id="tagging-weather-code-diaryweather-code"><a class="link" href="#tagging-weather-code-diaryweather-code">3.5.6. Tagging weather: <code>diaryWeather</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -561,7 +632,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tagging-mood-code-diarymood-code"><a class="link" href="#tagging-mood-code-diarymood-code">3.4.7. Tagging mood: <code>diaryMood</code></a></h4>
+<h4 id="tagging-mood-code-diarymood-code"><a class="link" href="#tagging-mood-code-diarymood-code">3.5.7. Tagging mood: <code>diaryMood</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -575,12 +646,12 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar"><a class="link" href="#calendar">3.5. Calendar</a></h3>
+<h3 id="calendar"><a class="link" href="#calendar">3.6. Calendar</a></h3>
 <div class="paragraph">
 <p>A calendar in the app that allows you to schedule and set deadline for important tasks such as project or assignment deadlines.</p>
 </div>
 <div class="sect3">
-<h4 id="adding-deadline-code-deadlineadd-code"><a class="link" href="#adding-deadline-code-deadlineadd-code">3.5.1. Adding Deadline: <code>deadlineAdd</code></a></h4>
+<h4 id="adding-deadline-code-deadlineadd-code"><a class="link" href="#adding-deadline-code-deadlineadd-code">3.6.1. Adding Deadline: <code>deadlineAdd</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -593,49 +664,140 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="removing-deadline-code-deadlinedelete-code"><a class="link" href="#removing-deadline-code-deadlinedelete-code">3.5.2. Removing Deadline: <code>deadlineDelete</code></a></h4>
+<h4 id="removing-deadline-code-taskdelete-code"><a class="link" href="#removing-deadline-code-taskdelete-code">3.6.2. Removing Deadline: <code>taskDelete</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes a deadline from the deadline list, marking the deadline as done</p>
+<p>Deletes a task from the deadline list, marking the task as done</p>
 </li>
 <li>
-<p>Format: <code>deadlineDelete index/INDEX</code></p>
+<p>Format: <code>taskDelete index/INDEX</code></p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-module-tasks-code-moduletask-code"><a class="link" href="#adding-module-tasks-code-moduletask-code">3.6.3. Adding Module Tasks: <code>moduleTask</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Schedules a module task, this module task includes priority level, module that is associated with the task.</p>
+</li>
+<li>
+<p>Format: <code>taskAdd desc/DESCRIPTION m/MODULE_CODE date/DD-MM-YYYY PRI/PRIORITY-LEVEL</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This requires you to add a module under <code>moduleAdd</code> before you can use it
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="notes"><a class="link" href="#notes">3.6. Notes</a></h3>
-<div class="paragraph">
-<p>Allows you to create notes from the application, making it easier for you to find your files since often time students have a lot of research papers or references opened when writing a report.</p>
-</div>
-<div class="sect3">
-<h4 id="note-taking-code-notes-code"><a class="link" href="#note-taking-code-notes-code">3.6.1. Note Taking: <code>notes</code></a></h4>
+<h3 id="notes"><a class="link" href="#notes">3.7. Notes</a></h3>
 <div class="ulist">
 <ul>
 <li>
+<p>Allows you to create notes from the application, making it easier for you to find your files since often time students have a lot of research papers or references opened when writing a report.</p>
+</li>
+<li>
 <p>Allows for users to create documents for notes, organise their notes in folders.
-Default location is set to user&#8217;s desktop.</p>
-</li>
-<li>
-<p>Format: <code>notes ops/COMMAND loc/DIRECTORY</code></p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><code>notes ops/list loc/NUS/</code>: shows content in usr/Desktop/NUS/ folder, content will be updated in the UI</p>
-</li>
-<li>
-<p><code>notes ops/open loc/test.doc</code>: Opens the file test.doc at usr/Desktop, if file is not present, error message will be shown.</p>
-</li>
-<li>
-<p><code>notes ops/create loc/test.doc</code>: Creates the file test.doc at usr/Desktop, if file is already present, error message will be shown.</p>
-</li>
-</ol>
-</div>
+Default location is set to
+<code>/User/&lt;ACCOUNT NAME&gt;</code> for mac
+<code>C:\Users\&lt;ACCOUNT NAME&gt;</code> for windows</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Path type gives you the flexibility to choose whether you want to use the current directory&#8217;s path or the absolute path
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>INSERT PATH IMAGES</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="listing-directory-code-noteslist-code"><a class="link" href="#listing-directory-code-noteslist-code">3.7.1. Listing Directory: <code>notesList</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>List the directory that you supplied.</p>
+</li>
+<li>
+<p>Format: <code>notesList loc/PATH pt/PATH TYPE</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-directory-code-notescreate-code"><a class="link" href="#listing-directory-code-notescreate-code">3.7.2. Listing Directory: <code>notesCreate</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Creates a file/directory based on what you specified.</p>
+</li>
+<li>
+<p>Format: <code>notesCreate loc/PATH name/FILE_NAME type/TYPE pt/PATH_TYPE</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-directory-code-notesopen-code"><a class="link" href="#listing-directory-code-notesopen-code">3.7.3. Listing Directory: <code>notesOpen</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Opens a file/directory based on what you specified.</p>
+</li>
+<li>
+<p>Format: <code>notesOpen loc/PATH name/FILE_NAME pt/PATH_TYPE</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-directory-code-notesdelete-code"><a class="link" href="#listing-directory-code-notesdelete-code">3.7.4. Listing Directory: <code>notesDelete</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete a file based on what you specified.</p>
+</li>
+<li>
+<p>Format: <code>notesDelete loc/PATH name/FILE_NAME pt/PATH_TYPE</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+This can only be use to delete a file and not a folder
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -647,6 +809,10 @@ Default location is set to user&#8217;s desktop.</p>
 <div class="paragraph">
 <p>This section summarizes the list of commands.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Address Book:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -671,18 +837,24 @@ e.g. <code>find James Jake</code></p>
 <li>
 <p>list: list</p>
 </li>
+</ul>
+</div>
+</li>
+<li>
+<p>Profile</p>
+<div class="ulist">
+<ul>
 <li>
 <p>cap : cap {BREAKDOWN}</p>
 </li>
-<li>
-<p>modreq : modreq {\MAJOR}<br>
-e.g. <code>modreq computer science</code></p>
+</ul>
+</div>
 </li>
 <li>
 <p>help : help</p>
 </li>
 <li>
-<p>diary :</p>
+<p>Diary :</p>
 <div class="ulist">
 <ul>
 <li>
@@ -713,18 +885,27 @@ e.g. <code>diary weather 1 SUNNY</code></p>
 <p>diary emotion ID EMOTION
 e.g. <code>diary emotion 1 HAPPY</code></p>
 </li>
-<li>
-<p>todo : todo DESCRIPTION
-e.g. <code>todo water plants</code></p>
+</ul>
+</div>
 </li>
 <li>
-<p>deadline : deadline DESCRIPTION /by DD-MM-YYYY HHMM
-e.g. <code>deadline Finish homework /by 30-03-2020 1800</code></p>
-</li>
-<li>
-<p>mymodplan: mymodplan</p>
+<p>Calendar:</p>
 <div class="ulist">
 <ul>
+<li>
+<p>deadline : deadlineAdd DESCRIPTION /by DD-MM-YYYY HHMM
+e.g. <code>deadlineAdd Finish homework /by 30-03-2020 1800</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Mod Plan:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>mymodplan: mymodplan</p>
+</li>
 <li>
 <p>mymodplan add MODULE CODE
 e.g. <code>mymodplan add CS2103T</code></p>
@@ -733,32 +914,37 @@ e.g. <code>mymodplan add CS2103T</code></p>
 <p>mymodplan done MODULE CODE
 e.g. <code>mymodplan done CS2103T</code></p>
 </li>
+<li>
+<p>modreq : modreq {\MAJOR}<br>
+e.g. <code>modreq computer science</code></p>
+</li>
 </ul>
 </div>
 </li>
 <li>
-<p>notes : notes</p>
+<p>Notes</p>
 <div class="ulist">
 <ul>
 <li>
-<p>notes ops/open loc/DIRECTORY
-e.g. <code>notes ops/open loc/Desktop/</code></p>
+<p>notesList loc/PATH pt/PATH TYPE
+e.g. <code>notesList loc/Desktop pt/abs</code></p>
 </li>
 <li>
-<p>notes ops/create loc/DIRECTORY
-e.g. <code>notes ops/create loc/Desktop/test.doc</code></p>
+<p>notesOpen loc/PATH name/FILE_NAME pt/PATH_TYPE
+e.g. <code>notesOpen loc/Desktop name/test.doc pt/abs</code></p>
 </li>
 <li>
-<p>notes ops/list loc/DIRECTORY
-e.g. <code>notes ops/list loc/Desktop/</code></p>
+<p>notesCreate loc/PATH name/FILE_NAME type/TYPE pt/PATH_TYPE
+Example: <code>notesCreate loc/Desktop/ name/Test.doc type/file pt/abs</code></p>
+</li>
+<li>
+<p>notesDelete loc/PATH name/FILE_NAME pt/PATH_TYPE
+e.g. <code>notesDelete loc/Desktop/ name/Test.doc pt/abs</code></p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-</li>
-</ul>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-04 14:45:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 10:14:53 UTC</div></div></div></body></html>
