@@ -26,7 +26,7 @@
 <li><a href="#module-planning">3.2. Module Planning</a></li>
 <li><a href="#diary">3.3. Diary</a></li>
 <li><a href="#todo-list">3.4. ToDo List</a></li>
-<li><a href="#proposed-pathing">3.5. [Proposed] Pathing</a></li>
+<li><a href="#notes-feature">3.5. Notes Feature</a></li>
 <li><a href="#logging">3.6. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
 </ul>
@@ -472,12 +472,36 @@ Users can use <code>grade</code> command, followed by the module code and the gr
 
 </div>
 <div class="sect2">
-<h3 id="proposed-pathing"><a class="link" href="#proposed-pathing">3.5. [Proposed] Pathing</a></h3>
+<h3 id="notes-feature"><a class="link" href="#notes-feature">3.5. Notes Feature</a></h3>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">3.5.1. Implementation</a></h4>
 <div class="paragraph">
-<p>Given below is the consideration and proposed implementation for pathing in the future versions.</p>
+<p>The notes feature allow users to access their desktop files and folders with commands.</p>
+</div>
+<div class="paragraph">
+<p>This feature is implemented using a panel on the main window, listing out a list of documents and folders that are in the specified directory.</p>
+</div>
+<div class="paragraph">
+<p>Notes features includes <code>notesOpen</code>, <code>notesCreate</code>, <code>notesDelete</code> and <code>notesList</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/NotesListCommand.png" alt="NotesListCommand">
+</div>
+<div class="title">Figure 9. Notes List Activity Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/NotesCreation.png" alt="NotesCreation">
+</div>
+<div class="title">Figure 10. Notes Open Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>notesCreate and notesDelete activity diagram works similar to notesOpen.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">3.5.1. Current Implementation</a></h4>
+<h4 id="pathing"><a class="link" href="#pathing">3.5.2. Pathing</a></h4>
 <div class="paragraph">
 <p>The Path interface in java allows for 2 implementation of pathing namely:</p>
 </div>
@@ -491,47 +515,51 @@ Users can use <code>grade</code> command, followed by the module code and the gr
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>AbsolutePath will take the path given from <code>/</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/absVSrel.png" alt="absVSrel">
+</div>
+<div class="title">Figure 11. Notes Pathing Diagram</div>
 </div>
 <div class="paragraph">
-<p>RelativePath will take reference from the path that the current system has opened.</p>
+<p>AbsolutePath will take the path given from <code>usr/</code>.</p>
 </div>
 <div class="paragraph">
-<p>The current implementation for the notes module allows user to access from <code>usr/Desktop/{}</code> to open, create and list the directory.</p>
+<p>RelativePath will take reference from the path that the current system has opened, in this case, <code>usr/Desktop/NUS Y2S2</code>.
+The user is given the freedom to provide any of the 2 forms when using the <code>notesOpen</code>, <code>notesCreate</code>, <code>notesDelete</code> and <code>notesList</code> commands.</p>
 </div>
 <div class="paragraph">
-<p>In future implementation we are considering to implement the option to choose from AbsolutePath and RelativePath.</p>
+<p><strong>AbsolutePath</strong>:</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="absolutepath"><a class="link" href="#absolutepath">3.5.2. AbsolutePath:</a></h4>
 <div class="paragraph">
-<p>Benefits:</p>
+<p><strong>Benefits</strong>:</p>
 </div>
 <div class="paragraph">
 <p>This allows for more flexibility as the user do not need to keep note of its current directory and will be able to access any folder/document that is on their system</p>
 </div>
 <div class="paragraph">
-<p>cons:</p>
+<p><strong>cons</strong>:</p>
 </div>
 <div class="paragraph">
-<p>Will require much more input from the user</p>
+<p>Will require much more input from the user, for example, referring to the above figure,
+Accessing the CS2103T file requires the user to input <code>loc/Desktop/NUS Y2S2/CS2103T</code> as opposed to <code>loc/CS2103T</code> if the user is using absolute over relative pathing</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="relativepath"><a class="link" href="#relativepath">3.5.3. RelativePath:</a></h4>
 <div class="paragraph">
-<p>Benefits:</p>
+<p><strong>RelativePath</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>Benefits</strong>:</p>
 </div>
 <div class="paragraph">
 <p>Easier for the user to navigate through the current folder and not key in the whole folder path</p>
 </div>
 <div class="paragraph">
-<p>cons:</p>
+<p><strong>Cons</strong>:</p>
 </div>
 <div class="paragraph">
-<p>Not as flexible</p>
+<p>Not as flexible. Referring to the above diagram,
+Accessing the <strong>Documents</strong> folder will require the user to input <code>loc/../../Documents</code>, this may not be as intuitive to people with no programming background.
+Using <code>loc/Documents abs/abs</code> will allow the user to access any folder from anywhere.</p>
 </div>
 </div>
 </div>
@@ -1111,4 +1139,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 10:14:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 02:05:58 UTC</div></div></div></body></html>
