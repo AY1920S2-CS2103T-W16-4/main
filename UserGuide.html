@@ -9,21 +9,21 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#quick-start">2. Quick Start</a>
-<ul class="sectlevel3">
-<li><a href="#commonly-used-symbols">2.1. Commonly Used Symbols</a></li>
+<li><a href="#introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#an-introduction-to-nusproductivity-user-guide">1.1. An Introduction to NUSProductivity User guide</a></li>
+<li><a href="#commonly-used-symbols">1.2. Commonly Used Symbols</a></li>
 </ul>
 </li>
+<li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#general">3.1. General</a></li>
-<li><a href="#switching-tabs-code-calendar-code-code-diary-code-code-modplan-code-code-addressbook-code-code-notes-code-code-profile-code">3.2. Switching Tabs : <code>calendar</code>, <code>diary</code>, <code>modplan</code>, <code>addressbook</code>, <code>notes</code>, <code>profile</code></a></li>
-<li><a href="#address-book">3.3. Address Book</a></li>
-<li><a href="#profile">3.4. Profile</a></li>
-<li><a href="#diary">3.5. Diary</a></li>
-<li><a href="#calendar">3.6. Calendar</a></li>
-<li><a href="#notes">3.7. Notes</a></li>
+<li><a href="#calendar">3.2. Calendar</a></li>
+<li><a href="#notes">3.3. Notes</a></li>
+<li><a href="#address-book">3.4. Address Book</a></li>
+<li><a href="#profile">3.5. Profile</a></li>
+<li><a href="#diary">3.6. Diary</a></li>
 </ul>
 </li>
 <li><a href="#command-summary">4. Command Summary</a></li>
@@ -33,69 +33,30 @@
 <div class="sect1">
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>NUSProductivity is an application designed to let you better manage your school work. The app is set out to enhance your productivity in school through 5 main features, module planning, CAP (cumulative average point) tracking, note taking, deadline and task listing, and finally, diary logging. This app is designed mainly for NUS students with the possibility to customise it for students from other universities in the future. More importantly, NUSProductivity is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). Read on to get you started on using the application!</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This section allows you to start up NUSProductivity with ease. Detailed steps are listed below.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Ensure you have Java <code>11</code> or above installed on your computer.</p>
-</li>
-<li>
-<p>Download the latest version of <code>NUSProductivity.jar</code> <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/releases">here</a>.</p>
-</li>
-<li>
-<p>Copy the file to the folder you want to use as the home folder for NUSProductivity.</p>
-</li>
-<li>
-<p>Double-click the file to start the app. The GUI should appear in a few seconds (screenshot of GUI shown below).</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>Figure 1. NUSProductivity calendar tab</p>
-</div>
-</li>
-<li>
-<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
-e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
-</li>
-<li>
-<p>Some example commands you can try:</p>
+<div class="sect2">
+<h3 id="an-introduction-to-nusproductivity-user-guide"><a class="link" href="#an-introduction-to-nusproductivity-user-guide">1.1. An Introduction to NUSProductivity User guide</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>search</code></strong><code>CS2103T</code> : searches for the module <code>CS2103T</code></p>
+<p>NUSProductivity is an application designed for all NUS students to better manage their school work. The app is set out to enhance your productivity in school through 5 main features, module planning, CAP (cumulative average point) tracking, note taking, deadline and task listing, and finally, diary logging. This app is designed only for NUS students for now with the possibility to customise it for students from other universities in the future. More importantly, NUSProductivity is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). Read on to get you started on using the application!</p>
 </li>
 <li>
-<p><strong><code>deadlineAdd desc/Finish homework by/30-04-2020 cat/School</code></strong> : schedules a deadline on the calendar for you to finish your homework</p>
+<p>The purpose of this document is for you to familiarise yourself with the functions and capabilities of what NUSProductivity can do.</p>
 </li>
 <li>
-<p><strong><code>cap</code></strong> : calculates your CAP</p>
-</li>
-<li>
-<p><strong><code>exit</code></strong> : exits the app</p>
+<p>The image below shows the different parts of the user interface of NUSProductivity</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
-</li>
-</ol>
+<div class="imageblock">
+<div class="content">
+<img src="images/StartupDescription.png" alt="StartupDescription" width="790">
 </div>
-<div class="sect3">
-<h4 id="commonly-used-symbols"><a class="link" href="#commonly-used-symbols">2.1. Commonly Used Symbols</a></h4>
+<div class="title">Figure 1. NUSProductivity Introduction</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="commonly-used-symbols"><a class="link" href="#commonly-used-symbols">1.2. Commonly Used Symbols</a></h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -120,18 +81,68 @@ This symbol indicates a tip that you could use.
 </tr>
 </table>
 </div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-This symbol indicates an aspect that should be used with caution.
-</td>
-</tr>
-</table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section allows you to start up NUSProductivity with ease. Detailed steps are listed below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure you have Java <code>11</code> or above installed on your computer, if not you can refer to the guide below</p>
+</li>
+<li>
+<p><a href="https://docs.oracle.com/en/java/javase/11/install/installation-jdk-microsoft-windows-platforms.html#GUID-C11500A9-252C-46FE-BB17-FC5A9528EAEB">Windows</a> <a href="https://docs.oracle.com/en/java/javase/11/install/installation-jdk-macos.html#GUID-2FE451B0-9572-4E38-A1A5-568B77B146DE">Mac</a></p>
+</li>
+<li>
+<p>Download the latest version of <code>NUSProductivity.jar</code> <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/releases">here</a>.</p>
+</li>
+<li>
+<p>Copy the file to the folder you want to use as the home folder for NUSProductivity.</p>
+</li>
+<li>
+<p>Double-click the file to start the app. The GUI should appear in a few seconds (screenshot of GUI shown below).</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui" width="790">
+</div>
+<div class="title">Figure 2. NUSProductivity Start up</div>
+</div>
+</li>
+<li>
+<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
+e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
+</li>
+<li>
+<p>Some example commands you can try:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>search</code></strong><code>CS2103T</code> : searches for the module <code>CS2103T</code></p>
+</li>
+<li>
+<p><strong><code>calendar</code></strong> : Allows you to switch to the calendar tab</p>
+</li>
+<li>
+<p><strong><code>deadlineAdd desc/Finish homework by/30-04-2020 cat/School</code></strong> : schedules a deadline on the calendar for you to finish your homework</p>
+</li>
+<li>
+<p><strong><code>cap</code></strong> : calculates your CAP</p>
+</li>
+<li>
+<p><strong><code>exit</code></strong> : exits the app</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -189,13 +200,12 @@ This symbol indicates an aspect that should be used with caution.
 </ul>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="switching-tabs-code-calendar-code-code-diary-code-code-modplan-code-code-addressbook-code-code-notes-code-code-profile-code"><a class="link" href="#switching-tabs-code-calendar-code-code-diary-code-code-modplan-code-code-addressbook-code-code-notes-code-code-profile-code">3.2. Switching Tabs : <code>calendar</code>, <code>diary</code>, <code>modplan</code>, <code>addressbook</code>, <code>notes</code>, <code>profile</code></a></h3>
+<div class="sect3">
+<h4 id="switching-tabs-code-calendar-code-code-diary-code-code-modplan-code-code-addressbook-code-code-notes-code-code-profile-code"><a class="link" href="#switching-tabs-code-calendar-code-code-diary-code-code-modplan-code-code-addressbook-code-code-notes-code-code-profile-code">3.1.3. Switching Tabs : <code>calendar</code>, <code>diary</code>, <code>modplan</code>, <code>addressbook</code>, <code>notes</code>, <code>profile</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Switches to the respective tab</p>
+<p>This command allows you to switch to the tab using the command line instead of clicking on the respective tab.</p>
 </li>
 <li>
 <p>Format: <code>calendar</code>, <code>diary</code>, <code>modplan</code>, <code>addressbook</code>, <code>notes</code>, <code>profile</code></p>
@@ -203,21 +213,402 @@ This symbol indicates an aspect that should be used with caution.
 <div class="content">
 <img src="images/switching_tabs.png" alt="switching tabs" width="790">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure 2.Switching tabs</p>
+<div class="title">Figure 3. Switching tabs</div>
 </div>
 </li>
 </ul>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="address-book"><a class="link" href="#address-book">3.3. Address Book</a></h3>
+<h3 id="calendar"><a class="link" href="#calendar">3.2. Calendar</a></h3>
+<div class="paragraph">
+<p>The calendar feature in the app that allows you to schedule and set deadline for important tasks such as project or assignment deadlines.</p>
+</div>
+<div class="paragraph">
+<p>The application allows you to add 2 type of tasks, <code>deadline</code> and <code>moduleTask</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>moduleTask</code> allows you to tag a module, that you have already inputted in your Profile tab, to the task itself. It allows you to set the priority level of the task.</p>
+</div>
+<div class="paragraph">
+<p><code>deadline</code> allows you to input a deadline event into the calendar without any specified modules attached to it.</p>
+</div>
+<div class="sect3">
+<h4 id="priority-levels"><a class="link" href="#priority-levels">3.2.1. Priority Levels</a></h4>
+<div class="paragraph">
+<p>We give you the flexibility to choose and indicate what priority each <code>moduleTask</code> should have. This priority is represented from 1 to 5, with 1 being the lowest priority and 5 being the highest.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/prioritylevels.png" alt="prioritylevels" width="790">
+</div>
+<div class="title">Figure 4. NUSProductivity calendar priority levels</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deadline"><a class="link" href="#deadline">3.2.2. Deadline</a></h4>
+<div class="sect4">
+<h5 id="adding-deadline-code-deadlineadd-code"><a class="link" href="#adding-deadline-code-deadlineadd-code">Adding Deadline: <code>deadlineAdd</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Schedules a task tagged with a deadline to the calendar. A dot will be shown to indicate there is a deadline to be met on that day</p>
+</li>
+<li>
+<p>Format: <code>deadlineAdd desc/DESCRIPTION by/DD-MM-YYYY cat/CATEGORY</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/deadlineAdd.png" alt="deadlineAdd" width="790">
+</div>
+<div class="title">Figure 5. Adding Deadlines</div>
+</div>
+<div class="paragraph">
+<p>After invoking the command, the deadline will be added to the calendar as shown in figure 5. The task will be tagged as light grey to signify it is uncompleted yet.</p>
+</div>
+<div class="paragraph">
+<p>Deadline tasks are defaulty tagged with the lowest priority.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="module-tasks"><a class="link" href="#module-tasks">3.2.3. Module Tasks</a></h4>
+<div class="sect4">
+<h5 id="adding-module-tasks-code-moduletask-code"><a class="link" href="#adding-module-tasks-code-moduletask-code">Adding Module Tasks: <code>moduleTask</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Schedules a module task, this module task includes priority level, module that is associated with the task.</p>
+</li>
+<li>
+<p>Format: <code>taskAdd desc/DESCRIPTION m/MODULE_CODE date/DD-MM-YYYY PRI/PRIORITY-LEVEL</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/moduleTaskAdd.png" alt="moduleTaskAdd" width="790">
+</div>
+<div class="title">Figure 6. Adding Module Tasks</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This requires you to add a module under <code>moduleAdd</code> before you can use it
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/moduleTaskAddError.png" alt="moduleTaskAddError" width="790">
+</div>
+<div class="title">Figure 7. Error when adding a module task without adding a module first.</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="shared-functions"><a class="link" href="#shared-functions">3.2.4. Shared Functions</a></h4>
+<div class="paragraph">
+<p>The commands stated in this section can be used for both moduleTask and deadline tasks.</p>
+</div>
+<div class="sect4">
+<h5 id="marking-a-task-as-done-code-done-code"><a class="link" href="#marking-a-task-as-done-code-done-code">Marking a task as Done: <code>done</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Marks a task as completed, completed task will be shown with a black background while uncompleted task will be shown as a grey background.</p>
+</li>
+<li>
+<p>Format: <code>done index/INDEX</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/taskDone.png" alt="taskDone" width="790">
+</div>
+<div class="title">Figure 8. Completing a task</div>
+</div>
+<div class="paragraph">
+<p>After a task is completed, it will be pushed to the bottom, the dot on the calendar removed and the background of the task is changed to black to signify the task is compelted.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="removing-deadline-code-taskdelete-code"><a class="link" href="#removing-deadline-code-taskdelete-code">Removing Deadline: <code>taskDelete</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes a task from the deadline list, marking the task as done</p>
+</li>
+<li>
+<p>Format: <code>taskDelete index/INDEX</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/taskDelete.png" alt="taskDelete" width="790">
+</div>
+<div class="title">Figure 9. Deleting a task</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Tip: delete a task only after the date have passed to make sure everything is completed up to your current date
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="sorting-the-calendar-code-sorttask-code"><a class="link" href="#sorting-the-calendar-code-sorttask-code">Sorting the Calendar: <code>sortTask</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows you to sort the tasks list on the left by either date or priority. This gives you the flexibility to plan ahead, whether you want to complete a more urgent task or to complete a task with the deadline that is earlier</p>
+</li>
+<li>
+<p>Format: <code>sortTask by/SORT</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/taskSort.png" alt="taskSort" width="790">
+</div>
+<div class="title">Figure 10. Sorting tasks by priority</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+SORT can only be either date or priority
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="finding-specific-tasks-in-the-calendar-code-findtask-code"><a class="link" href="#finding-specific-tasks-in-the-calendar-code-findtask-code">Finding specific tasks in the Calendar: <code>findTask</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows you to see task at a glance based on what you specified.</p>
+</li>
+<li>
+<p>Format: <code>findTask m/MODULECODE</code> or <code>findTask cat/CATEGORY</code> or <code>findTask date/DD-MM-YYYY</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/findTask.png" alt="findTask" width="790">
+</div>
+<div class="title">Figure 11. Finding task by module Code</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The dots on the calendar will not disappear and will show that there is still task to be completed on that date despite filtering
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="listing-back-all-tasks-in-the-calendar-code-listtask-code"><a class="link" href="#listing-back-all-tasks-in-the-calendar-code-listtask-code">Listing back all tasks in the Calendar: <code>listTask</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows you to list back all task after you have filtered the list with findTask</p>
+</li>
+<li>
+<p>Format: <code>listTask</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/listTask.png" alt="listTask" width="790">
+</div>
+<div class="title">Figure 12. Listing all tasks</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="notes"><a class="link" href="#notes">3.3. Notes</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows you to create notes from the application, making it easier for you to find your files since often time students have a lot of research papers or references opened when writing a report.</p>
+</li>
+<li>
+<p>Allows for users to create documents for notes, organise their notes in folders.
+Default location is set to
+<code>/User/&lt;ACCOUNT NAME&gt;</code> for mac
+<code>C:\Users\&lt;ACCOUNT NAME&gt;</code> for windows</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="pathing"><a class="link" href="#pathing">3.3.1. Pathing</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>The notes feature allows you to specify the pathing used to access the file/folder you specify</p>
+</li>
+<li>
+<p>The diagram below shows a comparision between absolute vs relative pathing</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/pathing.png" alt="pathing" width="790">
+</div>
+<div class="title">Figure 13. Pathing Absolute vs Rel</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+if you want to access the Documents folder as shown in figure 13, you can use the absolute pathing and specify loc/Desktop instead of typing loc/../../../Documents
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-directory-code-noteslist-code"><a class="link" href="#listing-directory-code-noteslist-code">3.3.2. Listing Directory: <code>notesList</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>List the directory that you supplied. The display will show all folders that is in that directory.</p>
+</li>
+<li>
+<p>Format: <code>notesList loc/PATH pt/PATH TYPE</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/notesListingUG.png" alt="notesListingUG" width="790">
+</div>
+<div class="title">Figure 14. Listing files in directory</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-a-note-code-notescreate-code"><a class="link" href="#creating-a-note-code-notescreate-code">3.3.3. Creating a note: <code>notesCreate</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Creates a file/directory based on what you specified.</p>
+</li>
+<li>
+<p>Format: <code>notesCreate loc/PATH name/FILE_NAME type/TYPE pt/PATH_TYPE</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The type can only be file or folder
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/notesCreateUG.png" alt="notesCreateUG" width="790">
+</div>
+<div class="title">Figure 15. Creating a file in a specified directory</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="opening-a-note-code-notesopen-code"><a class="link" href="#opening-a-note-code-notesopen-code">3.3.4. Opening a note: <code>notesOpen</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Opens a file/directory based on what you specified.</p>
+</li>
+<li>
+<p>Format: <code>notesOpen loc/PATH name/FILE_NAME pt/PATH_TYPE</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/notesOpenUG.png" alt="notesOpenUG" width="790">
+</div>
+<div class="title">Figure 16. Opening a file in a specified directory</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-note-code-notesdelete-code"><a class="link" href="#deleting-a-note-code-notesdelete-code">3.3.5. Deleting a note: <code>notesDelete</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete a file based on what you specified.</p>
+</li>
+<li>
+<p>Format: <code>notesDelete loc/PATH name/FILE_NAME pt/PATH_TYPE</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/notesDeleteUG.png" alt="notesDeleteUG" width="790">
+</div>
+<div class="title">Figure 17. Deleting a file in a specified directory</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This can only be use to delete a file and not a folder
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="address-book"><a class="link" href="#address-book">3.4. Address Book</a></h3>
 <div class="paragraph">
 <p>The address book allows you to add other individuals, such as professors and fellow classmates to your addressbook. Information such as phone number and email of the person will be saved into the address book for easier communication for projects or to schedule consultation relating to the module.</p>
 </div>
 <div class="sect3">
-<h4 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.3.1. Adding a person: <code>add</code></a></h4>
+<h4 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.4.1. Adding a person: <code>add</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -259,7 +650,7 @@ A person can have any number of tags (including 0)
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3.2. Listing all persons : <code>list</code></a></h4>
+<h4 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.4.2. Listing all persons : <code>list</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -272,7 +663,7 @@ A person can have any number of tags (including 0)
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.3.3. Editing a person : <code>edit</code></a></h4>
+<h4 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.4.3. Editing a person : <code>edit</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -327,7 +718,7 @@ Edits the name of the <code>2nd person</code> to be <code>Betsy Crower</code> an
 </div>
 </div>
 <div class="sect3">
-<h4 id="locating-persons-by-name-find"><a class="link" href="#locating-persons-by-name-find">3.3.4. Locating persons by name: find</a></h4>
+<h4 id="locating-persons-by-name-find"><a class="link" href="#locating-persons-by-name-find">3.4.4. Locating persons by name: find</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -385,7 +776,7 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.3.5. Deleting a person : <code>delete</code></a></h4>
+<h4 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.4.5. Deleting a person : <code>delete</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -436,7 +827,7 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.3.6. Clearing all entries : <code>clear</code></a></h4>
+<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.4.6. Clearing all entries : <code>clear</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -450,12 +841,12 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="profile"><a class="link" href="#profile">3.4. Profile</a></h3>
+<h3 id="profile"><a class="link" href="#profile">3.5. Profile</a></h3>
 <div class="paragraph">
 <p>This feature allows individuals to see their own profile, their target cap, their current cap and the all modules that the individual have taken.</p>
 </div>
 <div class="sect3">
-<h4 id="view-cap-summary-code-cap-code"><a class="link" href="#view-cap-summary-code-cap-code">3.4.1. View CAP summary : <code>cap</code></a></h4>
+<h4 id="view-cap-summary-code-cap-code"><a class="link" href="#view-cap-summary-code-cap-code">3.5.1. View CAP summary : <code>cap</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -475,7 +866,7 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="view-module-requirement-code-modreq-code"><a class="link" href="#view-module-requirement-code-modreq-code">3.4.2. View module requirement: <code>modreq</code></a></h4>
+<h4 id="view-module-requirement-code-modreq-code"><a class="link" href="#view-module-requirement-code-modreq-code">3.5.2. View module requirement: <code>modreq</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -498,7 +889,7 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="module-information-code-module-code"><a class="link" href="#module-information-code-module-code">3.4.3. Module information: <code>module</code></a></h4>
+<h4 id="module-information-code-module-code"><a class="link" href="#module-information-code-module-code">3.5.3. Module information: <code>module</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -522,7 +913,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="module-planning-code-mymodplan-code"><a class="link" href="#module-planning-code-mymodplan-code">3.4.4. Module planning: <code>mymodplan</code></a></h4>
+<h4 id="module-planning-code-mymodplan-code"><a class="link" href="#module-planning-code-mymodplan-code">3.5.4. Module planning: <code>mymodplan</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -549,12 +940,12 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="diary"><a class="link" href="#diary">3.5. Diary</a></h3>
+<h3 id="diary"><a class="link" href="#diary">3.6. Diary</a></h3>
 <div class="paragraph">
 <p>The diary feature allows you to jot down any thoughts, be it for your personal life or for school work, or just a concept that you may not understand that you will have to revisit in the future.</p>
 </div>
 <div class="sect3">
-<h4 id="adding-an-diary-entry-code-diaryadd-code"><a class="link" href="#adding-an-diary-entry-code-diaryadd-code">3.5.1. Adding an diary entry: <code>diaryAdd</code></a></h4>
+<h4 id="adding-an-diary-entry-code-diaryadd-code"><a class="link" href="#adding-an-diary-entry-code-diaryadd-code">3.6.1. Adding an diary entry: <code>diaryAdd</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -567,7 +958,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-diary-logs-code-diarylog-code"><a class="link" href="#viewing-diary-logs-code-diarylog-code">3.5.2. Viewing diary logs: <code>diaryLog</code></a></h4>
+<h4 id="viewing-diary-logs-code-diarylog-code"><a class="link" href="#viewing-diary-logs-code-diarylog-code">3.6.2. Viewing diary logs: <code>diaryLog</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -580,7 +971,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-diary-entries-with-specified-entry-id-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-entry-id-code-diaryshow-code">3.5.3. Viewing diary entries with specified entry ID: <code>diaryShow</code></a></h4>
+<h4 id="viewing-diary-entries-with-specified-entry-id-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-entry-id-code-diaryshow-code">3.6.3. Viewing diary entries with specified entry ID: <code>diaryShow</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -593,7 +984,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-diary-entries-with-specified-date-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-date-code-diaryshow-code">3.5.4. Viewing diary entries with specified date: <code>diaryShow</code></a></h4>
+<h4 id="viewing-diary-entries-with-specified-date-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-date-code-diaryshow-code">3.6.4. Viewing diary entries with specified date: <code>diaryShow</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -606,7 +997,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-an-diary-entry-code-diarydelete-code"><a class="link" href="#deleting-an-diary-entry-code-diarydelete-code">3.5.5. Deleting an diary entry: <code>diaryDelete</code></a></h4>
+<h4 id="deleting-an-diary-entry-code-diarydelete-code"><a class="link" href="#deleting-an-diary-entry-code-diarydelete-code">3.6.5. Deleting an diary entry: <code>diaryDelete</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -619,7 +1010,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tagging-weather-code-diaryweather-code"><a class="link" href="#tagging-weather-code-diaryweather-code">3.5.6. Tagging weather: <code>diaryWeather</code></a></h4>
+<h4 id="tagging-weather-code-diaryweather-code"><a class="link" href="#tagging-weather-code-diaryweather-code">3.6.6. Tagging weather: <code>diaryWeather</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -632,7 +1023,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tagging-mood-code-diarymood-code"><a class="link" href="#tagging-mood-code-diarymood-code">3.5.7. Tagging mood: <code>diaryMood</code></a></h4>
+<h4 id="tagging-mood-code-diarymood-code"><a class="link" href="#tagging-mood-code-diarymood-code">3.6.7. Tagging mood: <code>diaryMood</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -642,162 +1033,6 @@ professor’s contact associated with the module.</p>
 <p>Format: <code>diaryMood id/ENTRY_ID m/MOOD</code></p>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="calendar"><a class="link" href="#calendar">3.6. Calendar</a></h3>
-<div class="paragraph">
-<p>A calendar in the app that allows you to schedule and set deadline for important tasks such as project or assignment deadlines.</p>
-</div>
-<div class="sect3">
-<h4 id="adding-deadline-code-deadlineadd-code"><a class="link" href="#adding-deadline-code-deadlineadd-code">3.6.1. Adding Deadline: <code>deadlineAdd</code></a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Schedules a task tagged with a deadline to the calendar. A dot will be shown to indicate there is a deadline to be met on that day</p>
-</li>
-<li>
-<p>Format: <code>deadlineAdd desc/DESCRIPTION by/DD-MM-YYYY cat/CATEGORY</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="removing-deadline-code-taskdelete-code"><a class="link" href="#removing-deadline-code-taskdelete-code">3.6.2. Removing Deadline: <code>taskDelete</code></a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes a task from the deadline list, marking the task as done</p>
-</li>
-<li>
-<p>Format: <code>taskDelete index/INDEX</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="adding-module-tasks-code-moduletask-code"><a class="link" href="#adding-module-tasks-code-moduletask-code">3.6.3. Adding Module Tasks: <code>moduleTask</code></a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Schedules a module task, this module task includes priority level, module that is associated with the task.</p>
-</li>
-<li>
-<p>Format: <code>taskAdd desc/DESCRIPTION m/MODULE_CODE date/DD-MM-YYYY PRI/PRIORITY-LEVEL</code></p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This requires you to add a module under <code>moduleAdd</code> before you can use it
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="notes"><a class="link" href="#notes">3.7. Notes</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Allows you to create notes from the application, making it easier for you to find your files since often time students have a lot of research papers or references opened when writing a report.</p>
-</li>
-<li>
-<p>Allows for users to create documents for notes, organise their notes in folders.
-Default location is set to
-<code>/User/&lt;ACCOUNT NAME&gt;</code> for mac
-<code>C:\Users\&lt;ACCOUNT NAME&gt;</code> for windows</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Path type gives you the flexibility to choose whether you want to use the current directory&#8217;s path or the absolute path
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>INSERT PATH IMAGES</p>
-</li>
-</ul>
-</div>
-<div class="sect3">
-<h4 id="listing-directory-code-noteslist-code"><a class="link" href="#listing-directory-code-noteslist-code">3.7.1. Listing Directory: <code>notesList</code></a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>List the directory that you supplied.</p>
-</li>
-<li>
-<p>Format: <code>notesList loc/PATH pt/PATH TYPE</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="listing-directory-code-notescreate-code"><a class="link" href="#listing-directory-code-notescreate-code">3.7.2. Listing Directory: <code>notesCreate</code></a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Creates a file/directory based on what you specified.</p>
-</li>
-<li>
-<p>Format: <code>notesCreate loc/PATH name/FILE_NAME type/TYPE pt/PATH_TYPE</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="listing-directory-code-notesopen-code"><a class="link" href="#listing-directory-code-notesopen-code">3.7.3. Listing Directory: <code>notesOpen</code></a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Opens a file/directory based on what you specified.</p>
-</li>
-<li>
-<p>Format: <code>notesOpen loc/PATH name/FILE_NAME pt/PATH_TYPE</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="listing-directory-code-notesdelete-code"><a class="link" href="#listing-directory-code-notesdelete-code">3.7.4. Listing Directory: <code>notesDelete</code></a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Delete a file based on what you specified.</p>
-</li>
-<li>
-<p>Format: <code>notesDelete loc/PATH name/FILE_NAME pt/PATH_TYPE</code></p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-This can only be use to delete a file and not a folder
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -811,6 +1046,92 @@ This can only be use to delete a file and not a folder
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p><strong>General</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>calendar</strong>: <code>calendar</code></p>
+</li>
+<li>
+<p><strong>notes</strong>: <code>notes</code></p>
+</li>
+<li>
+<p><strong>modplan</strong>: <code>modplan</code></p>
+</li>
+<li>
+<p><strong>diary</strong>: <code>diary</code></p>
+</li>
+<li>
+<p><strong>profile</strong>: <code>profile</code></p>
+</li>
+<li>
+<p><strong>help</strong>: <code>help</code></p>
+</li>
+<li>
+<p><strong>exit</strong>: <code>exit</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Calendar</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>deadline</strong> : <code>deadlineAdd desc/DESCRIPTION by/DD-MM-YYYY cat/CATEGORY</code>
+e.g. <code>deadlineAdd desc/Do Chores by/30-04-2020 cat/Misc</code></p>
+</li>
+<li>
+<p><strong>moduleTask</strong>: <code>moduleTask desc/DESCRIPTION m/MODULE CODE date/DD-MM-YYYY pri/PRIORITY</code>
+e.g. <code>moduleTask desc/Project Deadline date/30-04-2020 m/CS2103T pri/5</code></p>
+</li>
+<li>
+<p><strong>done</strong>: <code>done index/INDEX</code>
+e.g. <code>done index/1</code></p>
+</li>
+<li>
+<p><strong>taskDelete</strong>: <code>taskDelete index/INDEX</code>
+e.g. <code>taskDelete index/1</code></p>
+</li>
+<li>
+<p><strong>sortTask</strong>: <code>sortTask by/SORT</code>
+e.g. <code>sortTask by/priority</code></p>
+</li>
+<li>
+<p><strong>findTask</strong>: <code>findTask m/MODULECODE</code> or <code>findTask cat/CATEGORY</code> or <code>findTask date/DD-MM-YYYY</code>
+e.g. <code>findTask m/CS2103T</code></p>
+</li>
+<li>
+<p><strong>listTask</strong>: <code>listTask</code>
+e.g. <code>listTask</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Notes</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>notesList</strong> loc/PATH pt/PATH TYPE
+e.g. <code>notesList loc/Desktop pt/abs</code></p>
+</li>
+<li>
+<p><strong>notesOpen</strong> loc/PATH name/FILE_NAME pt/PATH_TYPE
+e.g. <code>notesOpen loc/Desktop name/test.doc pt/abs</code></p>
+</li>
+<li>
+<p><strong>notesCreate</strong> loc/PATH name/FILE_NAME type/TYPE pt/PATH_TYPE
+e.g. <code>notesCreate loc/Desktop/ name/Test.doc type/file pt/abs</code></p>
+</li>
+<li>
+<p><strong>notesDelete</strong> loc/PATH name/FILE_NAME pt/PATH_TYPE
+e.g. <code>notesDelete loc/Desktop/ name/Test.doc pt/abs</code></p>
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p>Address Book:</p>
 <div class="ulist">
@@ -851,9 +1172,6 @@ e.g. <code>find James Jake</code></p>
 </div>
 </li>
 <li>
-<p>help : help</p>
-</li>
-<li>
 <p>Diary :</p>
 <div class="ulist">
 <ul>
@@ -889,17 +1207,6 @@ e.g. <code>diary emotion 1 HAPPY</code></p>
 </div>
 </li>
 <li>
-<p>Calendar:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>deadline : deadlineAdd DESCRIPTION /by DD-MM-YYYY HHMM
-e.g. <code>deadlineAdd Finish homework /by 30-03-2020 1800</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
 <p>Mod Plan:</p>
 <div class="ulist">
 <ul>
@@ -921,30 +1228,7 @@ e.g. <code>modreq computer science</code></p>
 </ul>
 </div>
 </li>
-<li>
-<p>Notes</p>
-<div class="ulist">
-<ul>
-<li>
-<p>notesList loc/PATH pt/PATH TYPE
-e.g. <code>notesList loc/Desktop pt/abs</code></p>
-</li>
-<li>
-<p>notesOpen loc/PATH name/FILE_NAME pt/PATH_TYPE
-e.g. <code>notesOpen loc/Desktop name/test.doc pt/abs</code></p>
-</li>
-<li>
-<p>notesCreate loc/PATH name/FILE_NAME type/TYPE pt/PATH_TYPE
-Example: <code>notesCreate loc/Desktop/ name/Test.doc type/file pt/abs</code></p>
-</li>
-<li>
-<p>notesDelete loc/PATH name/FILE_NAME pt/PATH_TYPE
-e.g. <code>notesDelete loc/Desktop/ name/Test.doc pt/abs</code></p>
-</li>
-</ul>
-</div>
-</li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 09:57:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 11:20:53 UTC</div></div></div></body></html>
