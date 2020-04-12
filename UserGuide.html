@@ -22,7 +22,7 @@
 <li><a href="#calendar">3.2. Calendar</a></li>
 <li><a href="#notes">3.3. Notes</a></li>
 <li><a href="#address-book">3.4. Address Book</a></li>
-<li><a href="#profile">3.5. Profile</a></li>
+<li><a href="#profile-module-book">3.5. Profile (Module Book)</a></li>
 <li><a href="#diary">3.6. Diary</a></li>
 </ul>
 </li>
@@ -841,32 +841,234 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="profile"><a class="link" href="#profile">3.5. Profile</a></h3>
+<h3 id="profile-module-book"><a class="link" href="#profile-module-book">3.5. Profile (Module Book)</a></h3>
 <div class="paragraph">
-<p>This feature allows individuals to see their own profile, their target cap, their current cap and the all modules that the individual have taken.</p>
+<p>This feature allows individuals to see their own profile, their current cap and the all modules that the individual have taken and all the grades gotten.</p>
 </div>
 <div class="sect3">
-<h4 id="view-cap-summary-code-cap-code"><a class="link" href="#view-cap-summary-code-cap-code">3.5.1. View CAP summary : <code>cap</code></a></h4>
+<h4 id="adding-a-module-code-moduleadd-code"><a class="link" href="#adding-a-module-code-moduleadd-code">3.5.1. Adding a module : <code>moduleAdd</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Shows the current cap of the individual. If only cap is specified, it will only show the MCs taken up to the point and the CAP.</p>
+<p>Adds a module you have taken before or is taking now and store your grade for each module if you want.</p>
 </li>
 <li>
-<p>Format: <code>cap BREAKDOWN</code></p>
+<p>Format: <code>moduleAdd m/MODULE_CODE [g/GRADE]</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The grade field is optional. You can state your grade when you add in modules and
+also can update or add in your grade later.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You can only add in modules which are valid modules that can be taken in NUS.</p>
+</li>
+<li>
+<p>All other module codes inputted will be considered as invalid and the program will not allow you to add in.</p>
+</li>
+<li>
+<p>This requirement is not case sensitive, which means for example, both "CS2103" and "cs2103" are considered valid module code.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The program checks whether a module code provided is valid or not by using the search feature, which fetch information about
+modules online. If the search function fails to fetch any information, the module code will be treated as invalid.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-module-code-moduledel-code"><a class="link" href="#deleting-a-module-code-moduledel-code">3.5.2. Deleting a module : <code>moduleDel</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes a module you have added to the program before from the profile tab.</p>
+</li>
+<li>
+<p>Format: <code>moduleDel MODULE_CODE</code></p>
 </li>
 </ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="paragraph">
-<p>If cap breakdown is inputted, it will show a breakdown of all the modules and grades that is tagged to the module.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the module specified from the module book (profile)</p>
+</li>
+<li>
+<p>You can only delete the module which you have added into the program before.</p>
+</li>
+<li>
+<p>Module code inputted is not case sensitive ('moduleDel cs2103' is the same as 'moduleDel CS2103')</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="view-module-requirement-code-modreq-code"><a class="link" href="#view-module-requirement-code-modreq-code">3.5.2. View module requirement: <code>modreq</code></a></h4>
+<h4 id="editing-the-grade-of-a-module-code-grade-code"><a class="link" href="#editing-the-grade-of-a-module-code-grade-code">3.5.3. Editing the grade of a module : <code>grade</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Updates or adds the grade of certain modules you have added to the program.</p>
+</li>
+<li>
+<p>Format: <code>grade m/MODULE_CODE g/GRADE</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Updates the grade of the specified module as the grade you provided now.</p>
+</li>
+<li>
+<p>You can only update the grade of module which you have added into the program before.</p>
+</li>
+<li>
+<p>Grade inputted should be a valid grade in NUS&#8217;s grading system.</p>
+</li>
+<li>
+<p>Both module code and grade inputted is not case sensitive.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+List of all valid grade: A+, A, A-, B+, B, B-, C+, C, D+, D, F, S and U.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-current-cap-code-cap-code"><a class="link" href="#view-current-cap-code-cap-code">3.5.4. View current CAP : <code>cap</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows your current cap based on the grades of modules you have stated.</p>
+</li>
+<li>
+<p>Format: <code>cap</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Calculates your current CAP.</p>
+</li>
+<li>
+<p>CAP = Sum (module grade point x modular credits for the module) / Sum (modular credits)</p>
+</li>
+<li>
+<p>The calculation strictly follow the grading system of NUS.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You don&#8217;t need to indicate the modular credits for each module when you add it in because the program will fetch that infomation online.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="managing-your-tasks-separately-for-each-module"><a class="link" href="#managing-your-tasks-separately-for-each-module">3.5.5. Managing your tasks separately for each module</a></h4>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+For this part, the UI hasn&#8217;t been implemented yet so that you can only view your tasks in Calendar tab stated above.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Creating a module task : <code>moduleTask</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a task related to certain module you have added before.</p>
+</li>
+<li>
+<p>You need to indicate which module the task is related to, its priority level (how important it is) and also its deadline or scheduled timing.</p>
+</li>
+<li>
+<p>Format: <code>moduleTask desc/DESCRIPTION m/MODULE_CODE date/DEADLINE_OR_SCHEDULED_TIMING pri/PRIORITY</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>This command allows you to create tasks specific to certain module you added to the program before.</p>
+</li>
+<li>
+<p>Stores the task added in the module book and automatically adds and shows on the Calender.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-module-requirement-code-modreq-code"><a class="link" href="#view-module-requirement-code-modreq-code">3.5.6. View module requirement: <code>modreq</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -889,7 +1091,7 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="module-information-code-module-code"><a class="link" href="#module-information-code-module-code">3.5.3. Module information: <code>module</code></a></h4>
+<h4 id="module-information-code-module-code"><a class="link" href="#module-information-code-module-code">3.5.7. Module information: <code>module</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -913,7 +1115,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="module-planning-code-mymodplan-code"><a class="link" href="#module-planning-code-mymodplan-code">3.5.4. Module planning: <code>mymodplan</code></a></h4>
+<h4 id="module-planning-code-mymodplan-code"><a class="link" href="#module-planning-code-mymodplan-code">3.5.8. Module planning: <code>mymodplan</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1231,4 +1433,4 @@ e.g. <code>modreq computer science</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 06:23:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 07:19:12 UTC</div></div></div></body></html>
