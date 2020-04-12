@@ -1,18 +1,27 @@
 package seedu.address.model;
 
 import java.nio.file.Path;
+
+import java.time.LocalDate;
+import java.util.List;
 import java.util.function.Predicate;
 
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
+import seedu.address.commons.core.index.Index;
+import seedu.address.model.calender.Task;
 import seedu.address.model.diary.DiaryEntry;
+import seedu.address.model.diary.mood.Mood;
+import seedu.address.model.diary.weather.Weather;
 import seedu.address.model.notes.Notes;
 import seedu.address.model.nusmodule.Grade;
+import seedu.address.model.nusmodule.Major;
 import seedu.address.model.nusmodule.ModuleCode;
+import seedu.address.model.nusmodule.ModuleTask;
 import seedu.address.model.nusmodule.NusModule;
 import seedu.address.model.person.Person;
-import seedu.address.todolist.Deadline;
-import seedu.address.todolist.ToDo;
+import seedu.address.model.studentprofile.Profile;
 
 /**
  * The API of the Model component.
@@ -24,10 +33,17 @@ public interface Model {
     /** {@code Predicate} that always evaluate to true */
     Predicate<Notes> PREDICATE_SHOW_ALL_NOTES = unused -> true;
 
+    /** {@code Predicate} that always evaluate to true */
+    Predicate<Task> PREDICATE_SHOW_ALL_TASK = unused -> true;
+
+    /** {@code Predicate} that always evaluate to true */
+    Predicate<NusModule> PREDICATE_SHOW_ALL_MODULES_TAKEN = unused -> true;
+
     /**
      * Replaces user prefs data with the data in {@code userPrefs}.
      */
     void setUserPrefs(ReadOnlyUserPrefs userPrefs);
+
 
     /**
      * Returns the user prefs.
@@ -108,6 +124,20 @@ public interface Model {
 
     ObservableList<DiaryEntry> getDiaryList();
 
+    boolean isValidEntryId(int entryId);
+
+    void deleteDiaryEntry(int entryId);
+
+    void tagWeather(int entryId, Weather weather);
+
+    void tagMood(int entryId, Mood mood);
+
+    DiaryEntry getDiaryEntryById(int entryId);
+
+    List<Integer> getListOfIdsByDate(LocalDate date);
+
+    boolean isExistingDate(LocalDate date);
+
     //=========== Notes Module ==================================================================================
     /** Returns an list of String that contains what is currently in the folder */
     ObservableList<Notes> getFilesInFolderList();
@@ -136,28 +166,78 @@ public interface Model {
 
     double getCap();
 
+    void addModuleTask(ModuleTask moduleTask);
+
+    ObservableList<NusModule> getModulesListTaken();
+
+    ModuleBook getModuleBook();
+
+    int getSizeOfModuleTaskList(ModuleCode moduleCode);
+
+    void deleteModuleTask(ModuleCode moduleCode, Index index);
+
+    void doneModuleTask(ModuleCode moduleCode, Index index);
+
+    String getModuleTaskInfo(ModuleCode moduleCode);
+
+    String getTaskBreakdown();
+
+    List<ModuleTask> getModuleTaskList(ModuleCode moduleCode);
+
+    List<Task> findTasksByDate(String date);
+
+    List<Task> findTasksByCat(String cat);
+
+    void updateModulesListTaken(Predicate<NusModule> predicate);
+
+    Path getModuleBookFilePath();
+
     //=========== Deadline ==================================================================================
 
     /**
      * Adds deadline.
      */
-    void addDeadline(Deadline deadline);
+    void addDeadlineTask(Task deadline);
+
+    void sortTaskList();
+
+    Task deleteTask(Task task);
+
+    Task doneDeadlineTask(Task deadline);
+
+    void sortTask(String param);
 
     /**
      * Checks if content of deadline is empty
      */
-    boolean isEmptyDeadline(Deadline deadline);
+    boolean isEmptyDeadline(Task deadline);
+
+    /** Returns an list of Deadline that is currently in the list */
+    ObservableList<Task> getDeadlineTaskList();
+
+    /**
+     * Updates the deadline list by the given {@code predicate}.
+     * @throws NullPointerException if {@code predicate} is null.
+     */
+    void updateDeadlineTaskList(Predicate<Task> predicate);
 
     //=========== TD ==================================================================================
 
     /**
      * Adds todo.
      */
-    void addToDo(ToDo todo);
+    void addToDo(Task todo);
 
     /**
      * Checks if content of todo is empty
      */
-    boolean isEmptyToDo(ToDo todo);
+    boolean isEmptyToDo(Task todo);
 
+    //=========== Profile ==================================================================================
+
+    void updateMajor(Major major);
+
+    ObservableValue<String> getMajor();
+
+    Profile getProfile();
 }

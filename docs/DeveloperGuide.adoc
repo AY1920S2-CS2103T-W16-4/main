@@ -59,15 +59,15 @@ Each of the four components
 For example, the `Logic` component (see the class diagram given below) defines it's API in the `Logic.java` interface and exposes its functionality using the `LogicManager.java` class.
 
 .Class Diagram of the Logic Component
-image::LogicClassDiagram.png[]
+image::LogicClassDiagram.png[width="790"]
 
 [discrete]
 ==== How the architecture components interact with each other
 
-The _Sequence Diagram_ below shows how the components interact with each other for the scenario where the user issues the command `delete 1`.
+The _Sequence Diagram_ below shows how the components interact with each other for the scenario where the user issues the command `moduleAdd m/CS2103T`.
 
-.Component interactions for `delete 1` command
-image::ArchitectureSequenceDiagram.png[]
+.Component interactions for `moduleAdd m/CS2103T` command
+image::ArchitectureSequenceDiagram.png[width="790"]
 
 The sections below give more details of each component.
 
@@ -75,11 +75,12 @@ The sections below give more details of each component.
 === UI component
 
 .Structure of the UI Component
-image::UiClassDiagram.png[]
+image::UiClassDiagram.png[width="790"]
+
 
 *API* : link:{repoURL}/src/main/java/seedu/address/ui/Ui.java[`Ui.java`]
 
-The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class.
+The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `CalendarListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class.
 
 The `UI` component uses JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the link:{repoURL}/src/main/java/seedu/address/ui/MainWindow.java[`MainWindow`] is specified in link:{repoURL}/src/main/resources/view/MainWindow.fxml[`MainWindow.fxml`]
 
@@ -93,7 +94,7 @@ The `UI` component,
 
 [[fig-LogicClassDiagram]]
 .Structure of the Logic Component
-image::LogicClassDiagram.png[]
+image::LogicClassDiagram.png[width="790"]
 
 *API* :
 link:{repoURL}/src/main/java/seedu/address/logic/Logic.java[`Logic.java`]
@@ -107,15 +108,15 @@ link:{repoURL}/src/main/java/seedu/address/logic/Logic.java[`Logic.java`]
 Given below is the Sequence Diagram for interactions within the `Logic` component for the `execute("delete 1")` API call.
 
 .Interactions Inside the Logic Component for the `delete 1` Command
-image::DeleteSequenceDiagram.png[]
+image::DeleteSequenceDiagram.png[width="790"]
 
 NOTE: The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 [[Design-Model]]
 === Model component
 
-.Structure of the Model Component
-image::ModelClassDiagram.png[]
+.Part of the Model Component
+image::ModelClassDiagram.png[width="790"]
 
 *API* : link:{repoURL}/src/main/java/seedu/address/model/Model.java[`Model.java`]
 
@@ -135,7 +136,7 @@ image:BetterModelClassDiagram.png[]
 === Storage component
 
 .Structure of the Storage Component
-image::StorageClassDiagram.png[]
+image::StorageClassDiagram.png[width="790"]
 
 *API* : link:{repoURL}/src/main/java/seedu/address/storage/Storage.java[`Storage.java`]
 
@@ -155,17 +156,17 @@ This section describes some noteworthy details on how certain features are imple
 
 === Module Search
 
-Our module search function consists of 2 main implementation
+image::SearchCommandUMLDiagram.png[width="790"]
 
-  1.Retrieving information from NUSmods
-  2.Retrieving information from cached data
+*API* :
+link:{repoURL}/src/main/java/seedu/address/searcher/Search.java[`Search.java`]
 
-  The implementation allows user to retrieve details about a module from NUSmods if the user have not query about the module before.
-  The search function will create a API call and retrieve the object as a JSON object, which will be decoded and parsed into different relevant attribute of the Module Class.
+Module Search function returns `module` object that contains useful information for each module for the rest of the application to use.
+The function first checks if the information is available in local cache, and if it isnt, pulls it from NUSmods API.
+The JSON object pulled from the web is then parsed into a `module` object.
+This implementation means that a local cache of the added modules will be available even if the user is offline.
 
-  The moduleSearch function would first search its storage in data/addressbook.json whether the module information is queried before.
-  If queried, the information would be retrieved from the storage instead of querying from the internet.
-  This allows user to plan for module if they have queried the module before without the need for Internet access.
+
 
 === Module Planning
 
@@ -175,7 +176,7 @@ Our module search function consists of 2 main implementation
 Our program will check if the module code is valid by using the search feature above.
 * The _Sequence Diagram_ below shows how the components interact with each other for the scenario where the user want to add a module in our program.
 
-image::ModuleAddSequenceDiagram.png[]
+image::ModuleAddSequenceDiagram.png[width="790"]
 
 ==== Update your grades
 - For modules that you have taken, users can store their grade in our application.
@@ -190,6 +191,73 @@ Users can use `grade` command, followed by the module code and the grade in orde
 - Users can view the tasks related to each module separately.
 * Implementation:
 
+=== Calendar Feature
+
+==== Implementation
+
+The calendar feature allows users to add either a `deadline` or a `Module Task` to the calendar.
+
+The implementation of the main calender is facilitated by the CalenderMainPanel class, which serves as the main container for this feature.
+
+
+
+=== Notes Feature
+
+==== Implementation
+
+The notes feature allow users to access their desktop files and folders with commands.
+
+This feature is implemented using a panel on the main window, listing out a list of documents and folders that are in the specified directory.
+
+Notes features includes `notesOpen`, `notesCreate`, `notesDelete` and `notesList`.
+
+.Notes List Activity Diagram
+image::NotesList.png[width="600"]
+
+.Notes Open Activity Diagram
+image::NotesCreation.png[width="600"]
+
+notesCreate and notesDelete activity diagram works similar to notesOpen.
+
+
+==== Pathing
+The Path interface in java allows for 2 implementation of pathing namely:
+
+   1. AbsolutePath
+   2. RelativePath
+
+.Notes Pathing Diagram
+image::absVSrel.png[width="600"]
+
+AbsolutePath will take the path given from `usr/`.
+
+RelativePath will take reference from the path that the current system has opened, in this case, `usr/Desktop/NUS Y2S2`.
+The user is given the freedom to provide any of the 2 forms when using the `notesOpen`, `notesCreate`, `notesDelete` and `notesList` commands.
+
+**AbsolutePath**:
+
+*Benefits*:
+
+This allows for more flexibility as the user do not need to keep note of its current directory and will be able to access any folder/document that is on their system
+
+*cons*:
+
+Will require much more input from the user, for example, referring to the above figure,
+Accessing the CS2103T file requires the user to input `loc/Desktop/NUS Y2S2/CS2103T` as opposed to `loc/CS2103T` if the user is using absolute over relative pathing
+
+**RelativePath**:
+
+*Benefits*:
+
+Easier for the user to navigate through the current folder and not key in the whole folder path
+
+*Cons*:
+
+Not as flexible. Referring to the above diagram,
+Accessing the *Documents* folder will require the user to input `loc/../../Documents`, this may not be as intuitive to people with no programming background.
+Using `loc/Documents abs/abs` will allow the user to access any folder from anywhere.
+
+
 === Diary
 - `diaryAdd` and `diaryLog` extends from `Command` class
 - `DiaryEntry` is another model which contains:
@@ -197,47 +265,6 @@ Users can use `grade` command, followed by the module code and the grade in orde
 * Date
 * Weather
 * Mood
-
-=== ToDo List
-
-=== [Proposed] Pathing
-
-Given below is the consideration and proposed implementation for pathing in the future versions.
-
-==== Current Implementation
-
-The Path interface in java allows for 2 implementation of pathing namely:
-
-   1. AbsolutePath
-   2. RelativePath
-
-AbsolutePath will take the path given from `/`.
-
-RelativePath will take reference from the path that the current system has opened.
-
-The current implementation for the notes module allows user to access from `usr/Desktop/{}` to open, create and list the directory.
-
-In future implementation we are considering to implement the option to choose from AbsolutePath and RelativePath.
-
-==== AbsolutePath:
-Benefits:
-
-This allows for more flexibility as the user do not need to keep note of its current directory and will be able to access any folder/document that is on their system
-
-cons:
-
-Will require much more input from the user
-
-==== RelativePath:
-
-Benefits:
-
-Easier for the user to navigate through the current folder and not key in the whole folder path
-
-cons:
-
-Not as flexible
-
 
 === Logging
 

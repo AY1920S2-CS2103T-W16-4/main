@@ -7,28 +7,39 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
 
 import java.nio.file.Path;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.Predicate;
 
 import org.junit.jupiter.api.Test;
 
+import javafx.beans.value.ObservableValue;
+
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
+import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
+import seedu.address.model.ModuleBook;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
+import seedu.address.model.calender.Task;
 import seedu.address.model.diary.DiaryEntry;
+import seedu.address.model.diary.mood.Mood;
+import seedu.address.model.diary.weather.Weather;
 import seedu.address.model.notes.Notes;
 import seedu.address.model.nusmodule.Grade;
+import seedu.address.model.nusmodule.Major;
 import seedu.address.model.nusmodule.ModuleCode;
+import seedu.address.model.nusmodule.ModuleTask;
 import seedu.address.model.nusmodule.NusModule;
 import seedu.address.model.person.Person;
+import seedu.address.model.studentprofile.Profile;
 import seedu.address.testutil.PersonBuilder;
-import seedu.address.todolist.Deadline;
-import seedu.address.todolist.ToDo;
+
 
 public class AddCommandTest {
 
@@ -166,6 +177,41 @@ public class AddCommandTest {
         }
 
         @Override
+        public boolean isValidEntryId(int entryId) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void deleteDiaryEntry(int entryId) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void tagWeather(int entryId, Weather weather) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void tagMood(int entryId, Mood mood) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public DiaryEntry getDiaryEntryById(int entryId) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public List<Integer> getListOfIdsByDate(LocalDate date) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public boolean isExistingDate(LocalDate date) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public ObservableList<Notes> getFilesInFolderList() {
             throw new AssertionError("This method should not be called.");
         }
@@ -206,7 +252,72 @@ public class AddCommandTest {
         }
 
         @Override
+        public void doneModuleTask(ModuleCode moduleCode, Index index) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public String getModuleTaskInfo(ModuleCode moduleCode) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public String getTaskBreakdown() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public List<ModuleTask> getModuleTaskList(ModuleCode moduleCode) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public List<Task> findTasksByDate(String date) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public List<Task> findTasksByCat(String cat) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public void gradeModule(ModuleCode moduleCode, Grade grade) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void addModuleTask(ModuleTask moduleTask) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public ModuleBook getModuleBook() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public int getSizeOfModuleTaskList(ModuleCode moduleCode) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void deleteModuleTask(ModuleCode moduleCode, Index index) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void updateMajor(Major major) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public ObservableValue<String> getMajor() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public Profile getProfile() {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -216,24 +327,75 @@ public class AddCommandTest {
         }
 
         @Override
-        public void addDeadline(Deadline deadline) {
+        public ObservableList<NusModule> getModulesListTaken() {
+
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public boolean isEmptyDeadline(Deadline deadline) {
+        public void updateModulesListTaken(Predicate<NusModule> predicate) {
+
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public void addToDo(ToDo todo) {
+        public Path getModuleBookFilePath() {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public boolean isEmptyToDo(ToDo todo) {
+        public void addDeadlineTask(Task deadline) {
             throw new AssertionError("This method should not be called.");
         }
+
+        @Override
+        public void sortTaskList() {
+            throw new AssertionError("This method should not be called.");
+
+        }
+
+        @Override
+        public Task deleteTask(Task task) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public Task doneDeadlineTask(Task deadline) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void sortTask(String param) {
+            throw new AssertionError("This method should not be called.");
+
+        }
+
+
+        @Override
+        public boolean isEmptyDeadline(Task deadline) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public ObservableList<Task> getDeadlineTaskList() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void updateDeadlineTaskList(Predicate<Task> predicate) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void addToDo(Task todo) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public boolean isEmptyToDo(Task todo) {
+            throw new AssertionError("This method should not be called.");
+        }
+
     }
 
     /**

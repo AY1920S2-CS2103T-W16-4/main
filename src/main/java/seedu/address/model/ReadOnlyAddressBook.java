@@ -1,7 +1,7 @@
 package seedu.address.model;
 
 import javafx.collections.ObservableList;
-import seedu.address.model.diary.DiaryEntry;
+import seedu.address.model.calender.Task;
 import seedu.address.model.person.Person;
 
 /**
@@ -16,9 +16,9 @@ public interface ReadOnlyAddressBook {
     ObservableList<Person> getPersonList();
 
     /**
-     * Returns a list of diary entries
-     *
+     * Returns an unmodifiable view of the persons list.
+     * This list will not contain any duplicate persons.
      */
-    ObservableList<DiaryEntry> getDiaryList();
+    ObservableList<Task> getTaskList();
 
 }

@@ -22,47 +22,20 @@ public class JsonAddressBookStorage implements AddressBookStorage {
     private static final Logger logger = LogsCenter.getLogger(JsonAddressBookStorage.class);
 
     private Path filePath;
-    private Path diaryBookPath;
+    private Path calendarEntriesFilePath;
 
-    public JsonAddressBookStorage(Path filePath, Path diaryBookPath) {
+    public JsonAddressBookStorage(Path filePath, Path calendarEntriesFilePath) {
         this.filePath = filePath;
-        this.diaryBookPath = diaryBookPath;
+        this.calendarEntriesFilePath = calendarEntriesFilePath;
     }
 
     public JsonAddressBookStorage(Path filePath) {
         this.filePath = filePath;
-        this.diaryBookPath = null;
+        this.calendarEntriesFilePath = null;
     }
 
     public Path getAddressBookFilePath() {
         return filePath;
-    }
-
-    public Path getDiaryBookFilePath() {
-        return diaryBookPath;
-    }
-
-    /**
-     * Reads the diary book json file
-     *
-     * @param filePath location of the data. Cannot be null.
-     * @throws DataConversionException if the file is not in the correct format.
-     */
-    public Optional<ReadOnlyAddressBook> readDiaryBook(Path filePath) throws DataConversionException {
-        requireNonNull(filePath);
-
-        Optional<JsonSerializableAddressBook> jsonAddressBook = JsonUtil.readJsonFile(
-                filePath, JsonSerializableAddressBook.class);
-        if (!jsonAddressBook.isPresent()) {
-            return Optional.empty();
-        }
-
-        try {
-            return Optional.of(jsonAddressBook.get().toModelType());
-        } catch (IllegalValueException ive) {
-            logger.info("Illegal values found in " + filePath + ": " + ive.getMessage());
-            throw new DataConversionException(ive);
-        }
     }
 
     @Override

@@ -1,7 +1,7 @@
 package seedu.address.model.nusmodule;
 
+import java.util.List;
 import java.util.Optional;
-
 
 /**
  * Represents a module in NUS.
@@ -9,14 +9,23 @@ import java.util.Optional;
 public class NusModule {
     public final ModuleCode moduleCode;
     public final int modularCredit;
-    private boolean isTaking;
     private Optional<Grade> grade;
+    private List<ModuleTask> tasks;
 
-    public NusModule(ModuleCode moduleCode, int modularCredit, boolean isTaking, Optional<Grade> grade) {
+    public NusModule(ModuleCode moduleCode, int modularCredit,
+                     Optional<Grade> grade, List<ModuleTask> tasks) {
         this.moduleCode = moduleCode;
         this.modularCredit = modularCredit;
-        this.isTaking = isTaking;
         this.grade = grade;
+        this.tasks = tasks;
+    }
+
+    public void addTask(ModuleTask task) {
+        tasks.add(task);
+    }
+
+    public List<ModuleTask> getTasks() {
+        return this.tasks;
     }
 
     public double getGradePoint() {
@@ -35,6 +44,10 @@ public class NusModule {
         return this.moduleCode;
     }
 
+    public int getModularCredit() {
+        return this.modularCredit;
+    }
+
     @Override
     public String toString() {
         return moduleCode.toString();
@@ -47,3 +60,4 @@ public class NusModule {
                 && moduleCode.equals(((NusModule) other).moduleCode)); // state check
     }
 }
+

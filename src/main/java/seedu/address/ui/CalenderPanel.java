@@ -23,6 +23,8 @@ import seedu.address.commons.core.LogsCenter;
  * CalenderPanel that holds the month
  */
 public class CalenderPanel extends UiPart<Region> {
+    private static int year;
+    private static int monthNow;
     private static ArrayList<CalenderDate> calenderDatesArrayList = new ArrayList<>();
     private static final String FXML = "Calender.fxml";
     private final Logger logger = LogsCenter.getLogger(CalenderPanel.class);
@@ -31,6 +33,8 @@ public class CalenderPanel extends UiPart<Region> {
     private HashMap<String, Integer> datesArray = new HashMap<>();
     private String todayMonth;
     private String todayYear;
+
+
 
     @FXML
     private Text month;
@@ -66,19 +70,26 @@ public class CalenderPanel extends UiPart<Region> {
         todayYear = currentYear;
 
         int currentMonthInt = Integer.parseInt(currentMonth);
+        monthNow = currentMonthInt;
+        year = Integer.parseInt(todayYear);
         String currentMonthAndYear = monthsArray[currentMonthInt - 1] + " " + currentYear;
         month.setText(currentMonthAndYear);
         todayDate.setText("Today: " + date + " " + currentMonthAndYear);
     }
 
     public void setDates() {
-        int firstDayInt;
         try {
             String firstDay = getCalenderDates();
-            firstDayInt = datesArray.get(firstDay);
-            System.out.println(firstDayInt);
+            int firstDayInt = datesArray.get(firstDay);
+            String dateSkeleton = makeDate();
             for (int i = 1; i < 32; i++) {
-                calenderDatesArrayList.add(new CalenderDate(Integer.toString(i), "Mon"));
+                String temp = "";
+                if (i < 10) {
+                    temp = "0" + i;
+                } else {
+                    temp = "" + i;
+                }
+                calenderDatesArrayList.add(new CalenderDate(temp + dateSkeleton, i));
             }
 
             int x = 0;
@@ -103,13 +114,38 @@ public class CalenderPanel extends UiPart<Region> {
 
     }
 
+    /**
+     * Create the date format.
+     * @return a new date format
+     */
+    private String makeDate() {
+        String dateSkeleton = "";
+        if (monthNow < 10) {
+            dateSkeleton = "-" + 0 + monthNow + "-" + year;
+        } else {
+            dateSkeleton = "-" + monthNow + "-" + year;
+        }
+        return dateSkeleton;
+    }
+
     private String getCalenderDates() throws ParseException {
         String inputDate = String.format("01/%s/%s", todayMonth, todayYear);
         SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy");
         Date dt1 = format1.parse(inputDate);
         DateFormat format2 = new SimpleDateFormat("EEEE");
-        String finalDay = format2.format(dt1);
-        return finalDay;
+        return format2.format(dt1);
+    }
+
+    public static ArrayList<CalenderDate> getCalenderDatesArrayList() {
+        return calenderDatesArrayList;
+    }
+
+    public static int getYear() {
+        return year;
+    }
+
+    public static int getCurrentMonth() {
+        return monthNow;
     }
 
     private void setDatesArray() {
@@ -121,6 +157,5 @@ public class CalenderPanel extends UiPart<Region> {
         datesArray.put("Saturday", 5);
         datesArray.put("Sunday", 6);
     }
-
 
 }

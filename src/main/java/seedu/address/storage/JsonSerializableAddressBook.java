@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.diary.DiaryEntry;
 import seedu.address.model.person.Person;
 
 /**
@@ -25,6 +24,8 @@ class JsonSerializableAddressBook {
     private final List<JsonAdaptedPerson> persons = new ArrayList<>();
 
     private final List<JsonAdaptedDiary> diary = new ArrayList<>();
+
+    private final List<JsonAdaptedCalendar> calendar = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonSerializableAddressBook} with the given persons.
@@ -45,9 +46,6 @@ class JsonSerializableAddressBook {
      */
     public JsonSerializableAddressBook(ReadOnlyAddressBook source) {
         persons.addAll(source.getPersonList().stream().map(JsonAdaptedPerson::new).collect(Collectors.toList()));
-        if (source.getDiaryList() != null) {
-            diary.addAll(source.getDiaryList().stream().map(JsonAdaptedDiary::new).collect(Collectors.toList()));
-        }
     }
 
     /**
@@ -63,11 +61,6 @@ class JsonSerializableAddressBook {
                 throw new IllegalValueException(MESSAGE_DUPLICATE_PERSON);
             }
             addressBook.addPerson(person);
-        }
-
-        for (JsonAdaptedDiary jsonAdaptedDiary: diary) {
-            DiaryEntry diaryentry = jsonAdaptedDiary.toModelType();
-            addressBook.addDiaryEntry(diaryentry);
         }
 
         return addressBook;

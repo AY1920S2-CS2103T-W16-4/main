@@ -1,6 +1,7 @@
 = NUSProductivity
 :site-section: UserGuide
 :toc:
+:toclevels: 4
 :toc-title:
 :toc-placement: preamble
 :sectnums:
@@ -11,6 +12,8 @@
 ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
+:caution-caption: :fire:
+:important-caption: :heavy_exclamation_mark:
 endif::[]
 :repoURL: https://github.com/AY1920S2-CS2103T-W16-4/main
 
@@ -18,17 +21,46 @@ By: `Team W16-4`      Since: `Mar 2020`      Licence: `MIT`
 
 == Introduction
 
-NUSProductivity is an application designed to let you better manage your school work. The app is set out to enhance your productivity in school through 5 main features, module planning, CAP (cumulative average point) tracking, note taking, deadline and task listing, and finally, diary logging. This app is designed mainly for NUS students with the possibility to customise it for students from other universities in the future. More importantly, NUSProductivity is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). Read on to get you started on using the application!
+
+
+=== An Introduction to NUSProductivity User guide
+
+- NUSProductivity is an application designed for all NUS students to better manage their school work. The app is set out to enhance your productivity in school through 5 main features, module planning, CAP (cumulative average point) tracking, note taking, deadline and task listing, and finally, diary logging. This app is designed only for NUS students for now with the possibility to customise it for students from other universities in the future. More importantly, NUSProductivity is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). Read on to get you started on using the application!
+
+- The purpose of this document is for you to familiarise yourself with the functions and capabilities of what NUSProductivity can do.
+
+- The image below shows the different parts of the user interface of NUSProductivity
+
+.NUSProductivity Introduction
+image::StartupDescription.png[width="790"]
+
+
+=== Commonly Used Symbols
+
+[NOTE]
+This symbol indicates something you should take note of.
+
+[TIP]
+This symbol indicates a tip that you could use.
+
+[CAUTION]
+This symbol indicates something need be used or followed with caution.
+
+[IMPORTANT]
+This symbol indicates something you really need to pay attention to.
+
 
 ==  Quick Start
 
 This section allows you to start up NUSProductivity with ease. Detailed steps are listed below.
 
-.  Ensure you have Java `11` or above installed on your computer.
+.  Ensure you have Java `11` or above installed on your computer, if not you can refer to the guide below
+.  https://docs.oracle.com/en/java/javase/11/install/installation-jdk-microsoft-windows-platforms.html#GUID-C11500A9-252C-46FE-BB17-FC5A9528EAEB[Windows] https://docs.oracle.com/en/java/javase/11/install/installation-jdk-macos.html#GUID-2FE451B0-9572-4E38-A1A5-568B77B146DE[Mac]
 .  Download the latest version of `NUSProductivity.jar` link:{repoURL}/releases[here].
 .  Copy the file to the folder you want to use as the home folder for NUSProductivity.
 .  Double-click the file to start the app. The GUI should appear in a few seconds (screenshot of GUI shown below).
 +
+.NUSProductivity Start up
 image::Ui.png[width="790"]
 +
 .  Type the command in the command box and press kbd:[Enter] to execute it. +
@@ -36,11 +68,15 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 .  Some example commands you can try:
 
 * **`search`**`CS2103T` : searches for the module `CS2103T`
-* **`deadline`**`deadline finish homework by 30-03-2020 1800` : schedules a deadline on the calendar for you to finish your homework
+* **`calendar`** : Allows you to switch to the calendar tab
+* **`deadlineAdd desc/Finish homework by/30-04-2020 cat/School`** : schedules a deadline on the calendar for you to finish your homework
 * *`cap`* : calculates your CAP
 * *`exit`* : exits the app
 
 .  Refer to <<Features>> for details of each command.
+
+
+
 
 [[Features]]
 == Features
@@ -66,6 +102,199 @@ This section shows the detailed list of usable commands.
 - Exits the program.
 
 - Format: `exit`
+
+==== Switching Tabs : `calendar`, `diary`, `modplan`, `addressbook`, `notes`, `profile`
+
+- This command allows you to switch to the tab using the command line instead of clicking on the respective tab.
+- Format: `calendar`, `diary`, `modplan`, `addressbook`, `notes`, `profile`
+
++
+.Switching tabs
+image::switching_tabs.png[width="790"]
++
+
+
+
+=== Calendar
+
+The calendar feature in the app that allows you to schedule and set deadline for important tasks such as project or assignment deadlines.
+
+The application allows you to add 2 type of tasks, `deadline` and `moduleTask`.
+
+`moduleTask` allows you to tag a module, that you have already inputted in your Profile tab, to the task itself. It allows you to set the priority level of the task.
+
+`deadline` allows you to input a deadline event into the calendar without any specified modules attached to it.
+
+==== Priority Levels
+
+We give you the flexibility to choose and indicate what priority each `moduleTask` should have. This priority is represented from 1 to 5, with 1 being the lowest priority and 5 being the highest.
+
+.NUSProductivity calendar priority levels
+image::prioritylevels.png[width="790"]
+
+
+==== Deadline
+
+===== Adding Deadline: `deadlineAdd`
+
+- Schedules a task tagged with a deadline to the calendar. A dot will be shown to indicate there is a deadline to be met on that day
+
+- Format: `deadlineAdd desc/DESCRIPTION by/DD-MM-YYYY cat/CATEGORY`
+
+.Adding Deadlines
+image::deadlineAdd.png[width="790"]
+
+After invoking the command, the deadline will be added to the calendar as shown in figure 5. The task will be tagged as light grey to signify it is uncompleted yet.
+
+Deadline tasks are defaulty tagged with the lowest priority.
+
+==== Module Tasks
+
+===== Adding Module Tasks: `moduleTask`
+
+- Schedules a module task, this module task includes priority level, module that is associated with the task.
+
+- Format: `taskAdd desc/DESCRIPTION m/MODULE_CODE date/DD-MM-YYYY PRI/PRIORITY-LEVEL`
+
+.Adding Module Tasks
+image::moduleTaskAdd.png[width="790"]
+
+[NOTE]
+This requires you to add a module under `moduleAdd` before you can use it
+
+.Error when adding a module task without adding a module first.
+image::moduleTaskAddError.png[width="790"]
+
+==== Shared Functions
+
+The commands stated in this section can be used for both moduleTask and deadline tasks.
+
+
+===== Marking a task as Done: `done`
+
+- Marks a task as completed, completed task will be shown with a black background while uncompleted task will be shown as a grey background.
+
+- Format: `done index/INDEX`
+
+.Completing a task
+image::taskDone.png[width="790"]
+
+After a task is completed, it will be pushed to the bottom, the dot on the calendar removed and the background of the task is changed to black to signify the task is compelted.
+
+===== Removing Deadline: `taskDelete`
+
+- Deletes a task from the deadline list, marking the task as done
+
+- Format: `taskDelete index/INDEX`
+
+.Deleting a task
+image::taskDelete.png[width="790"]
+
+[TIP]
+Tip: delete a task only after the date have passed to make sure everything is completed up to your current date
+
+===== Sorting the Calendar: `sortTask`
+
+- Allows you to sort the tasks list on the left by either date or priority. This gives you the flexibility to plan ahead, whether you want to complete a more urgent task or to complete a task with the deadline that is earlier
+
+- Format: `sortTask by/SORT`
+
+.Sorting tasks by priority
+image::taskSort.png[width="790"]
+
+[NOTE]
+SORT can only be either date or priority
+
+===== Finding specific tasks in the Calendar: `findTask`
+
+- Allows you to see task at a glance based on what you specified.
+
+- Format: `findTask m/MODULECODE` or `findTask cat/CATEGORY` or `findTask date/DD-MM-YYYY`
+
+.Finding task by module Code
+image::findTask.png[width="790"]
+
+[NOTE]
+The dots on the calendar will not disappear and will show that there is still task to be completed on that date despite filtering
+
+===== Listing back all tasks in the Calendar: `listTask`
+
+- Allows you to list back all task after you have filtered the list with findTask
+
+- Format: `listTask`
+
+.Listing all tasks
+image::listTask.png[width="790"]
+
+
+=== Notes
+
+- Allows you to create notes from the application, making it easier for you to find your files since often time students have a lot of research papers or references opened when writing a report.
+
+- Allows for users to create documents for notes, organise their notes in folders.
+Default location is set to
+`/User/<ACCOUNT NAME>` for mac
+`C:\Users\<ACCOUNT NAME>` for windows
+
+
+
+==== Pathing
+
+- The notes feature allows you to specify the pathing used to access the file/folder you specify
+
+- The diagram below shows a comparision between absolute vs relative pathing
+
+.Pathing Absolute vs Rel
+image::pathing.png[width="790"]
+
+[TIP]
+if you want to access the Documents folder as shown in figure 13, you can use the absolute pathing and specify loc/Desktop instead of typing loc/../../../Documents
+
+
+==== Listing Directory: `notesList`
+
+- List the directory that you supplied. The display will show all folders that is in that directory.
+
+- Format: `notesList loc/PATH pt/PATH TYPE`
+
+.Listing files in directory
+image::notesListingUG.png[width="790"]
+
+==== Creating a note: `notesCreate`
+
+- Creates a file/directory based on what you specified.
+
+- Format: `notesCreate loc/PATH name/FILE_NAME type/TYPE pt/PATH_TYPE`
+
+[NOTE]
+The type can only be file or folder
+
+.Creating a file in a specified directory
+image::notesCreateUG.png[width="790"]
+
+
+==== Opening a note: `notesOpen`
+
+- Opens a file/directory based on what you specified.
+
+- Format: `notesOpen loc/PATH name/FILE_NAME pt/PATH_TYPE`
+
+.Opening a file in a specified directory
+image::notesOpenUG.png[width="790"]
+
+==== Deleting a note: `notesDelete`
+
+- Delete a file based on what you specified.
+
+- Format: `notesDelete loc/PATH name/FILE_NAME pt/PATH_TYPE`
+
+.Deleting a file in a specified directory
+image::notesDeleteUG.png[width="790"]
+
+[NOTE]
+This can only be use to delete a file and not a folder
+
+
 
 === Address Book
 
@@ -124,6 +353,7 @@ A person can have any number of tags (including 0)
 * Only the name is searched.
 * Only full words will be matched e.g. Han will not match Hans
 * Persons matching at least one keyword will be returned (i.e. OR search). e.g. Hans Bo will return Hans Gruber, Bo Yang
+* After a find operation, use `list` to get back the original list for address book.
 ****
 
 - Examples:
@@ -161,22 +391,237 @@ A person can have any number of tags (including 0)
 - Format: `clear`
 
 
-=== Profile
+=== Profile / Module Book (Part 1: Manage your modules)
 
-This feature allows individuals to see their own profile, their target cap, their current cap and the all modules that the individual have taken.
+- This feature allows individuals to see their own profile, their current cap and the all modules that the individual have taken and all the grades gotten.
 
+.Main Screen for profile tab
+image::ProfileMainScreen.png[width="790"]
 
-==== View CAP summary : `cap`
+==== Adding a module : `moduleAdd`
 
-- Shows the current cap of the individual. If only cap is specified, it will only show the MCs taken up to the point and the CAP.
+- Adds a module you have taken before or is taking now and store your grade for each module if you want.
 
-- Format: `cap BREAKDOWN`
+- Format: `moduleAdd m/MODULE_CODE [g/GRADE]`
+
+[TIP]
+The grade field is optional. You can state your grade when you add in modules and
+also can update or add in your grade later.
 
 ****
-If cap breakdown is inputted, it will show a breakdown of all the modules and grades that is tagged to the module.
+* You can only add in modules which are valid modules that can be taken in NUS.
+* All other module codes inputted will be considered as invalid and the program will not allow you to add in.
+* This requirement is not case sensitive, which means for example, both "CS2103" and "cs2103" are considered valid module code.
 ****
 
-==== View module requirement: `modreq`
+[TIP]
+The program checks whether a module code provided is valid or not by using the search function in module planning feature, which fetch information about
+modules online. If the search function fails to fetch any information, the module code will be treated as invalid.
+
+- Example:
+* `moduleAdd m/CS2103`
+* `moduleAdd m/cs1101s g/A`
+
+.Adding a module
+image::AddModule.png[width="790"]
+
+==== Deleting a module : `moduleDel`
+
+- Deletes a module you have added to the program before from the profile tab.
+
+- Format: `moduleDel MODULE_CODE`
+
+****
+* Deletes the module specified from the module book (profile)
+* You can only delete the module which you have added into the program before.
+* Module code inputted is not case sensitive ('moduleDel cs2103' is the same as 'moduleDel CS2103')
+****
+
+- Example:
+* `moduleDel CS2103` +
+Delete CS2103 from module book if you have added it before.
+
+.Deleting a module
+image::DeleteModule.png[width="790"]
+
+
+==== Editing the grade of a module : `grade`
+
+- Updates or adds the grade of certain modules you have added to the program.
+
+- Format: `grade m/MODULE_CODE g/GRADE`
+
+****
+* Updates the grade of the specified module as the grade you provided now.
+* You can only update the grade of module which you have added into the program before.
+* Grade inputted should be a valid grade in NUS's grading system.
+* Both module code and grade inputted is not case sensitive.
+****
+
+[TIP]
+List of all valid grade: A+, A, A-, B+, B, B-, C+, C, D+, D, F, S and U.
+
+- Example:
+* `grade m/CS1101S g/S`
+* `grade m/CS2103 g/A`
+
+.Updating the grade of a module
+image::Grade.png[width="790"]
+
+==== View current CAP : `cap`
+
+- Shows your current cap based on the grades of modules you have stated.
+
+- Format: `cap`
+
+****
+* Calculates your current CAP.
+* CAP = Sum (module grade point x modular credits for the module) / Sum (modular credits)
+* The calculation strictly follow the grading system of NUS.
+* Shows current CAP in CLI, CAP on UI will only get updated after you restart.
+****
+
+[TIP]
+You don't need to indicate the modular credits for each module when you add it in because the program will fetch that infomation online.
+
+.View current CAP
+image::Cap.png[width="790"]
+
+=== Profile / Module Book (Part 2: Manage your tasks separately for each module)
+
+Most of the functionality here has been integrate into the Calendar feature but these commands left here still can be used.
+You can give it a try if you want.
+
+[NOTE]
+These tasks related to certain module are called 'module task' from now on.
+
+[TIP]
+All commands that make changes to the module tasks will be synchronous for both module book and the task list in calendar feature.
+
+[IMPORTANT]
+For this part, the UI hasn't been implemented yet but you are able to see the updated list of module tasks in command line.
+
+[IMPORTANT]
+Most functionality covered in this part can also be achieved by some commands in Calendar feature above. Just provides users
+with an alternative way. (The orders of tasks shown are different. Thus, the index inputted may be different to achieve the same modification.)
+
+==== Creating a module task : `moduleTask`
+
+[NOTE]
+This command has been covered in Calendar feature already.
+
+- Adds a module task related to certain module you have added before in module book.
+
+- You need to indicate which module the task is related to, its priority level (how important it is) and also its deadline or scheduled timing.
+
+- Format: `moduleTask desc/DESCRIPTION m/MODULE_CODE date/DEADLINE_OR_SCHEDULED_TIMING pri/PRIORITY`
+
+[CAUTION]
+The date inputted should be in the format: DD-MM-YYYY.
+
+****
+* This command allows you to create tasks to certain module you added to the program before.
+* Stores the task added in the module book and automatically adds and shows on the Calender.
+* You will get an updated list of tasks related to that specific module after adding. (shown in command line)
+****
+- Example:
+* `moduleTask desc/essay m/CS2101 date/02-04-2020 pri/3` +
+Add a module task as specified in module book and also shows on calendar.
+
+.Adding a module task for certain module
+image::ModuleTaskProfile.png[width="790"]
+
+.module task added will also be shown on calendar
+image::ModuleTaskCalendar.png[width="790"]
+
+==== Listing all module tasks of certain module
+
+[TIP]
+You can also view module tasks in calendar using `findModule m/MODULE_CODE`
+
+- Lists all module tasks related to the specific module.
+
+- Format: `listModuleTasks MODULE_CODE`
+
+****
+* Lists all module tasks related to that module in *CLI*.
+* Module code inputted must be valid module code you have added in before.
+****
+
+- Example:
+* `listModuleTasks CS2103` +
+Lists all module tasks of CS2103.
+
+.Showing all module tasks related to specified module
+image::ListModuleTask.png[width="790"]
+
+==== Deleting a module task : `taskDelete`
+
+- Deletes the specified module tasks for certain module from the module book and calendar.
+
+- Format: `taskDelete m/MODULE_CODE index/INDEX`
+
+[NOTE]
+This command is similar to the `taskDelete` command in Calendar feature but you need to specify the module code.
+
+****
+* Deletes the module task at the specified INDEX.
+* The index refers to the index number *shown in the CLI* (you can get that by entering 'listModuleTasks MODULE_CODE')
+* The index must be a positive integer 1, 2, 3, …
+****
+
+[CAUTION]
+Only refer to the index of tasks shown in command line when performing this command. (not the one in calendar)
+
+- Example:
+* `taskDelete m/CS2103 index/1` +
+Deletes the first module task for CS2103 in module book and Calendar. +
+*(First task in module book and may not be the first in Calendar even after performing `findTask m/cs2103`)*
+
+.Deleting a module task
+image::TaskDeleteWirhModuleCode.png[width="790"]
+
+==== Marking a module task as done : `done`
+
+- Marks the specified module tasks for certain module as done in the module book and calendar.
+
+- Format: `done m/MODULE_CODE index/Index`
+
+[NOTE]
+This command is similar to the `done` command in Calendar feature but you need to specify the module code.
+
+****
+* Deletes the module task at the specified INDEX.
+* The index refers to the index number *shown in the CLI* (you can get that by entering 'listModuleTasks MODULE_CODE')
+* The index must be a positive integer 1, 2, 3, …
+****
+
+[CAUTION]
+Only refer to the index of tasks shown in command line when performing this command. (not the one in calendar)
+
+- Example:
+* `done m/cs2103 index/1` +
+Marks the first module task for module cs2103 as done.
+
+.Marking a module task as done
+image::DoneWithModuleCode.png[width="790"]
+
+==== View task breakdown per module : `taskBreakdown`
+
+- Shows the how many tasks are there in total and how many tasks haven't been completed yet for each module.
+
+- Format: `taskBreakdown`
+
+- Shows in the command line
+
+.Show task breakdown
+image::TaskBreakDown.png[width="790"]
+
+==== States major taken : `major` (coming in v2.0)
+
+=== Module planning
+
+==== View module requirement: `modreq` (coming in v2.0)
 
 - Shows the modules requirement for the major specified. This function will show the core modules that the individual have to take before graduation but have not taken yet.
 
@@ -187,16 +632,16 @@ If cap breakdown is inputted, it will show a breakdown of all the modules and gr
 * `modreq computer science`
 
 
-==== Module information: `module`
+==== Module information: `search`
 
 - Shows basic information about the module, such as time of lecture, tutorial, exam venues and
 professor’s contact associated with the module.
 
-- Format: `module MODULE CODE`
+- Format: `search MODULE_CODE`
 
 - Example:
 
-* `module CS2103T`
+* `search CS2103T`
 
 
 === Diary
@@ -232,84 +677,116 @@ The diary feature allows you to jot down any thoughts, be it for your personal l
 - Format: `diaryMood id/ENTRY_ID m/MOOD`
 
 
-=== Calendar
 
-A calendar in the app that allows you to schedule and set deadline for important tasks such as project or assignment deadlines.
-
-==== ToDo: `todo`
-
-- Schedules a task to the calendar.
-
-- Format: `todo DESCRIPTION`
-
-==== Deadline: `deadline`
-
-- Schedules a task tagged with a deadline to the calendar.
-
-- Format: `deadline DESCRIPTION /by DD-MM-YYYY HHMM`
-
-=== Notes
-
-Allows you to create notes from the application, making it easier for you to find your files since often time students have a lot of research papers or references opened when writing a report.
-
-==== Note Taking: `notes`
-
-- Allows for users to create documents for notes, organise their notes in folders.
-Default location is set to user's desktop.
-
-- Format: notes ops/COMMAND loc/DIRECTORY
-
-a.	`notes ops/list loc/NUS/`: shows content in usr/Desktop/NUS/ folder, content will be updated in the UI
-b.	`notes ops/open loc/test.doc`: Opens the file test.doc at usr/Desktop, if file is not present, error message will be shown.
-c.	`notes ops/create loc/test.doc`: Creates the file test.doc at usr/Desktop, if file is already present, error message will be shown.
 
 == Command Summary
 
 This section summarizes the list of commands.
 
-•	add  n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]… +
- e.g. `add n/James Ho p/22224444 e/jamesho@example.com t/friend t/colleague`
-•	clear : clear
-•	delete : delete INDEX +
- e.g. `delete 3`
-•	edit : edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG]… +
- e.g. `edit 2 n/James Lee e/jameslee@example.com`
-•	find : find KEYWORD [MORE_KEYWORDS] +
- e.g. `find James Jake`
-•	list: list
-•	cap : cap {BREAKDOWN}
-•	modreq : modreq {\MAJOR} +
-e.g. `modreq computer science`
-•	help : help
-•	diary :
-* diary log LIMIT
-e.g. `diary log 10`
-* diary show ENTRY ID
-e.g. `diary show 3`
-* diary show DD-MM-YYYY
-e.g. `diary show 30-03-2020`
-* diary add ENTRY
-e.g. `diary add "Today is a good day"`
-* diary delete ENTRY ID
-e.g. `diary delete 1`
-* diary weather ID WEATHER
-e.g. `diary weather 1 SUNNY`
-* diary emotion ID EMOTION
-e.g. `diary emotion 1 HAPPY`
-* todo : todo DESCRIPTION
-e.g. `todo water plants`
-* deadline : deadline DESCRIPTION /by DD-MM-YYYY HHMM
-e.g. `deadline Finish homework /by 30-03-2020 1800`
-* mymodplan: mymodplan
-** mymodplan add MODULE CODE
-e.g. `mymodplan add CS2103T`
-** mymodplan done MODULE CODE
-e.g. `mymodplan done CS2103T`
-* notes : notes
-** notes ops/open loc/DIRECTORY
-e.g. `notes ops/open loc/Desktop/`
-** notes ops/create loc/DIRECTORY
-e.g. `notes ops/create loc/Desktop/test.doc`
-** notes ops/list loc/DIRECTORY
-e.g. `notes ops/list loc/Desktop/`
+* *General*:
+** *calendar*: `calendar`
+** *notes*: `notes`
+** *modplan*: `modplan`
+** *diary*: `diary`
+** *profile*: `profile`
+** *help*: `help`
+** *exit*: `exit`
 
+* *Calendar*:
+** *deadline* : `deadlineAdd desc/DESCRIPTION by/DD-MM-YYYY cat/CATEGORY`
+e.g. `deadlineAdd desc/Do Chores by/30-04-2020 cat/Misc`
+** *moduleTask*: `moduleTask desc/DESCRIPTION m/MODULE CODE date/DD-MM-YYYY pri/PRIORITY`
+e.g. `moduleTask desc/Project Deadline date/30-04-2020 m/CS2103T pri/5`
+** *done*: `done index/INDEX`
+e.g. `done index/1`
+** *taskDelete*: `taskDelete index/INDEX`
+e.g. `taskDelete index/1`
+** *sortTask*: `sortTask by/SORTING_PARAM`
+e.g. `sortTask by/priority`
+** *findTask*: `findTask m/MODULECODE` or `findTask cat/CATEGORY` or `findTask date/DD-MM-YYYY`
+e.g. `findTask m/CS2103T`
+** *listTask*: `listTask`
+e.g. `listTask`
+
+
+* *Notes*
+** *notesList* loc/PATH pt/PATH TYPE
+e.g. `notesList loc/Desktop pt/abs`
+** *notesOpen* loc/PATH name/FILE_NAME pt/PATH_TYPE
+e.g. `notesOpen loc/Desktop name/test.doc pt/abs`
+** *notesCreate* loc/PATH name/FILE_NAME type/TYPE pt/PATH_TYPE
+e.g. `notesCreate loc/Desktop/ name/Test.doc type/file pt/abs`
+** *notesDelete* loc/PATH name/FILE_NAME pt/PATH_TYPE
+e.g. `notesDelete loc/Desktop/ name/Test.doc pt/abs`
+
+
+
+
+* Address Book:
+** add  n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]… +
+ e.g. `add n/James Ho p/22224444 e/jamesho@example.com t/friend t/colleague`
+** clear : clear
+** delete : delete INDEX +
+ e.g. `delete 3`
+** edit : edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG]… +
+ e.g. `edit 2 n/James Lee e/jameslee@example.com`
+** find : find KEYWORD [MORE_KEYWORDS] +
+ e.g. `find James Jake`
+** list: list
+
+* *Profile* (Module Book)
+** moduleAdd m/MODULE_CODE [g/GRADE] +
+ e.g. `moduleAdd m/cs2103 g/A`
+** moduleDel*MODULE_CODE +
+ e.g. `moduleDel CS2103`
+** grade m/MODULE_CODE g/GRADE +
+ e.g. `grade m/cs2103 g/A`
+** cap
+** moduleTask desc/DESCRIPTION m/MODULE CODE date/DD-MM-YYYY pri/PRIORITY +
+ e.g. `moduleTask desc/Project m/CS2103T date/30-04-2020 pri/5`
+** taskDelete m/MODULE_CODE index/INDEX
+ e.g. `taskDelete m/cs2103 index/1`
+** done m/MODULE_CODE index/INDEX
+ e.g. `done m/cs2103 index/1`
+** listModuleTasks m/MODULE_CODE
+ e.g. `listModuleTasks m/CS2103`
+** taskBreakdown
+
+* Diary :
+** diary log LIMIT
+e.g. `diary log 10`
+** diary show ENTRY ID
+e.g. `diary show 3`
+** diary show DD-MM-YYYY
+e.g. `diary show 30-03-2020`
+** diary add ENTRY
+e.g. `diary add "Today is a good day"`
+** diary delete ENTRY ID
+e.g. `diary delete 1`
+** diary weather ID WEATHER
+e.g. `diary weather 1 SUNNY`
+** diary emotion ID EMOTION
+e.g. `diary emotion 1 HAPPY`
+
+* Mod Plan:
+** search MODULE_CODE +
+ e.g. `search CS2103T`
+** mymodplan: mymodplan (coming in v2.0)
+** mymodplan add MODULE CODE
+e.g. `mymodplan add CS2103T` (coming in v2.0)
+** mymodplan done MODULE CODE
+e.g. `mymodplan done CS2103T` (coming in v2.0)
+** modreq : modreq {\MAJOR} + (coming in v2.0)
+e.g. `modreq computer science`
+
+== Glossary
+- *NUS* : National University of Singapore
+
+- *CAP* : The Cumulative Average Point is the weighted average grade point of the letter grades of all the modules taken by the students, according to NUS's grading system.
+
+== FAQ
+*Q*: How do I transfer my data to another Computer? +
+*A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous fitness log book folder.
+
+*Q*: How do I save my data in my own PC? +
+*A*: NusProductivity saves your data of all your modules, grades and tasks after you make changes.
