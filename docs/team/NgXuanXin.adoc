@@ -1,0 +1,40 @@
+= Ng Xuan Xin - Project Portfolio
+:site-section: AboutUs
+:imagesDir: ../images
+:stylesDir: ../stylesheets
+
+== PROJECT: NUSProductivity
+
+---
+
+== Overview
+
+NUSProductivity is a desktop application for NUS students. The user interacts with it using a CLI, and it has a GUI creasted with JavaFX. The application is intended to help NUS students solve their productivity issues and ease student’s daily task in NUS.
+
+== Summary of contributions
+
+* *Major enhancement*: added commands and functions for Events
+** What it does: allows the user to add, delete, and mark events that are scheduled on the calendar as done
+** Justification: Since the product is deisgned to be user-friendly for NUS students, this feature allows users to schedule school-wide events they do not want to miss, which is a huge enhancement alongside implementations for scheduling deadlines (complementary features)
+** Highlights: This enhancement is complementary with the deadline scheduling feature, and forms the calendar component
+
+* *Minor contributions*: 
+** Assisted with deadline scheduling feature
+** Checkstyle fixing 
+
+* *Code contributed*: [https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=xuanxinng&sort=groupTitle&sortWithin=title&since=2020-0214&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false&tabOpen=true&tabType=authorship&tabAuthor=xuanxinng&tabRepo=AY1920S2-CS2103T-W16-4%2Fmain%5Bmaster%5D[Functional code]]
+
+* *Other contributions*:
+
+** Documentation:
+*** Did cosmetic tweaks to existing contents of the User Guide
+*** Created additional user stories for the Developer Guide
+*** Added use cases for the Developer Guide
+*** Updated product scope and non functional requirements as well
+
+** Reviewing contribution
+*** Reviewed pull requests with non-trivial comments at least twice (for other teams in the class) 
+
+** Community:
+*** Reported at least twelve bugs and suggestions for other teams in the class 
+
