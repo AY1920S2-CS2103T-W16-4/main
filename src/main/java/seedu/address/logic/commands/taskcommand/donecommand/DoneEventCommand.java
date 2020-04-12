@@ -10,7 +10,7 @@ import java.util.List;
 import static java.util.Objects.requireNonNull;
 
 /**
- * Mark a deadline in calendar as done.
+ * Mark an event in calendar as done.
  */
 
 public class DoneEventCommand extends DoneCommand {

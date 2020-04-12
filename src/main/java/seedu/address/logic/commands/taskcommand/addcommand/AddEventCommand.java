@@ -20,7 +20,7 @@ public class AddEventCommand extends Command {
             + " eventAdd desc/<description> on/{DD-MM-YYYY}\n "
             + "Example: eventAdd desc/NUS Open Day on/02-04-2020";
 
-    public static final String MESSAGE_SUCCESS = "Deadline added: ";
+    public static final String MESSAGE_SUCCESS = "Event added: ";
 
     private final Task eventToAdd;
 
