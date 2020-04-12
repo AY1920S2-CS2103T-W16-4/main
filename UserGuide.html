@@ -22,8 +22,10 @@
 <li><a href="#calendar">3.2. Calendar</a></li>
 <li><a href="#notes">3.3. Notes</a></li>
 <li><a href="#address-book">3.4. Address Book</a></li>
-<li><a href="#profile-module-book">3.5. Profile (Module Book)</a></li>
-<li><a href="#diary">3.6. Diary</a></li>
+<li><a href="#profile-module-book-part-1-manage-your-modules">3.5. Profile / Module Book (Part 1: Manage your modules)</a></li>
+<li><a href="#profile-module-book-part-2-manage-your-tasks-separately-for-each-module">3.6. Profile / Module Book (Part 2: Manage your tasks separately for each module)</a></li>
+<li><a href="#module-planning">3.7. Module planning</a></li>
+<li><a href="#diary">3.8. Diary</a></li>
 </ul>
 </li>
 <li><a href="#command-summary">4. Command Summary</a></li>
@@ -841,9 +843,19 @@ Deletes the 1st person in the results of the find command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="profile-module-book"><a class="link" href="#profile-module-book">3.5. Profile (Module Book)</a></h3>
-<div class="paragraph">
+<h3 id="profile-module-book-part-1-manage-your-modules"><a class="link" href="#profile-module-book-part-1-manage-your-modules">3.5. Profile / Module Book (Part 1: Manage your modules)</a></h3>
+<div class="ulist">
+<ul>
+<li>
 <p>This feature allows individuals to see their own profile, their current cap and the all modules that the individual have taken and all the grades gotten.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ProfileMainScreen.png" alt="ProfileMainScreen" width="790">
+</div>
+<div class="title">Figure 18. Main Screen for profile tab</div>
 </div>
 <div class="sect3">
 <h4 id="adding-a-module-code-moduleadd-code"><a class="link" href="#adding-a-module-code-moduleadd-code">3.5.1. Adding a module : <code>moduleAdd</code></a></h4>
@@ -894,11 +906,34 @@ also can update or add in your grade later.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The program checks whether a module code provided is valid or not by using the search feature, which fetch information about
+The program checks whether a module code provided is valid or not by using the search function in module planning feature, which fetch information about
 modules online. If the search function fails to fetch any information, the module code will be treated as invalid.
 </td>
 </tr>
 </table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>moduleAdd m/CS2103</code></p>
+</li>
+<li>
+<p><code>moduleAdd m/cs1101s g/A</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddModule.png" alt="AddModule" width="790">
+</div>
+<div class="title">Figure 19. Adding a module</div>
 </div>
 </div>
 <div class="sect3">
@@ -929,6 +964,27 @@ modules online. If the search function fails to fetch any information, the modul
 </ul>
 </div>
 </div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>moduleDel CS2103</code><br>
+Delete CS2103 from module book if you have added it before.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteModule.png" alt="DeleteModule" width="790">
+</div>
+<div class="title">Figure 20. Deleting a module</div>
 </div>
 </div>
 <div class="sect3">
@@ -975,6 +1031,29 @@ List of all valid grade: A+, A, A-, B+, B, B-, C+, C, D+, D, F, S and U.
 </tr>
 </table>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>grade m/CS1101S g/S</code></p>
+</li>
+<li>
+<p><code>grade m/CS2103 g/A</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Grade.png" alt="Grade" width="790">
+</div>
+<div class="title">Figure 21. Updating the grade of a module</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="view-current-cap-code-cap-code"><a class="link" href="#view-current-cap-code-cap-code">3.5.4. View current CAP : <code>cap</code></a></h4>
@@ -1001,6 +1080,9 @@ List of all valid grade: A+, A, A-, B+, B, B-, C+, C, D+, D, F, S and U.
 <li>
 <p>The calculation strictly follow the grading system of NUS.</p>
 </li>
+<li>
+<p>Shows current CAP in CLI, CAP on UI will only get updated after you restart.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -1017,29 +1099,83 @@ You don&#8217;t need to indicate the modular credits for each module when you ad
 </tr>
 </table>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Cap.png" alt="Cap" width="790">
 </div>
-<div class="sect3">
-<h4 id="managing-your-tasks-separately-for-each-module"><a class="link" href="#managing-your-tasks-separately-for-each-module">3.5.5. Managing your tasks separately for each module</a></h4>
-<div class="admonitionblock warning">
+<div class="title">Figure 22. View current CAP</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="profile-module-book-part-2-manage-your-tasks-separately-for-each-module"><a class="link" href="#profile-module-book-part-2-manage-your-tasks-separately-for-each-module">3.6. Profile / Module Book (Part 2: Manage your tasks separately for each module)</a></h3>
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-For this part, the UI hasn&#8217;t been implemented yet so that you can only view your tasks in Calendar tab stated above.
+These tasks related to certain module are called 'module task' from now on.
 </td>
 </tr>
 </table>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Creating a module task : <code>moduleTask</code></p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+All commands that make changes to the module tasks will be synchronous for both module book and the task list in calendar feature.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For this part, the UI hasn&#8217;t been implemented yet but you are able to see the updated list of module tasks in command line.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Most functionality covered in this part can also be achieved by some commands in Calendar feature above. Just provides users
+with an alternative way. (The orders of tasks shown are different. Thus, the index inputted may be different to achieve the same modification.)
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="creating-a-module-task-code-moduletask-code"><a class="link" href="#creating-a-module-task-code-moduletask-code">3.6.1. Creating a module task : <code>moduleTask</code></a></h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command has been covered in Calendar feature already.
+</td>
+</tr>
+</table>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Adds a task related to certain module you have added before.</p>
+<p>Adds a module task related to certain module you have added before in module book.</p>
 </li>
 <li>
 <p>You need to indicate which module the task is related to, its priority level (how important it is) and also its deadline or scheduled timing.</p>
@@ -1049,26 +1185,305 @@ For this part, the UI hasn&#8217;t been implemented yet so that you can only vie
 </li>
 </ul>
 </div>
-</li>
-</ol>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The date inputted should be in the format: DD-MM-YYYY.
+</td>
+</tr>
+</table>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>This command allows you to create tasks specific to certain module you added to the program before.</p>
+<p>This command allows you to create tasks to certain module you added to the program before.</p>
 </li>
 <li>
 <p>Stores the task added in the module book and automatically adds and shows on the Calender.</p>
+</li>
+<li>
+<p>You will get an updated list of tasks related to that specific module after adding. (shown in command line)</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>moduleTask desc/essay m/CS2101 date/02-04-2020 pri/3</code><br>
+Add a module task as specified in module book and also shows on calendar.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleTaskProfile.png" alt="ModuleTaskProfile" width="790">
+</div>
+<div class="title">Figure 23. Adding a module task for certain module</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleTaskCalendar.png" alt="ModuleTaskCalendar" width="790">
+</div>
+<div class="title">Figure 24. module task added will also be shown on calendar</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="view-module-requirement-code-modreq-code"><a class="link" href="#view-module-requirement-code-modreq-code">3.5.6. View module requirement: <code>modreq</code></a></h4>
+<h4 id="listing-all-module-tasks-of-certain-module"><a class="link" href="#listing-all-module-tasks-of-certain-module">3.6.2. Listing all module tasks of certain module</a></h4>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can also view module tasks in calendar using <code>findModule m/MODULE_CODE</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lists all module tasks related to the specific module.</p>
+</li>
+<li>
+<p>Format: <code>listModuleTasks MODULE_CODE</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Lists all module tasks related to that module in <strong>CLI</strong>.</p>
+</li>
+<li>
+<p>Module code inputted must be valid module code you have added in before.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listModuleTasks CS2103</code><br>
+Lists all module tasks of CS2103.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ListModuleTask.png" alt="ListModuleTask" width="790">
+</div>
+<div class="title">Figure 25. Showing all module tasks related to specified module</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-module-task-code-taskdelete-code"><a class="link" href="#deleting-a-module-task-code-taskdelete-code">3.6.3. Deleting a module task : <code>taskDelete</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the specified module tasks for certain module from the module book and calendar.</p>
+</li>
+<li>
+<p>Format: <code>taskDelete m/MODULE_CODE index/INDEX</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command is similar to the <code>taskDelete</code> command in Calendar feature but you need to specify the module code.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the module task at the specified INDEX.</p>
+</li>
+<li>
+<p>The index refers to the index number <strong>shown in the CLI</strong> (you can get that by entering 'listModuleTasks MODULE_CODE')</p>
+</li>
+<li>
+<p>The index must be a positive integer 1, 2, 3, …</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Only refer to the index of tasks shown in command line when performing this command. (not the one in calendar)
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>taskDelete m/CS2103 index/1</code><br>
+Deletes the first module task for CS2103 in module book and Calendar.<br>
+<strong>(First task in module book and may not be the first in Calendar even after performing <code>findTask m/cs2103</code>)</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskDeleteWirhModuleCode.png" alt="TaskDeleteWirhModuleCode" width="790">
+</div>
+<div class="title">Figure 26. Deleting a module task</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="marking-a-module-task-as-done-code-done-code"><a class="link" href="#marking-a-module-task-as-done-code-done-code">3.6.4. Marking a module task as done : <code>done</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Marks the specified module tasks for certain module as done in the module book and calendar.</p>
+</li>
+<li>
+<p>Format: <code>done m/MODULE_CODE index/Index</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command is similar to the <code>done</code> command in Calendar feature but you need to specify the module code.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the module task at the specified INDEX.</p>
+</li>
+<li>
+<p>The index refers to the index number <strong>shown in the CLI</strong> (you can get that by entering 'listModuleTasks MODULE_CODE')</p>
+</li>
+<li>
+<p>The index must be a positive integer 1, 2, 3, …</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Only refer to the index of tasks shown in command line when performing this command. (not the one in calendar)
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>done m/cs2103 index/1</code><br>
+Marks the first module task for module cs2103 as done.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DoneWithModuleCode.png" alt="DoneWithModuleCode" width="790">
+</div>
+<div class="title">Figure 27. Marking a module task as done</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-task-breakdown-per-module-code-taskbreakdown-code"><a class="link" href="#view-task-breakdown-per-module-code-taskbreakdown-code">3.6.5. View task breakdown per module : <code>taskBreakdown</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the how many tasks are there in total and how many tasks haven&#8217;t been completed yet for each module.</p>
+</li>
+<li>
+<p>Format: <code>taskBreakdown</code></p>
+</li>
+<li>
+<p>Shows in the command line</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskBreakDown.png" alt="TaskBreakDown" width="790">
+</div>
+<div class="title">Figure 28. Show task breakdown</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="states-major-taken-code-major-code-coming-in-v2-0"><a class="link" href="#states-major-taken-code-major-code-coming-in-v2-0">3.6.6. States major taken : <code>major</code> (coming in v2.0)</a></h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="module-planning"><a class="link" href="#module-planning">3.7. Module planning</a></h3>
+<div class="sect3">
+<h4 id="view-module-requirement-code-modreq-code"><a class="link" href="#view-module-requirement-code-modreq-code">3.7.1. View module requirement: <code>modreq</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1091,7 +1506,7 @@ For this part, the UI hasn&#8217;t been implemented yet so that you can only vie
 </div>
 </div>
 <div class="sect3">
-<h4 id="module-information-code-module-code"><a class="link" href="#module-information-code-module-code">3.5.7. Module information: <code>module</code></a></h4>
+<h4 id="module-information-code-module-code"><a class="link" href="#module-information-code-module-code">3.7.2. Module information: <code>module</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1115,7 +1530,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="module-planning-code-mymodplan-code"><a class="link" href="#module-planning-code-mymodplan-code">3.5.8. Module planning: <code>mymodplan</code></a></h4>
+<h4 id="module-planning-code-mymodplan-code"><a class="link" href="#module-planning-code-mymodplan-code">3.7.3. Module planning: <code>mymodplan</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1142,12 +1557,12 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="diary"><a class="link" href="#diary">3.6. Diary</a></h3>
+<h3 id="diary"><a class="link" href="#diary">3.8. Diary</a></h3>
 <div class="paragraph">
 <p>The diary feature allows you to jot down any thoughts, be it for your personal life or for school work, or just a concept that you may not understand that you will have to revisit in the future.</p>
 </div>
 <div class="sect3">
-<h4 id="adding-an-diary-entry-code-diaryadd-code"><a class="link" href="#adding-an-diary-entry-code-diaryadd-code">3.6.1. Adding an diary entry: <code>diaryAdd</code></a></h4>
+<h4 id="adding-an-diary-entry-code-diaryadd-code"><a class="link" href="#adding-an-diary-entry-code-diaryadd-code">3.8.1. Adding an diary entry: <code>diaryAdd</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1160,7 +1575,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-diary-logs-code-diarylog-code"><a class="link" href="#viewing-diary-logs-code-diarylog-code">3.6.2. Viewing diary logs: <code>diaryLog</code></a></h4>
+<h4 id="viewing-diary-logs-code-diarylog-code"><a class="link" href="#viewing-diary-logs-code-diarylog-code">3.8.2. Viewing diary logs: <code>diaryLog</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1173,7 +1588,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-diary-entries-with-specified-entry-id-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-entry-id-code-diaryshow-code">3.6.3. Viewing diary entries with specified entry ID: <code>diaryShow</code></a></h4>
+<h4 id="viewing-diary-entries-with-specified-entry-id-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-entry-id-code-diaryshow-code">3.8.3. Viewing diary entries with specified entry ID: <code>diaryShow</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1186,7 +1601,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-diary-entries-with-specified-date-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-date-code-diaryshow-code">3.6.4. Viewing diary entries with specified date: <code>diaryShow</code></a></h4>
+<h4 id="viewing-diary-entries-with-specified-date-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-date-code-diaryshow-code">3.8.4. Viewing diary entries with specified date: <code>diaryShow</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1199,7 +1614,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-an-diary-entry-code-diarydelete-code"><a class="link" href="#deleting-an-diary-entry-code-diarydelete-code">3.6.5. Deleting an diary entry: <code>diaryDelete</code></a></h4>
+<h4 id="deleting-an-diary-entry-code-diarydelete-code"><a class="link" href="#deleting-an-diary-entry-code-diarydelete-code">3.8.5. Deleting an diary entry: <code>diaryDelete</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1212,7 +1627,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tagging-weather-code-diaryweather-code"><a class="link" href="#tagging-weather-code-diaryweather-code">3.6.6. Tagging weather: <code>diaryWeather</code></a></h4>
+<h4 id="tagging-weather-code-diaryweather-code"><a class="link" href="#tagging-weather-code-diaryweather-code">3.8.6. Tagging weather: <code>diaryWeather</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1225,7 +1640,7 @@ professor’s contact associated with the module.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tagging-mood-code-diarymood-code"><a class="link" href="#tagging-mood-code-diarymood-code">3.6.7. Tagging mood: <code>diaryMood</code></a></h4>
+<h4 id="tagging-mood-code-diarymood-code"><a class="link" href="#tagging-mood-code-diarymood-code">3.8.7. Tagging mood: <code>diaryMood</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1433,4 +1848,4 @@ e.g. <code>modreq computer science</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 10:43:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 12:26:20 UTC</div></div></div></body></html>

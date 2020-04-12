@@ -334,27 +334,20 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 <div class="sect2">
 <h3 id="module-search"><a class="link" href="#module-search">3.1. Module Search</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/SearchCommandUMLDiagram.png" alt="SearchCommandUMLDiagram" width="790">
+</div>
+</div>
 <div class="paragraph">
-<p>Our module search function consists of 2 main implementation</p>
+<p><strong>API</strong> :
+<a href="https://github.com/AY1920S2-CS2103T-W16-4/main/src/main/java/seedu/address/searcher/Search.java"><code>Search.java</code></a></p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>1.Retrieving information from NUSmods
-2.Retrieving information from cached data</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>The implementation allows user to retrieve details about a module from NUSmods if the user have not query about the module before.
-The search function will create a API call and retrieve the object as a JSON object, which will be decoded and parsed into different relevant attribute of the Module Class.</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>The moduleSearch function would first search its storage in data/addressbook.json whether the module information is queried before.
-If queried, the information would be retrieved from the storage instead of querying from the internet.
-This allows user to plan for module if they have queried the module before without the need for Internet access.</pre>
-</div>
+<div class="paragraph">
+<p>Module Search function returns <code>module</code> object that contains useful information for each module for the rest of the application to use.
+The function first checks if the information is available in local cache, and if it isnt, pulls it from NUSmods API.
+The JSON object pulled from the web is then parsed into a <code>module</code> object.
+This implementation means that a local cache of the added modules will be available even if the user is offline.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1147,4 +1140,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 10:43:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 12:26:20 UTC</div></div></div></body></html>
