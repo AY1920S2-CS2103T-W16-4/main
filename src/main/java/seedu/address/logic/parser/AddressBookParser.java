@@ -39,12 +39,15 @@ import seedu.address.logic.commands.modulecommand.DeleteModuleCommand;
 import seedu.address.logic.commands.modulecommand.GradeCommand;
 import seedu.address.logic.commands.taskcommand.TaskBreakdownCommand;
 import seedu.address.logic.commands.taskcommand.addcommand.AddDeadlineCommand;
+import seedu.address.logic.commands.taskcommand.addcommand.AddEventCommand;
 import seedu.address.logic.commands.taskcommand.addcommand.AddToDoCommand;
 import seedu.address.logic.commands.taskcommand.addcommand.ModuleTaskCommand;
+import seedu.address.logic.commands.taskcommand.deletecommand.DeleteEventCommand;
 import seedu.address.logic.commands.taskcommand.deletecommand.DeleteTaskCommand;
 import seedu.address.logic.commands.taskcommand.donecommand.DoneCommand;
 import seedu.address.logic.commands.taskcommand.findcommand.FindTasksCommand;
 import seedu.address.logic.commands.taskcommand.listcommand.ListAllTaskCommand;
+import seedu.address.logic.commands.taskcommand.listcommand.ListEventCommand;
 import seedu.address.logic.commands.taskcommand.listcommand.ListModuleTaskCommand;
 import seedu.address.logic.commands.taskcommand.sortcommand.SortTasksCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -180,6 +183,15 @@ public class AddressBookParser {
 
         case ModuleTaskCommand.COMMAND_WORD:
             return new ModuleTaskCommandParser().parse(arguments);
+
+        case AddEventCommand.COMMAND_WORD:
+            return new AddEventCommandParser().parse(arguments);
+
+        case DeleteEventCommand.COMMAND_WORD:
+            return new DeleteEventCommandParser().parse(arguments);
+
+        case ListEventCommand.COMMAND_WORD:
+            return new ListEventCommand();
 
         case MajorCommand.COMMAND_WORD:
             return new MajorCommandParser().parse(arguments);

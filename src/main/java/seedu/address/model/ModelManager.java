@@ -48,6 +48,7 @@ public class ModelManager implements Model {
     private final FilteredList<Notes> filesInFolder;
     private ModuleBook moduleBook;
     private FilteredList<Task> deadlineTaskList;
+    private FilteredList<Task> eventList;
     private final FilteredList<NusModule> moduleListTaken;
     private Profile studentProfile;
 
@@ -435,6 +436,55 @@ public class ModelManager implements Model {
         Task.sortDeadlineTaskList(param);
     }
 
+
+    //=========== Event Module ==================================================================================
+
+    @Override
+    public boolean isEmptyEvent(Task event) {
+        return false;
+    }
+
+    /**
+     * Returns a list of task in the deadline task list
+     */
+    @Override
+    public ObservableList<Task> getEventList() {
+        return eventList;
+    }
+
+    @Override
+    public void updateEventList(Predicate<Task> predicate) {
+        requireNonNull(predicate);
+        eventList.setPredicate(predicate);
+    }
+
+    @Override
+    public void addEvent(Task event) {
+
+        Task.addEvent(event);
+    }
+
+    @Override
+    public Task doneEvent(Task event) {
+        Task.getEventList().get(event.getIndex() - 1).markAsDone();
+
+        Task done = Task.getEventList().get(event.getIndex() - 1);
+        Task.getEventList().remove(event.getIndex() - 1);
+        Task.getEventList().add(done);
+        return done;
+    }
+
+    @Override
+    public void sortEventList() {
+        Task.sortEventList();
+    }
+
+    @Override
+    public Task deleteEvent(Task event) {
+        Task.getEventList().remove(event);
+        Task.removeTaskPerDate(event.getDate(), event);
+        return event;
+    }
 
     //=========== TD Module ==================================================================================
 

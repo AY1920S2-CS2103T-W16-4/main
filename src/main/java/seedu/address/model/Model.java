@@ -221,6 +221,30 @@ public interface Model {
      */
     void updateDeadlineTaskList(Predicate<Task> predicate);
 
+    //=========== Event ==================================================================================
+
+    void addEvent(Task deadline);
+
+    void sortEventList();
+
+    Task deleteEvent(Task event);
+
+    Task doneEvent(Task event);
+
+    /**
+     * Checks if content of event is empty
+     */
+    boolean isEmptyEvent(Task event);
+
+    /** Returns an list of Events that is currently in the list */
+    ObservableList<Task> getEventList();
+
+    /**
+     * Updates the deadline list by the given {@code predicate}.
+     * @throws NullPointerException if {@code predicate} is null.
+     */
+    void updateEventList(Predicate<Task> predicate);
+
     //=========== TD ==================================================================================
 
     /**

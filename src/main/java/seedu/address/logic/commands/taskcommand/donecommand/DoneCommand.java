@@ -9,7 +9,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 
 /**
- * Mark a task as done from the calendar or from certain module in profile tab.
+ * Mark a task or event as done from the calendar or from certain module in profile tab.
  */
 public abstract class DoneCommand extends Command {
     public static final String COMMAND_WORD = "done";

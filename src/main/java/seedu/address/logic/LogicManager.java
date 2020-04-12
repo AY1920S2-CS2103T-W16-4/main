@@ -107,6 +107,11 @@ public class LogicManager implements Logic {
     }
 
     @Override
+    public ObservableList<Task> getEventList() {
+        return model.getEventList();
+    }
+
+    @Override
     public ObservableList<NusModule> getModulesListTaken() {
         return model.getModulesListTaken();
     }

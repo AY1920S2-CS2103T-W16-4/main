@@ -29,6 +29,8 @@ public class CliSyntax {
     public static final Prefix PREFIX_MODULETASK_TIMING = new Prefix("date/");
     public static final Prefix PREFIX_PRIORITY = new Prefix("pri/");
     public static final Prefix PREFIX_SORTING = new Prefix("by/");
+    public static final Prefix PREFIX_EVENT_DATE = new Prefix("on/");
+
 
     /* Diary Prefixes*/
     public static final Prefix PREFIX_ENTRY_CONTENT = new Prefix("ec/");
