@@ -28,7 +28,7 @@ public class AddToDoCommandParser implements Parser<AddToDoCommand> {
         if (!arePrefixesPresent(argMultimap, PREFIX_TASK_DESC)
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddDeadlineCommand.MESSAGE_USAGE));
-        }                                                               //is this supposed to be addtodocommand?
+        } //is this supposed to be addtodocommand instead of adddeadlinecommand?
 
         Task todo = ParserUtil.parseTodo(argMultimap.getValue(PREFIX_TASK_DESC).get());
 

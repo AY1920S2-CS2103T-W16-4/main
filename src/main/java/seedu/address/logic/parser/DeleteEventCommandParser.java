@@ -1,13 +1,15 @@
 package seedu.address.logic.parser;
 
+import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_INDEX;
+
+import java.util.stream.Stream;
+
 import seedu.address.logic.commands.taskcommand.deletecommand.DeleteEventCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.calender.Task;
 
-import java.util.stream.Stream;
 
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_INDEX;
 
 /**
  * Parses input arguments and creates a new DeleteModuleCommand object

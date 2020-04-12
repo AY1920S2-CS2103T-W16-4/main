@@ -1,14 +1,19 @@
 package seedu.address.logic.parser;
 
-import seedu.address.logic.commands.taskcommand.addcommand.AddEventCommand;
-import seedu.address.logic.parser.*;
-import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.calender.Task;
+import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_EVENT_DATE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_DESC;
 
 import java.util.stream.Stream;
 
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.*;
+import seedu.address.logic.commands.taskcommand.addcommand.AddEventCommand;
+import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.calender.Task;
+
+
+/**
+ * Parses input arguments and creates a new AddCommand object
+ */
 
 public class AddEventCommandParser implements Parser<AddEventCommand> {
     /**

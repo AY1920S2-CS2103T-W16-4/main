@@ -1,15 +1,16 @@
 package seedu.address.logic.commands.taskcommand.deletecommand;
 
-import seedu.address.logic.commands.Command;
+import static java.util.Objects.requireNonNull;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_TASK;
+
+import java.util.List;
+
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.calender.Task;
 
-import java.util.List;
 
-import static java.util.Objects.requireNonNull;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_TASK;
 
 /**
  * Deletes an event.
