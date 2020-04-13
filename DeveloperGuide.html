@@ -24,8 +24,8 @@
 <ul class="sectlevel2">
 <li><a href="#module-search">3.1. Module Search</a></li>
 <li><a href="#profile-module-book-feature">3.2. Profile (Module Book) feature</a></li>
-<li><a href="#calendar-feature">3.3. Calendar Feature</a></li>
-<li><a href="#notes-feature">3.4. Notes Feature</a></li>
+<li><a href="#calendar-feature-xinwei">3.3. Calendar Feature (Xinwei)</a></li>
+<li><a href="#notes-feature-xinwei">3.4. Notes Feature (Xinwei)</a></li>
 <li><a href="#diary">3.5. Diary</a></li>
 <li><a href="#logging">3.6. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
@@ -447,19 +447,113 @@ i.e. Any modification in module tasks will be updated in <code>Task</code> which
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar-feature"><a class="link" href="#calendar-feature">3.3. Calendar Feature</a></h3>
+<h3 id="calendar-feature-xinwei"><a class="link" href="#calendar-feature-xinwei">3.3. Calendar Feature (Xinwei)</a></h3>
+<div class="paragraph">
+<p>NUSProductivity consist of a calendar feature that provides an overarching view of all tasks, allowing user to view their uncompleted tasks and whether there is a task present on the date itself.</p>
+</div>
+<div class="paragraph">
+<p>The calendar feature allows users to add either a <code>deadline</code> or a <code>Module Task</code> to the calendar, which inherits from a super class <code>Task</code></p>
+</div>
 <div class="sect3">
 <h4 id="implementation-3"><a class="link" href="#implementation-3">3.3.1. Implementation</a></h4>
 <div class="paragraph">
-<p>The calendar feature allows users to add either a <code>deadline</code> or a <code>Module Task</code> to the calendar.</p>
+<p>The implementation of the main Calender tab is facilitated a <code>SplitPane</code> in the MainWindow class consisting of 2 main classes, <code>CalenderListPanel</code> and <code>CalenderPanel</code></p>
 </div>
 <div class="paragraph">
-<p>The implementation of the main calender is facilitated by the CalenderMainPanel class, which serves as the main container for this feature.</p>
+<p>The <code>CalenderListPanel</code> on the right contains a list of <code>Task</code> added to the calendar will the <code>CalenderPanel</code> shows the actual calender view for the current month.</p>
+</div>
+<div class="paragraph">
+<p>The diagram below describes the class structure of the calendar class structure.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CalenderUIClassDiagram.png" alt="CalenderUIClassDiagram">
+</div>
+<div class="title">Figure 12. Calender UI Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>Upon initialisation of CalenderPanel, the CalenderPanel would call its 2 methods of <code>setMonth()</code> and <code>setDate()</code> to create <code>CalenderDate</code> instances starting from the first day of the current month.</p>
+</div>
+<div class="paragraph">
+<p>Then, upon initialisation of CalenderListPanel, it will create instances of <code>CalenderDeadline</code> by getting the <code>ObservableList&lt;Task&gt;</code> from <code>getDeadlineTaskList</code>.</p>
+</div>
+<div class="paragraph">
+<p>This will call upon the inner class in <code>CalenderListPanel</code>, <code>DeadlineListViewCell updateItem</code> method which allows the program to check whether there is any deadline due on any on the date in <code>calenderDatesArrayList</code>.</p>
+</div>
+<div class="paragraph">
+<p>If a <code>deadline</code> or a <code>Module Task</code> is found, <code>setPriorityColour()</code> and <code>setStatusColour()</code> will be invoked to update the Calendar display to change the colour of the dots based on the priority levels mentioned in the User Guide.</p>
+</div>
+<div class="paragraph">
+<p>Every time a <code>Task</code> is modified, the <code>DeadlineListViewCell updateItem</code> method will be invoked to update any changes to the display.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-logic"><a class="link" href="#implementation-logic">3.3.2. Implementation logic</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementation: both deadline and module Task are inherits from the super class Task. A task is created when the <code>moduleTask</code> or <code>deadlineAdd</code> command is invoked.</p>
+</li>
+<li>
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user wants to add a task to the program.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddTaskSequenceDiagram.png" alt="AddTaskSequenceDiagram">
+</div>
+<div class="title">Figure 13. Add task sequence diagram</div>
+</div>
+<div class="paragraph">
+<p>The <code>addDeadlineTask</code> method will modify the <code>ObservableList&lt;Task&gt;</code> supplied to the <code>CalenderListPanel</code>, invoking the <code>updateItem</code> method, causing a change in the user display.</p>
+</div>
+<div class="paragraph">
+<p>All other calendar functions works similarly to <code>addDeadlineTask</code> as shown in the Activity diagram below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram">
+</div>
+<div class="title">Figure 14. Calendar Activity Diagram</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.3.3. Design Considerations:</a></h4>
+<div class="paragraph">
+<p>Aspect 1: Method of displaying the dot indicator</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current solution</strong>: Currently, the dot is being shown by getting the <code>static HashMap</code> from <code>Task</code> as this <code>HashMap</code> stores a key-pair value of date - Tasks.</p>
+</li>
+<li>
+<p>By making changes to the <code>deadlineTaskList</code>, we also edited the <code>HashMap</code>. This allows everytime a <code>updateItem</code> method call to check whether a task is present, and if so the priority of the task.</p>
+</li>
+<li>
+<p><strong>Alternative 1</strong>: Store all tasks of the current date in <code>CalendarDate</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Allows for tasks to be accessed locally and not through a static variable from the main class <code>Task</code>.</p>
+</li>
+<li>
+<p>Cons: Implementation may be more complex as more parameters have to be passed to <code>CalenderDate</code> and also ensuring that the list of task passed in <code>CalendarDate</code> is up to date.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Reason for chosen implementation:</strong>
+The current solution is easier to implement as everything is done in the relevant functions such as <code>deadlineAdd</code> or <code>taskDelete</code>. The only thing that the program needs to check is whether a date in the <code>HashMap</code> contains a task and if so, the priority of the task. With the alternative implementation, we will need to pass in a <code>List</code> for each of the 31 dates which may be very troublesome to keep track of especially when we are editing the main task list. This ease of implementation is the deciding factor when choosing which method to implement.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="notes-feature"><a class="link" href="#notes-feature">3.4. Notes Feature</a></h3>
+<h3 id="notes-feature-xinwei"><a class="link" href="#notes-feature-xinwei">3.4. Notes Feature (Xinwei)</a></h3>
 <div class="sect3">
 <h4 id="implementation-4"><a class="link" href="#implementation-4">3.4.1. Implementation</a></h4>
 <div class="paragraph">
@@ -471,17 +565,26 @@ i.e. Any modification in module tasks will be updated in <code>Task</code> which
 <div class="paragraph">
 <p>Notes features includes <code>notesOpen</code>, <code>notesCreate</code>, <code>notesDelete</code> and <code>notesList</code>.</p>
 </div>
+<div class="paragraph">
+<p>The diagram below shows the sequence diagram of a <code>notesOpen</code> command with the other methods working similarly to the stated method.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/notesOpenSequenceDiagram.png" alt="notesOpenSequenceDiagram" width="600">
+</div>
+<div class="title">Figure 15. Notes Open Sequence Diagram</div>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/NotesList.png" alt="NotesList" width="600">
 </div>
-<div class="title">Figure 12. Notes List Activity Diagram</div>
+<div class="title">Figure 16. Notes List Activity Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/NotesCreation.png" alt="NotesCreation" width="600">
 </div>
-<div class="title">Figure 13. Notes Open Activity Diagram</div>
+<div class="title">Figure 17. Notes Open Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>notesCreate and notesDelete activity diagram works similar to notesOpen.</p>
@@ -490,7 +593,7 @@ i.e. Any modification in module tasks will be updated in <code>Task</code> which
 <div class="sect3">
 <h4 id="pathing"><a class="link" href="#pathing">3.4.2. Pathing</a></h4>
 <div class="paragraph">
-<p>The Path interface in java allows for 2 implementation of pathing namely:</p>
+<p>Our program allows the user to specify different pathing system, namely:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -506,7 +609,7 @@ i.e. Any modification in module tasks will be updated in <code>Task</code> which
 <div class="content">
 <img src="images/absVSrel.png" alt="absVSrel" width="600">
 </div>
-<div class="title">Figure 14. Notes Pathing Diagram</div>
+<div class="title">Figure 18. Notes Pathing Diagram</div>
 </div>
 <div class="paragraph">
 <p>AbsolutePath will take the path given from <code>usr/</code>.</p>
@@ -1155,4 +1258,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:25:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:45:05 UTC</div></div></div></body></html>
