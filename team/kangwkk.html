@@ -1,0 +1,1100 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Kang Wangkai - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">NUSProductivity</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Kang Wangkai - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-nusproductivity"><a class="link" href="#project-nusproductivity">PROJECT: NUSProductivity</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NUSProductivity is a desktop application for NUS students. The user interacts with it using a CLI, and it has a GUI creasted with JavaFX. The application is intended to help NUS students solve their productivity issues and ease student&#8217;s daily task in NUS.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement 1</strong>: Module Book feature</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows users to be able to manage the modules they have taken or are taking in NUS. (contain functionality to
+add module, delete module, update grades and calculate CAP based on NUS grading system)</p>
+</li>
+<li>
+<p>Justification: This feature improves the product significantly because a user can track what modules they have taken and what grades they have gotten. Moreover, it allows users to get their CAP immediately and can change grade to
+see how the CAP will change accordingly to see room for improvements.</p>
+</li>
+<li>
+<p>Highlights: This enhancement makes it very convenient for users to store their modules and getting the cap. It required an in-depth analysis of design alternatives. The implementation too was challenging as some of the functionality relies on other feature of this product (module search feature)
+so I need to be familiar with that feature&#8217;s implementation first.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major enhancement 2</strong>: Add in functionality to manage module tasks</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: This feature allow users to create, delete, mark as done and list all tasks related to any module users have added using the previous feature.</p>
+</li>
+<li>
+<p>Justification: This feature improves the product significantly because a user will be able to manage their tasks for each module separately and it basically avoid users be overwhelmed with lots of tasks from different modules.</p>
+</li>
+<li>
+<p>Highlights: This enhancement requires a comprehensive understanding to the original product because it needs to add in codes for logic, model and storage part of the program.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major enhancement 3</strong>: Add in storage for modules and their tasks and synchronize the module tasks updated to the calendar feature.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: This feature allow users to store modules and module tasks they added in before and the module tasks created will be allow updated in the whole task list in Calendar feature.</p>
+</li>
+<li>
+<p>Justification: This feature improves the product significantly because users do not need to input everything every time they relaunch and makes the module task feature and calendar feature live together.</p>
+</li>
+<li>
+<p>Highlights: The implementation was very challenging because it depends on other feature which I need to get familiar with and need to change original code to fit to calendar feature after discussing with teammates which actually differs with my original idea.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement 1</strong>: Add some commands and its parsers to Calendar feature</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Adds in command skeletons such as sorting and finding tasks commands and their parsers, which let the user be able to sort and find tasks in Calendar.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: <a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=kangwkk&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">tp dashboard</a></p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Setting up team organization and team repository</p>
+</li>
+<li>
+<p>Enable Travis CI for the team repo.</p>
+</li>
+<li>
+<p>Set up auto-publishing of docs for the team repo.</p>
+</li>
+<li>
+<p>Open up issues for user stories and manage milestones.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added contents for user guide: <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/pull/12">#12</a>, <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/pull/199">#199</a>, <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/pull/203">#203</a></p>
+</li>
+<li>
+<p>Added contents for developer guide: <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/pull/41">#41</a>, <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/pull/205">#205</a>, <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/pull/205">#208</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Reviewing/mentoring contribution:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Gave feedbacks and reviewed on code pull requests <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/pull/45">#45</a>, <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/pull/185">#185</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com/nus-cs2103-AY1920S2/addressbook-level3/pull/30">#30</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="profile-module-book-part-1-manage-your-modules"><a class="link" href="#profile-module-book-part-1-manage-your-modules">Profile / Module Book (Part 1: Manage your modules)</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>This feature allows individuals to see their own profile, their current cap and the all modules that the individual have taken and all the grades gotten.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ProfileMainScreen.png" alt="ProfileMainScreen" width="790">
+</div>
+<div class="title">Figure 1. Main Screen for profile tab</div>
+</div>
+<div class="sect3">
+<h4 id="adding-a-module-code-moduleadd-code"><a class="link" href="#adding-a-module-code-moduleadd-code">Adding a module : <code>moduleAdd</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a module you have taken before or is taking now and store your grade for each module if you want.</p>
+</li>
+<li>
+<p>Format: <code>moduleAdd m/MODULE_CODE [g/GRADE]</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The grade field is optional. You can state your grade when you add in modules and
+also can update or add in your grade later.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You can only add in modules which are valid modules that can be taken in NUS.</p>
+</li>
+<li>
+<p>All other module codes inputted will be considered as invalid and the program will not allow you to add in.</p>
+</li>
+<li>
+<p>This requirement is not case sensitive, which means for example, both "CS2103" and "cs2103" are considered valid module code.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The program checks whether a module code provided is valid or not by using the search function in module planning feature, which fetch information about
+modules online. If the search function fails to fetch any information, the module code will be treated as invalid.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>moduleAdd m/CS2103</code></p>
+</li>
+<li>
+<p><code>moduleAdd m/cs1101s g/A</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddModule.png" alt="AddModule" width="790">
+</div>
+<div class="title">Figure 2. Adding a module</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-module-code-moduledel-code"><a class="link" href="#deleting-a-module-code-moduledel-code">Deleting a module : <code>moduleDel</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes a module you have added to the program before from the profile tab.</p>
+</li>
+<li>
+<p>Format: <code>moduleDel MODULE_CODE</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the module specified from the module book (profile)</p>
+</li>
+<li>
+<p>You can only delete the module which you have added into the program before.</p>
+</li>
+<li>
+<p>Module code inputted is not case sensitive ('moduleDel cs2103' is the same as 'moduleDel CS2103')</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>moduleDel CS2103</code><br>
+Delete CS2103 from module book if you have added it before.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteModule.png" alt="DeleteModule" width="790">
+</div>
+<div class="title">Figure 3. Deleting a module</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-the-grade-of-a-module-code-grade-code"><a class="link" href="#editing-the-grade-of-a-module-code-grade-code">Editing the grade of a module : <code>grade</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Updates or adds the grade of certain modules you have added to the program.</p>
+</li>
+<li>
+<p>Format: <code>grade m/MODULE_CODE g/GRADE</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Updates the grade of the specified module as the grade you provided now.</p>
+</li>
+<li>
+<p>You can only update the grade of module which you have added into the program before.</p>
+</li>
+<li>
+<p>Grade inputted should be a valid grade in NUS&#8217;s grading system.</p>
+</li>
+<li>
+<p>Both module code and grade inputted is not case sensitive.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+List of all valid grade: A+, A, A-, B+, B, B-, C+, C, D+, D, F, S and U.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>grade m/CS1101S g/S</code></p>
+</li>
+<li>
+<p><code>grade m/CS2103 g/A</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Grade.png" alt="Grade" width="790">
+</div>
+<div class="title">Figure 4. Updating the grade of a module</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-current-cap-code-cap-code"><a class="link" href="#view-current-cap-code-cap-code">View current CAP : <code>cap</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows your current cap based on the grades of modules you have stated.</p>
+</li>
+<li>
+<p>Format: <code>cap</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Calculates your current CAP.</p>
+</li>
+<li>
+<p>CAP = Sum (module grade point x modular credits for the module) / Sum (modular credits)</p>
+</li>
+<li>
+<p>The calculation strictly follow the grading system of NUS.</p>
+</li>
+<li>
+<p>Shows current CAP in in result display panel, CAP on UI will only get updated after you restart.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You don&#8217;t need to indicate the modular credits for each module when you add it in because the program will fetch that infomation online.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Cap.png" alt="Cap" width="790">
+</div>
+<div class="title">Figure 5. View current CAP</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="profile-module-book-part-2-manage-your-tasks-separately-for-each-module"><a class="link" href="#profile-module-book-part-2-manage-your-tasks-separately-for-each-module">Profile / Module Book (Part 2: Manage your tasks separately for each module)</a></h3>
+<div class="paragraph">
+<p>Most of the functionality here has been integrate into the Calendar feature but these commands left here still can be used.
+You can give it a try if you want.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These tasks related to certain module are called 'module task' from now on.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+All commands that make changes to the module tasks will be synchronous for both module book and the task list in calendar feature.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+For this part, the UI hasn&#8217;t been implemented yet but you are able to see the updated list of module tasks in command line.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Most functionality covered in this part can also be achieved by some commands in Calendar feature above. Just provides users
+with an alternative way. (The orders of tasks shown are different. Thus, the index inputted may be different to achieve the same modification.)
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="creating-a-module-task-code-moduletask-code"><a class="link" href="#creating-a-module-task-code-moduletask-code">Creating a module task : <code>moduleTask</code></a></h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command has been covered in Calendar feature already.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a module task related to certain module you have added before in module book.</p>
+</li>
+<li>
+<p>You need to indicate which module the task is related to, its priority level (how important it is) and also its deadline or scheduled timing.</p>
+</li>
+<li>
+<p>Format: <code>moduleTask desc/DESCRIPTION m/MODULE_CODE date/DEADLINE_OR_SCHEDULED_TIMING pri/PRIORITY</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The date inputted should be in the format: DD-MM-YYYY.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>This command allows you to create tasks to certain module you added to the program before.</p>
+</li>
+<li>
+<p>Stores the task added in the module book and automatically adds and shows on the Calender.</p>
+</li>
+<li>
+<p>You will get an updated list of tasks related to that specific module after adding. (shown in command line)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>moduleTask desc/essay m/CS2101 date/02-04-2020 pri/3</code><br>
+Add a module task as specified in module book and also shows on calendar.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModuleTaskProfile.png" alt="ModuleTaskProfile" width="790">
+</div>
+<div class="title">Figure 6. Adding a module task for certain module</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModuleTaskCalendar.png" alt="ModuleTaskCalendar" width="790">
+</div>
+<div class="title">Figure 7. module task added will also be shown on calendar</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-all-module-tasks-of-certain-module"><a class="link" href="#listing-all-module-tasks-of-certain-module">Listing all module tasks of certain module</a></h4>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can also view module tasks in calendar using <code>findModule m/MODULE_CODE</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lists all module tasks related to the specific module.</p>
+</li>
+<li>
+<p>Format: <code>listModuleTasks MODULE_CODE</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Lists all module tasks related to that module in <strong>in result display panel</strong>.</p>
+</li>
+<li>
+<p>Module code inputted must be valid module code you have added in before.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listModuleTasks CS2103</code><br>
+Lists all module tasks of CS2103.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ListModuleTask.png" alt="ListModuleTask" width="790">
+</div>
+<div class="title">Figure 8. Showing all module tasks related to specified module</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-module-task-code-taskdelete-code"><a class="link" href="#deleting-a-module-task-code-taskdelete-code">Deleting a module task : <code>taskDelete</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the specified module tasks for certain module from the module book and calendar.</p>
+</li>
+<li>
+<p>Format: <code>taskDelete m/MODULE_CODE index/INDEX</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command is similar to the <code>taskDelete</code> command in Calendar feature but you need to specify the module code.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the module task at the specified INDEX.</p>
+</li>
+<li>
+<p>The index refers to the index number <strong>shown in result display panel</strong> (you can get that by entering 'listModuleTasks MODULE_CODE')</p>
+</li>
+<li>
+<p>The index must be a positive integer 1, 2, 3, …</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Only refer to the index of tasks shown in command line when performing this command. (not the one in calendar)
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>taskDelete m/CS2103 index/1</code><br>
+Deletes the first module task for CS2103 in module book and Calendar.<br>
+<strong>(First task in module book and may not be the first in Calendar even after performing <code>findTask m/cs2103</code>)</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/TaskDeleteWirhModuleCode.png" alt="TaskDeleteWirhModuleCode" width="790">
+</div>
+<div class="title">Figure 9. Deleting a module task</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="marking-a-module-task-as-done-code-done-code"><a class="link" href="#marking-a-module-task-as-done-code-done-code">Marking a module task as done : <code>done</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Marks the specified module tasks for certain module as done in the module book and calendar.</p>
+</li>
+<li>
+<p>Format: <code>done m/MODULE_CODE index/Index</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command is similar to the <code>done</code> command in Calendar feature but you need to specify the module code.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the module task at the specified INDEX.</p>
+</li>
+<li>
+<p>The index refers to the index number <strong>shown in the in result display panel</strong> (you can get that by entering 'listModuleTasks MODULE_CODE')</p>
+</li>
+<li>
+<p>The index must be a positive integer 1, 2, 3, …</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Only refer to the index of tasks shown in result display panel when performing this command. (not the one in calendar)
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>done m/cs2103 index/1</code><br>
+Marks the first module task for module cs2103 as done.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DoneWithModuleCode.png" alt="DoneWithModuleCode" width="790">
+</div>
+<div class="title">Figure 10. Marking a module task as done</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<strong>Clarification for <code>taskDelete</code> and <code>done</code> commands.</strong><br>
+If you did not provide specific module code in the command, the index required refers to the index of list of tasks shown in calendar tab. Otherwise,
+it refers to the index of list of module tasks shown in the result display panel.<br>
+<strong>For example:</strong><br>
+<code>taskDelete m/cs2103 index/1</code> will delete the first task as shown in Figure 26<br>
+<code>taskDelete index/1</code> will delete the first task shown in the task list in calendar tab.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-task-breakdown-per-module-code-taskbreakdown-code"><a class="link" href="#view-task-breakdown-per-module-code-taskbreakdown-code">View task breakdown per module : <code>taskBreakdown</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the how many tasks are there in total and how many tasks haven&#8217;t been completed yet for each module.</p>
+</li>
+<li>
+<p>Format: <code>taskBreakdown</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/TaskBreakDown.png" alt="TaskBreakDown" width="790">
+</div>
+<div class="title">Figure 11. Show task breakdown</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="states-major-taken-code-major-code-coming-in-v2-0"><a class="link" href="#states-major-taken-code-major-code-coming-in-v2-0">States major taken : <code>major</code> (coming in v2.0)</a></h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="profile-module-book-feature-wangkai"><a class="link" href="#profile-module-book-feature-wangkai">Profile (Module Book) feature (Wangkai)</a></h3>
+<div class="paragraph">
+<p>This profile feature allows users to manage the modules they have taken before or is taking now in NUS.
+In details, users are able to store their module taken into the program with the grades for each module stated if applicable and
+can also store tasks which are related to each module.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>This feature is implemented using a panel on the main screen of profile tab with a list of modules that is updated with every command that
+may affect module list (such as add, delete or grade).</p>
+</li>
+<li>
+<p>The module book (profile) currently supports following features.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adds in or deletes modules and display the list of modules in profile tab.</p>
+</li>
+<li>
+<p>Updates user&#8217;s grades for each module and get CAP calculated immediately.</p>
+</li>
+<li>
+<p>Manage the tasks related to each module (module tasks) through CLI.</p>
+</li>
+<li>
+<p>Any modification to module tasks will be updated in the Calendar tab and also show messages on the result display panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/NusModuleClassDiagram.png" alt="NusModuleClassDiagram" width="790">
+</div>
+<div class="title">Figure 12. Class diagram of structure and relations of NusModule, ModuleBook and relevant classes.</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As shown in the class diagram above, modules are created by a class called <code>NusModule</code>. Every instance of <code>NusModule</code> contains a <code>ModuleCode</code> object, a
+<code>Grade</code> object (optional) and a list of <code>ModuleTask</code> objects.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The module book only accept modules that are provided in NUS and will check the module code the user want to add is valid or not by using the search feature mentioned above.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All possible actions mentioned above such as creating modules, deleting modules and adding tasks to modules are implemented through
+the <code>ModuleBook</code> class.</p>
+</li>
+<li>
+<p>The program will automatically save any modification to module book after each command is executed by calling the <code>saveModuleBook</code> method
+in <code>Storage</code>.</p>
+</li>
+<li>
+<p>For example, modules are created with <code>moduleAdd</code> command, followed by the module code and grade. (if applicable)<br>
+Our program will check if the module code is valid by using the search feature above and whether the module has already been added in our module book.
+And then call method <code>addModule</code> in <code>ModuleBook</code> to create the module as required. Finally, it will automatically save the module added just now.</p>
+</li>
+<li>
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user want to add a module in our program.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModuleAddSequenceDiagram.png" alt="ModuleAddSequenceDiagram" width="950">
+</div>
+<div class="title">Figure 13. Sequence diagram when moduleAdd command is executed</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/PartOfModelClassDiagramForProfile.png" alt="PartOfModelClassDiagramForProfile" width="400">
+</div>
+<div class="title">Figure 14. Relation between ModuleBook and Task</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The program will synchronize the modification to module tasks in <code>ModuleBook</code> with that shown in Calendar tab through <code>ModelManager</code> as shown above.
+i.e. Any modification in module tasks will be updated in <code>Task</code> which is the main class Calendar feature depends on. (see more details in Calendar feature)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">Example Use Scenario</a></h4>
+<div class="paragraph">
+<p>Given below are example usages scenario and how the Module Book feature behaves at each step.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+User can manage their tasks in different ways.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Example 1</strong>:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user execute <code>listModuleTasks</code> command.</p>
+</li>
+<li>
+<p>The program check whether the module code provided has been recorded or not.</p>
+</li>
+<li>
+<p>Display the list of tasks.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Below is an activity diagram describing the events that will happen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ListModuleTasksActivityDiagram.png" alt="ListModuleTasksActivityDiagram" width="790">
+</div>
+<div class="title">Figure 15. Activity diagram for list module tasks command</div>
+</div>
+<div class="paragraph">
+<p><strong>Example 2</strong>:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user execute <code>done</code> command.</p>
+</li>
+<li>
+<p>The program check whether the input is valid or not.</p>
+</li>
+<li>
+<p>The task specified will be deleted accordingly.</p>
+</li>
+<li>
+<p>Synchronize between module book and calendar.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Below is an activity diagram describing the events that will happen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DoneCommandActivityDiagram.png" alt="DoneCommandActivityDiagram" width="850">
+</div>
+<div class="title">Figure 16. Activity diagram for done command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect 1</strong>: How the user add in a module into module book for future management ?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current solution</strong>: Only need to provide the module code to add module and it will fetch the information about the module using Module Search feature automatically.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros</strong>: Users don&#8217;t need to provide any other information (such as modular credit of the module) for other functionality such as calculating the CAP.</p>
+</li>
+<li>
+<p><strong>Pros</strong>: The module information will be cached locally after you add the module once and this can used for future development.</p>
+</li>
+<li>
+<p><strong>Cons</strong>: Need Internet connection when you add in certain module for the first time.</p>
+</li>
+<li>
+<p><strong>Cons</strong>: Highly depends on the Module Search feature.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative Solution</strong>: Let the user enter all information required for each module when they add it in. (such as modular credit)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros</strong>: More flexible, not depends on other features.</p>
+</li>
+<li>
+<p><strong>Cons</strong>: Very tedious for users to add in lots of modules.</p>
+</li>
+<li>
+<p><strong>Cons</strong>: Need to ask user to provide new information when more new functionality is added in the future.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Reason for chosen implementation</strong>:<br>
+The current implementation is much more user friendly and have more potential for future development. The implement can become
+very ideal if the Module Search feature works properly.</p>
+</div>
+<div class="paragraph">
+<p><strong>Aspect 2</strong>: How the user manage their tasks for each module?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current solution</strong>: For each module added, it contains a list of <code>ModuleTask</code>. Also update the calendar when add task in.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros</strong>: Users can either view their tasks for each module separately or view all the tasks shown in Calendar tab.</p>
+</li>
+<li>
+<p><strong>Pros</strong>: More nice-looking that the user can view all the deadlines on calendar.</p>
+</li>
+<li>
+<p><strong>Cons</strong>: Prone to bugs during the synchronization of module book and calendar.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative solution</strong>: Only store the list of <code>ModuleTask</code> in module book and do not update in Calendar tab.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros</strong>: Easier to implement and can avoid some synchronization bugs.</p>
+</li>
+<li>
+<p><strong>Cons</strong>: Users can not gain a view of the whole pictures with all tasks shown on calendar.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Reason for chosen implementation</strong>:<br>
+The current implementation updates the module tasks added in onto the calender and provides the users different ways
+to manage their tasks. (as a whole or separately for each module)</p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 10:50:54 UTC</div></div></div></body></html>
