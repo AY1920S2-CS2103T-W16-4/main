@@ -26,7 +26,7 @@
 <li><a href="#profile-module-book-feature-wangkai">3.2. Profile (Module Book) feature (Wangkai)</a></li>
 <li><a href="#calendar-feature-xinwei">3.3. Calendar Feature (Xinwei)</a></li>
 <li><a href="#notes-feature-xinwei">3.4. Notes Feature (Xinwei)</a></li>
-<li><a href="#diary">3.5. Diary</a></li>
+<li><a href="#diary-feature-jiangwei">3.5. Diary feature (Jiangwei)</a></li>
 <li><a href="#event-feature-proposed-xuan-xin">3.6. Event Feature (Proposed) (Xuan Xin)</a></li>
 <li><a href="#logging">3.7. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.8. Configuration</a></li>
@@ -829,32 +829,114 @@ Using <code>loc/Documents abs/abs</code> will allow the user to access any folde
 </div>
 </div>
 <div class="sect2">
-<h3 id="diary"><a class="link" href="#diary">3.5. Diary</a></h3>
+<h3 id="diary-feature-jiangwei"><a class="link" href="#diary-feature-jiangwei">3.5. Diary feature (Jiangwei)</a></h3>
+<div class="paragraph">
+<p>The diary feature is just like a real life diary book. It allows you jot down any thoughts, be it for your personal life or for school work. You can also note down a concept you don&#8217;t understand or your reflection for each day in case you want to revisit them in the future.
+In details, users can add and delete a diary entry, display a particular diary entry and tag each entry with mood or the weather on that day.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-5"><a class="link" href="#implementation-5">3.5.1. Implementation</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p><code>diaryAdd</code> and <code>diaryLog</code> extends from <code>Command</code> class</p>
+<p>This feature is implemented using a panel on the main screen of diary tab. The list of diary entries will update upon executing diary commands that may affect Diary Book. (such as diaryAdd, diaryDelete or diaryMood) The GUI aspect is not fully implemented yet (coming in v2.0), so the current implementation&#8217;s response is in CLI style.</p>
 </li>
 <li>
-<p><code>DiaryEntry</code> is another model which contains:</p>
+<p>The Diary Book currently supports the following features:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a diary entry</p>
+</li>
+<li>
+<p>Deleting a diary entry</p>
+</li>
+<li>
+<p>Showing the log of recorded entries</p>
+</li>
+<li>
+<p>Display a particular diary entry with specified entry ID</p>
+</li>
+<li>
+<p>Finds the list of diary entries the match a given date</p>
+</li>
+<li>
+<p>tagging a entry with mood or weather</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DiaryClass.png" alt="DiaryClass" width="790">
+</div>
+<div class="title">Figure 21. Class diagram of structure and relations of DiaryBook, DiaryEntry and relevant classes.</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Diary Entry</p>
+<p>As shown in the class diagram above, diary entries are created by <code>DiaryEntry</code> class. Every instance of <code>DiaryEntry</code> contains a <code>LocalDate</code>, a <code>Mood</code> object (optional) and a <code>Weather</code> object (optional).</p>
 </li>
 <li>
-<p>Date</p>
+<p>Different types of <code>Mood</code> such as <code>CalmMood</code>, <code>HappyMood</code> extends from the abstract class <code>Mood</code>. Similar subtype relation holds for different types of weather and the abstract class <code>Weather</code>.</p>
 </li>
 <li>
-<p>Weather</p>
+<p>List of diary entries are managed by the <code>DiaryBook</code> class. All relevant actions such as adding, deleting as described above are implemented inside <code>DiaryBook</code>. This can be seen from the methods of <code>DiaryBook</code> in the class diagram above.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-use-case"><a class="link" href="#example-use-case">3.5.2. Example Use Case</a></h4>
+<div class="paragraph">
+<p>Given below are example usages scenario and how the Module Book feature behaves at each step.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Example</strong>: deleting the diary entry with entry ID 1
+The sequence diagram below shows how the <code>diaryDelete id/1</code> command is executed</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DiarySequence.png" alt="DiarySequence" width="790">
+</div>
+<div class="title">Figure 22. Sequence Diagram for executing <code>diaryDelete id/1</code></div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.5.3. Design Considerations</a></h4>
+<div class="paragraph">
+<p>How does the user edit a diary entry?
+- Current solution: <code>Mood</code> and <code>Weather</code> can be updated easily with the <code>diaryMood</code> and <code>diaryWeather</code> command. However, We have not include a edit feature for the entry content. The users can first delete the entry and re-add the entry with updated diary entry.
+<strong> <strong>Pros</strong>: May deter users from changing past diary content as diary is meant to record what have happened and editing the past experience may not be encouraged.
+</strong> <strong>Cons</strong>: The users may need to retype the whole entry content which is a time consuming process.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative solution: include a feature that replaces a certain keyword with a new keyword.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros</strong>: Requires less typing and less time consuming.</p>
 </li>
 <li>
-<p>Mood</p>
+<p><strong>Cons</strong>: May cause some unintended changes to the entry content because of entry content containing substrings of the replaced keyword.</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><strong>Reason for chosen implementation:</strong>
+We want to adhere to the fact that past diary entries should not be changed but still allows editing, only that it will require more effort. The alternative solution is certainly feasible, to avoid the downsides of the alternative solution we can incorporate regular expressions to ensure more accurate replacing. However, this may require the users to have some prior knowledge which is not desired.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -863,7 +945,7 @@ Using <code>loc/Documents abs/abs</code> will allow the user to access any folde
 <p>This feature (in the works already) is meant to be an enhancement towards the Calendar feature.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">3.6.1. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">3.6.1. Implementation</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -891,7 +973,7 @@ Using <code>loc/Documents abs/abs</code> will allow the user to access any folde
 <div class="content">
 <img src="images/AddEventSequenceDiagram.png" alt="AddEventSequenceDiagram">
 </div>
-<div class="title">Figure 21. Add Event Sequence Diagram</div>
+<div class="title">Figure 23. Add Event Sequence Diagram</div>
 </div>
 <div class="paragraph">
 <p>The <code>eventAdd</code> method works similar to the <code>addDeadlineTask</code> above and will modify the <code>ObservableList&lt;Task&gt;</code> supplied to the <code>CalenderListPanel</code>, invoking the <code>updateItem</code> method, causing a change in the user display.</p>
@@ -922,7 +1004,7 @@ Using <code>loc/Documents abs/abs</code> will allow the user to access any folde
 <div class="content">
 <img src="images/ListEventActivityDiagram.png" alt="ListEventActivityDiagram">
 </div>
-<div class="title">Figure 22. List Event Activity Diagram</div>
+<div class="title">Figure 24. List Event Activity Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -941,7 +1023,7 @@ Using <code>loc/Documents abs/abs</code> will allow the user to access any folde
 <div class="content">
 <img src="images/EventActivityDiagram.png" alt="EventActivityDiagram">
 </div>
-<div class="title">Figure 23. Event Activity Diagram</div>
+<div class="title">Figure 25. Event Activity Diagram</div>
 </div>
 </div>
 </div>
@@ -1574,4 +1656,4 @@ Expected: Calculates your current cap with the modules inputted.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:35:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:35:48 UTC</div></div></div></body></html>

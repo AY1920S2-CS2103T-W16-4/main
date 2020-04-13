@@ -101,11 +101,12 @@
 <ul class="sectlevel3">
 <li><a href="#adding-an-diary-entry-code-diaryadd-code">3.8.1. Adding an diary entry: <code>diaryAdd</code></a></li>
 <li><a href="#viewing-diary-logs-code-diarylog-code">3.8.2. Viewing diary logs: <code>diaryLog</code></a></li>
-<li><a href="#viewing-diary-entries-with-specified-entry-id-code-diaryshow-code">3.8.3. Viewing diary entries with specified entry ID: <code>diaryShow</code></a></li>
-<li><a href="#viewing-diary-entries-with-specified-date-code-diaryshow-code">3.8.4. Viewing diary entries with specified date: <code>diaryShow</code></a></li>
-<li><a href="#deleting-an-diary-entry-code-diarydelete-code">3.8.5. Deleting an diary entry: <code>diaryDelete</code></a></li>
-<li><a href="#tagging-weather-code-diaryweather-code">3.8.6. Tagging weather: <code>diaryWeather</code></a></li>
-<li><a href="#tagging-mood-code-diarymood-code">3.8.7. Tagging mood: <code>diaryMood</code></a></li>
+<li><a href="#deleting-an-diary-entry-code-diarydelete-code">3.8.3. Deleting an diary entry: <code>diaryDelete</code></a></li>
+<li><a href="#viewing-diary-entries-with-a-specified-entry-id-code-diaryshow-code">3.8.4. Viewing diary entries with a specified entry ID: <code>diaryShow</code></a></li>
+<li><a href="#viewing-list-of-diary-entries-with-a-specified-date-code-diaryshow-code">3.8.5. Viewing list of diary entries with a specified date: <code>diaryShow</code></a></li>
+<li><a href="#tagging-a-diary-entry-with-weather-code-diaryweather-code">3.8.6. Tagging a diary entry with weather: <code>diaryWeather</code></a></li>
+<li><a href="#tagging-a-diary-entry-with-mood-code-diarymood-code">3.8.7. Tagging a diary entry with mood: <code>diaryMood</code></a></li>
+<li><a href="#filtering-diary-entries-according-to-mood-or-weather-code-diaryfilter-code-coming-in-v2-0">3.8.8. Filtering diary entries according to mood or weather: <code>diaryFilter</code> (coming in v2.0)</a></li>
 </ul>
 </li>
 </ul>
@@ -1699,8 +1700,31 @@ professor’s contact associated with the module.</p>
 </div>
 <div class="sect2">
 <h3 id="diary"><a class="link" href="#diary">3.8. Diary</a></h3>
-<div class="paragraph">
-<p>The diary feature allows you to jot down any thoughts, be it for your personal life or for school work, or just a concept that you may not understand that you will have to revisit in the future.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The diary feature is just like a real life diary book. It allows you jot down any thoughts, be it for your personal life or for school work. You can also note down a concept you don&#8217;t understand or your reflection for each day in case you want to revisit them in the future.
+The diary supports adding and deleting a diary entry, display a particular diary entry and tag each entry with your mood or the weather on that day.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/diaryMainScreen.png" alt="diaryMainScreen" width="790">
+</div>
+<div class="title">Figure 28. Main Screen for diary tab</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The UI for diary is not fully implemented yet. (coming in v2.0) You can just refer to the message section for response when using the diary feature and ignore the GUI for now as it may not function properly.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="adding-an-diary-entry-code-diaryadd-code"><a class="link" href="#adding-an-diary-entry-code-diaryadd-code">3.8.1. Adding an diary entry: <code>diaryAdd</code></a></h4>
@@ -1714,48 +1738,72 @@ professor’s contact associated with the module.</p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The date of the diary will be automatically recorded according to the date you jot down the diary.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example: <code>diaryAdd ec/I had a weird dream today.</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DiaryAdd.png" alt="DiaryAdd" width="790">
+</div>
+<div class="title">Figure 29. Adding a diary entry</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="viewing-diary-logs-code-diarylog-code"><a class="link" href="#viewing-diary-logs-code-diarylog-code">3.8.2. Viewing diary logs: <code>diaryLog</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Shows all diary entry IDs.</p>
+<p>Shows all diary entries with IDs and relevant information like date, weather and mood.</p>
 </li>
 <li>
-<p>Format: `diaryLog `</p>
+<p>Format: <code>diaryLog</code></p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Anything thing that comes after the <code>diaryLog</code> command will be ignored.
+</td>
+</tr>
+</table>
 </div>
-<div class="sect3">
-<h4 id="viewing-diary-entries-with-specified-entry-id-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-entry-id-code-diaryshow-code">3.8.3. Viewing diary entries with specified entry ID: <code>diaryShow</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Shows the diary entry for the specified entry ID.</p>
-</li>
-<li>
-<p>Format: <code>diaryShow id/ENTRY_ID</code></p>
+<p>Example: <code>diaryLog</code></p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DiaryLog.png" alt="DiaryLog" width="790">
 </div>
-<div class="sect3">
-<h4 id="viewing-diary-entries-with-specified-date-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-specified-date-code-diaryshow-code">3.8.4. Viewing diary entries with specified date: <code>diaryShow</code></a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Shows the diary entry at the specified date if there is any, date needs to be in DD-MM-YYYY.</p>
-</li>
-<li>
-<p>Format: <code>diaryShow date/DATE</code></p>
-</li>
-</ul>
+<div class="title">Figure 30. Showing diary logs</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-an-diary-entry-code-diarydelete-code"><a class="link" href="#deleting-an-diary-entry-code-diarydelete-code">3.8.5. Deleting an diary entry: <code>diaryDelete</code></a></h4>
+<h4 id="deleting-an-diary-entry-code-diarydelete-code"><a class="link" href="#deleting-an-diary-entry-code-diarydelete-code">3.8.3. Deleting an diary entry: <code>diaryDelete</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1766,9 +1814,122 @@ professor’s contact associated with the module.</p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The ENTRY_ID entered must be a integer and in the range of all available ENTRY_IDs as shown by the result of <code>diaryLog</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example: <code>diaryDelete id/1</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DiaryDelete.png" alt="DiaryDelete" width="790">
+</div>
+<div class="title">Figure 31. Deleting a diary entry with ID 1</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="tagging-weather-code-diaryweather-code"><a class="link" href="#tagging-weather-code-diaryweather-code">3.8.6. Tagging weather: <code>diaryWeather</code></a></h4>
+<h4 id="viewing-diary-entries-with-a-specified-entry-id-code-diaryshow-code"><a class="link" href="#viewing-diary-entries-with-a-specified-entry-id-code-diaryshow-code">3.8.4. Viewing diary entries with a specified entry ID: <code>diaryShow</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the diary entry for the specified entry ID.</p>
+</li>
+<li>
+<p>Format: <code>diaryShow id/ENTRY_ID</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The ENTRY_ID entered must be a integer and in the range of all available ENTRY_IDs as shown by the result of <code>diaryLog</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example: <code>diaryShow id/1</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DiaryShowID.png" alt="DiaryShowID" width="790">
+</div>
+<div class="title">Figure 32. Showing a diary entry with ID 1</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-list-of-diary-entries-with-a-specified-date-code-diaryshow-code"><a class="link" href="#viewing-list-of-diary-entries-with-a-specified-date-code-diaryshow-code">3.8.5. Viewing list of diary entries with a specified date: <code>diaryShow</code></a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the entry IDs of the diary entries that match the given date.</p>
+</li>
+<li>
+<p>Format: <code>diaryShow date/DATE</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+DATE needs to be in the format of DD-MM-YYYY.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+With the list of IDs, you can then view a specific diary entry with the <code>diaryShow id/ENTRY_ID</code> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example: <code>diaryShow date/13-04-2020</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DiaryShowDate.png" alt="DiaryShowDate" width="790">
+</div>
+<div class="title">Figure 33. Showing the list of entry IDs with date April 13, 2020</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tagging-a-diary-entry-with-weather-code-diaryweather-code"><a class="link" href="#tagging-a-diary-entry-with-weather-code-diaryweather-code">3.8.6. Tagging a diary entry with weather: <code>diaryWeather</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1779,9 +1940,46 @@ professor’s contact associated with the module.</p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The application supports four different kinds of weathers. They are "cloudy", "rainy", "sunny", "windy".
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The <code>diaryWeather</code> command argument is case sensitive, all weathers should be in lower case.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example: <code>diaryWeather id/1 w/sunny</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DiaryWeather.png" alt="DiaryWeather" width="790">
+</div>
+<div class="title">Figure 34. Recording weather for a particular diary entry</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="tagging-mood-code-diarymood-code"><a class="link" href="#tagging-mood-code-diarymood-code">3.8.7. Tagging mood: <code>diaryMood</code></a></h4>
+<h4 id="tagging-a-diary-entry-with-mood-code-diarymood-code"><a class="link" href="#tagging-a-diary-entry-with-mood-code-diarymood-code">3.8.7. Tagging a diary entry with mood: <code>diaryMood</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1789,6 +1987,69 @@ professor’s contact associated with the module.</p>
 </li>
 <li>
 <p>Format: <code>diaryMood id/ENTRY_ID m/MOOD</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The application supports four different kinds of moods. They are "calm, "happy", "sad", "stressed".
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The <code>diaryMood</code> command argument is case sensitive, all moods should be in lower case.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example: <code>diaryMood id/1 m/calm</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DiaryMood.png" alt="DiaryMood" width="790">
+</div>
+<div class="title">Figure 35. Recording your mood for a particular diary entry</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="filtering-diary-entries-according-to-mood-or-weather-code-diaryfilter-code-coming-in-v2-0"><a class="link" href="#filtering-diary-entries-according-to-mood-or-weather-code-diaryfilter-code-coming-in-v2-0">3.8.8. Filtering diary entries according to mood or weather: <code>diaryFilter</code> (coming in v2.0)</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the entry IDs of the diary entries that match the given mood or weather.</p>
+</li>
+<li>
+<p>Format: <code>diaryFilter m/MOOD</code> or <code>diaryFilter w/WEATHER</code></p>
+</li>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>diaryFilter m/happy</code></p>
+</li>
+<li>
+<p><code>diaryFilter w/sunny</code></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1961,36 +2222,36 @@ e.g. <code>listModuleTasks m/CS2103</code></p>
 </div>
 </li>
 <li>
-<p>Diary :</p>
+<p><strong>Diary</strong> :</p>
 <div class="ulist">
 <ul>
 <li>
-<p>diary log LIMIT
-e.g. <code>diary log 10</code></p>
+<p>diaryAdd ec/ENTRY_CONTENT<br>
+e.g. <code>diaryAdd ec/I had a weird dream today.</code></p>
 </li>
 <li>
-<p>diary show ENTRY ID
-e.g. <code>diary show 3</code></p>
+<p>diaryLog<br>
+e.g. <code>diaryLog</code></p>
 </li>
 <li>
-<p>diary show DD-MM-YYYY
-e.g. <code>diary show 30-03-2020</code></p>
+<p>diaryDelete id/ENTRY_ID<br>
+e.g. <code>diaryDelete id/1</code></p>
 </li>
 <li>
-<p>diary add ENTRY
-e.g. <code>diary add "Today is a good day"</code></p>
+<p>diaryShow id/ENTRY_ID or diaryShow date/DATE<br>
+e.g. <code>diaryShow date/13-04-2020</code></p>
 </li>
 <li>
-<p>diary delete ENTRY ID
-e.g. <code>diary delete 1</code></p>
+<p>diaryWeather id/ENTRY_ID w/WEATHER`<br>
+e.g. <code>diaryWeather id/1 w/sunny</code></p>
 </li>
 <li>
-<p>diary weather ID WEATHER
-e.g. <code>diary weather 1 SUNNY</code></p>
+<p>diaryMood id/ENTRY_ID m/MOOD<br>
+e.g. <code>diaryMood id/1 m/calm</code></p>
 </li>
 <li>
-<p>diary emotion ID EMOTION
-e.g. <code>diary emotion 1 HAPPY</code></p>
+<p>diaryFilter m/MOOD or diaryFilter w/WEATHER (coming in v2.0)<br>
+e.g. <code>diaryFilter m/happy</code></p>
 </li>
 </ul>
 </div>
@@ -2054,5 +2315,9 @@ e.g. <code>modreq computer science</code></p>
 <p><strong>Q</strong>: How do I save my data in my own PC?<br>
 <strong>A</strong>: NusProductivity saves your data of all your modules, grades and tasks after you make changes.</p>
 </div>
+<div class="paragraph">
+<p><strong>Q</strong>: Do I need Internet connection when using NUSProductivity?<br>
+<strong>A</strong>: Although we try to keep NUSProductivity as an offline application, some minimal network connection is required for the first time usage of certain features such as <code>moduleAdd</code> and <code>search</code>. However, only the first time searching for a module information is required as the results will be cached in our application to allow no Internet connection for future usage.</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:35:27 UTC</div></div></div></body></html>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:35:48 UTC</div></div></div></body></html>
