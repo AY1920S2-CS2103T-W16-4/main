@@ -154,7 +154,7 @@
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="calendar"><a class="link" href="#calendar">Calendar</a></h3>
+<h3 id="calendar-xinwei"><a class="link" href="#calendar-xinwei">Calendar (Xinwei)</a></h3>
 <div class="paragraph">
 <p>The calendar feature in the app that allows you to schedule and set deadline for important tasks such as project or assignment deadlines.</p>
 </div>
@@ -209,23 +209,72 @@
 </div>
 <div class="sect3">
 <h4 id="module-tasks"><a class="link" href="#module-tasks">Module Tasks</a></h4>
-<div class="sect4">
-<h5 id="adding-module-tasks-code-moduletask-code"><a class="link" href="#adding-module-tasks-code-moduletask-code">Adding Module Tasks: <code>moduleTask</code></a></h5>
+
+</div>
+<div class="sect3">
+<h4 id="adding-a-module-task-code-moduletask-code"><a class="link" href="#adding-a-module-task-code-moduletask-code">Adding a module task : <code>moduleTask</code></a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Schedules a module task, this module task includes priority level, module that is associated with the task.</p>
+<p>Format: <code>moduleTask desc/DESCRIPTION m/MODULE_CODE date/DEADLINE_OR_SCHEDULED_TIMING pri/PRIORITY</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The date inputted should be in the format: DD-MM-YYYY.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>This command allows you to create tasks to certain module you added to the program before.</p>
 </li>
 <li>
-<p>Format: <code>moduleTask desc/DESCRIPTION m/MODULE_CODE date/DD-MM-YYYY pri/PRIORITY-LEVEL</code></p>
+<p>Stores the task added in the module book and automatically adds and shows on the Calender.</p>
+</li>
+<li>
+<p>You will get an updated list of tasks related to that specific module after adding. (shown in command line)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>moduleTask desc/essay m/CS2101 date/02-04-2020 pri/3</code><br>
+Add a module task as specified in module book and also shows on calendar.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/moduleTaskAdd.png" alt="moduleTaskAdd" width="790">
+<img src="../images/ModuleTaskProfile.png" alt="ModuleTaskProfile" width="790">
 </div>
-<div class="title">Figure 3. Adding Module Tasks</div>
+<div class="title">Figure 3. Adding a module task for certain module</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModuleTaskCalendar.png" alt="ModuleTaskCalendar" width="790">
+</div>
+<div class="title">Figure 4. module task added will also be shown on calendar</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -243,8 +292,7 @@ This requires you to add a module under <code>moduleAdd</code> before you can us
 <div class="content">
 <img src="../images/moduleTaskAddError.png" alt="moduleTaskAddError" width="790">
 </div>
-<div class="title">Figure 4. Error when adding a module task without adding a module first.</div>
-</div>
+<div class="title">Figure 5. Error when adding a module task without adding a module first.</div>
 </div>
 </div>
 <div class="sect3">
@@ -268,7 +316,7 @@ This requires you to add a module under <code>moduleAdd</code> before you can us
 <div class="content">
 <img src="../images/taskDone.png" alt="taskDone" width="790">
 </div>
-<div class="title">Figure 5. Completing a task</div>
+<div class="title">Figure 6. Completing a task</div>
 </div>
 <div class="paragraph">
 <p>After a task is completed, it will be pushed to the bottom, the dot on the calendar removed and the background of the task is changed to black to signify the task is compelted.</p>
@@ -290,7 +338,7 @@ This requires you to add a module under <code>moduleAdd</code> before you can us
 <div class="content">
 <img src="../images/taskDelete.png" alt="taskDelete" width="790">
 </div>
-<div class="title">Figure 6. Deleting a task</div>
+<div class="title">Figure 7. Deleting a task</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -321,7 +369,7 @@ Tip: delete a task only after the date have passed to make sure everything is co
 <div class="content">
 <img src="../images/taskSort.png" alt="taskSort" width="790">
 </div>
-<div class="title">Figure 7. Sorting tasks by priority</div>
+<div class="title">Figure 8. Sorting tasks by priority</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -352,7 +400,7 @@ SORT can only be either date or priority
 <div class="content">
 <img src="../images/findTask.png" alt="findTask" width="790">
 </div>
-<div class="title">Figure 8. Finding task by module Code</div>
+<div class="title">Figure 9. Finding task by module Code</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -383,7 +431,7 @@ The dots on the calendar will not disappear and will show that there is still ta
 <div class="content">
 <img src="../images/listTask.png" alt="listTask" width="790">
 </div>
-<div class="title">Figure 9. Listing all tasks</div>
+<div class="title">Figure 10. Listing all tasks</div>
 </div>
 </div>
 </div>
@@ -466,7 +514,7 @@ This is meant to be an extension of the done command above, hence its implementa
 </div>
 </div>
 <div class="sect2">
-<h3 id="notes"><a class="link" href="#notes">Notes</a></h3>
+<h3 id="notes-xinwei"><a class="link" href="#notes-xinwei">Notes (Xinwei)</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -496,7 +544,7 @@ Default location is set to
 <div class="content">
 <img src="../images/pathing.png" alt="pathing" width="790">
 </div>
-<div class="title">Figure 10. Pathing Absolute vs Rel</div>
+<div class="title">Figure 11. Pathing Absolute vs Rel</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -527,7 +575,7 @@ if you want to access the Documents folder as shown in figure 13, you can use th
 <div class="content">
 <img src="../images/notesListingUG.png" alt="notesListingUG" width="790">
 </div>
-<div class="title">Figure 11. Listing files in directory</div>
+<div class="title">Figure 12. Listing files in directory</div>
 </div>
 </div>
 <div class="sect3">
@@ -558,7 +606,7 @@ The type can only be file or folder
 <div class="content">
 <img src="../images/notesCreateUG.png" alt="notesCreateUG" width="790">
 </div>
-<div class="title">Figure 12. Creating a file in a specified directory</div>
+<div class="title">Figure 13. Creating a file in a specified directory</div>
 </div>
 </div>
 <div class="sect3">
@@ -577,7 +625,7 @@ The type can only be file or folder
 <div class="content">
 <img src="../images/notesOpenUG.png" alt="notesOpenUG" width="790">
 </div>
-<div class="title">Figure 13. Opening a file in a specified directory</div>
+<div class="title">Figure 14. Opening a file in a specified directory</div>
 </div>
 </div>
 <div class="sect3">
@@ -596,7 +644,7 @@ The type can only be file or folder
 <div class="content">
 <img src="../images/notesDeleteUG.png" alt="notesDeleteUG" width="790">
 </div>
-<div class="title">Figure 14. Deleting a file in a specified directory</div>
+<div class="title">Figure 15. Deleting a file in a specified directory</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -631,7 +679,7 @@ This can only be use to delete a file and not a folder
 <div class="content">
 <img src="../images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram" width="790">
 </div>
-<div class="title">Figure 15. Component interactions for <code>moduleAdd m/CS2103T</code> command</div>
+<div class="title">Figure 16. Component interactions for <code>moduleAdd m/CS2103T</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
@@ -642,7 +690,7 @@ This can only be use to delete a file and not a folder
 <div class="content">
 <img src="../images/UiClassDiagram.png" alt="UiClassDiagram" width="790">
 </div>
-<div class="title">Figure 16. Structure of the UI Component</div>
+<div class="title">Figure 17. Structure of the UI Component</div>
 </div>
 </div>
 <div class="sect2">
@@ -668,7 +716,7 @@ This can only be use to delete a file and not a folder
 <div class="content">
 <img src="../images/CalenderUIClassDiagram.png" alt="CalenderUIClassDiagram">
 </div>
-<div class="title">Figure 17. Calender UI Class Diagram</div>
+<div class="title">Figure 18. Calender UI Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>Upon initialisation of CalenderPanel, the CalenderPanel would call its 2 methods of <code>setMonth()</code> and <code>setDate()</code> to create <code>CalenderDate</code> instances starting from the first day of the current month.</p>
@@ -702,7 +750,7 @@ This can only be use to delete a file and not a folder
 <div class="content">
 <img src="../images/AddTaskSequenceDiagram.png" alt="AddTaskSequenceDiagram">
 </div>
-<div class="title">Figure 18. Add task sequence diagram</div>
+<div class="title">Figure 19. Add task sequence diagram</div>
 </div>
 <div class="paragraph">
 <p>The <code>addDeadlineTask</code> method will modify the <code>ObservableList&lt;Task&gt;</code> supplied to the <code>CalenderListPanel</code>, invoking the <code>updateItem</code> method, causing a change in the user display.</p>
@@ -714,7 +762,7 @@ This can only be use to delete a file and not a folder
 <div class="content">
 <img src="../images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram">
 </div>
-<div class="title">Figure 19. Calendar Activity Diagram</div>
+<div class="title">Figure 20. Calendar Activity Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -771,19 +819,19 @@ The current solution is easier to implement as everything is done in the relevan
 <div class="content">
 <img src="../images/notesOpenSequenceDiagram.png" alt="notesOpenSequenceDiagram" width="600">
 </div>
-<div class="title">Figure 20. Notes Open Sequence Diagram</div>
+<div class="title">Figure 21. Notes Open Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/NotesList.png" alt="NotesList" width="600">
 </div>
-<div class="title">Figure 21. Notes List Activity Diagram</div>
+<div class="title">Figure 22. Notes List Activity Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/NotesCreation.png" alt="NotesCreation" width="600">
 </div>
-<div class="title">Figure 22. Notes Open Activity Diagram</div>
+<div class="title">Figure 23. Notes Open Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>notesCreate and notesDelete activity diagram works similar to notesOpen.</p>
@@ -808,7 +856,7 @@ The current solution is easier to implement as everything is done in the relevan
 <div class="content">
 <img src="../images/absVSrel.png" alt="absVSrel" width="600">
 </div>
-<div class="title">Figure 23. Notes Pathing Diagram</div>
+<div class="title">Figure 24. Notes Pathing Diagram</div>
 </div>
 <div class="paragraph">
 <p>AbsolutePath will take the path given from <code>usr/</code>.</p>
@@ -853,4 +901,4 @@ Using <code>loc/Documents abs/abs</code> will allow the user to access any folde
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:12:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:28:45 UTC</div></div></div></body></html>

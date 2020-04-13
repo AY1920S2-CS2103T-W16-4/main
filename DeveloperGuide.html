@@ -40,12 +40,13 @@
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
+<li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">G.2. Deleting a person</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
+<li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
+<li><a href="#deleting-a-person">F.2. Deleting a person</a></li>
+<li><a href="#calendar">F.3. Calendar</a></li>
+<li><a href="#notes">F.4. Notes</a></li>
+<li><a href="#module">F.5. Module</a></li>
 </ul>
 </li>
 </ul>
@@ -1336,13 +1337,10 @@ Using <code>loc/Documents abs/abs</code> will allow the user to access any folde
 <p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
 </li>
 <li>
-<p>Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.</p>
-</li>
-<li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse (e.g. fetch module information)</p>
 </li>
 <li>
-<p>Should respond within 2 seconds</p>
+<p>Should respond within 2 seconds with exception of 5s for some commands due to network availability (<code>moduleSearch</code>, <code>moduleAdd</code>)</p>
 </li>
 <li>
 <p>Should be easy to use for users who are novice at using technology</p>
@@ -1387,44 +1385,7 @@ Using <code>loc/Documents abs/abs</code> will allow the user to access any folde
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -1442,7 +1403,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1480,7 +1441,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">G.2. Deleting a person</a></h3>
+<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.2. Deleting a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1507,29 +1468,110 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Dealing with missing/corrupted data files</p>
+<h3 id="calendar"><a class="link" href="#calendar">F.3. Calendar</a></h3>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p>Test case: <code>deadlineAdd desc/Test deadline date/30-04-2020 cat/Work</code><br>
+Expected: A deadline task is added to the list, details of the task is shown on th left hand side of the calendar tab. A green dot will appear on 30-04-2020 to show that there is a task on that day</p>
+</li>
+<li>
+<p>Test case: <code>deadlineAdd desc/Test deadline2 date/28-04-2020 cat/Work</code><br>
+Expected: A deadline task is added to the list, details of the task is shown on th left hand side of the calendar tab. The task list on the left should show list sorted by dates, i.e. this deadline to be above the test case in a.</p>
+</li>
+<li>
+<p>Test case: <code>moduleTask m/CS2103T desc/CS2103T Test by/04-04-2020 pri/5</code><br>
+Expected: An error message shown that no such module is present (if you haven&#8217;t add CS2103T to the program), else, a task will be added to the list, the task list on the left will be sorted by date and a red dot (priority = 5) will be shown on the calendar</p>
+</li>
+<li>
+<p>Test case: <code>taskDelete index/1</code><br>
+Expected: First task on the task list is deleted.</p>
+</li>
+<li>
+<p>Test case: <code>taskDelete index/0</code><br>
+Expected: No task will be deleted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Test case: <code>sortTask by/priority</code><br>
+Expected: Task on the left is sorted by priority.</p>
+</li>
+<li>
+<p>Test case: <code>sortTask by/asiqowe</code><br>
+Expected: No sorting will be parsed and error message will be shown. Status bar remains the same.</p>
+</li>
+<li>
+<p>Test case: <code>findTask date/30-04-2020</code><br>
+Expected: All task that have a deadline of 30-04-2020 will be shown on the left panel, calendar dots for other dates will NOT be removed.</p>
+</li>
+<li>
+<p>Test case: <code>listTask</code><br>
+Expected: List all task after a findTask to show all available Tasks.</p>
 </li>
 </ol>
 </div>
+</div>
+<div class="sect2">
+<h3 id="notes"><a class="link" href="#notes">F.4. Notes</a></h3>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>notesList loc/Desktop pt/abs</code><br>
+Expected: All files on your desktop will be listed in the display</p>
+</li>
+<li>
+<p>Test case: <code>notesList loc/Desktop/Desktop by/abs</code><br>
+Expected: Error message will be shown</p>
+</li>
+<li>
+<p>Test case: <code>notesOpen loc/Desktop name/Test.doc pt/abs</code><br>
+Precondition: Needs to have a file called Test.doc on the desktop, else an error will be thrown<br>
+Expected: File is opened, notes user interface current directory changed to usr/Desktop</p>
+</li>
+<li>
+<p>Test case: <code>notesCreate loc/Desktop name/test type/folder pt/abs</code><br>
+Precondition: No folder on the desktop is named test<br>
+Expected: folder is created, notes user interface current directory changed to usr/Desktop/test</p>
+</li>
+<li>
+<p>Test case: <code>notesDelete loc/Desktop name/Test.doc pt/abs</code><br>
+Precondition: Needs to have a file called Test.doc on the desktop, else an error will be thrown<br>
+Expected: File is deleted, notes user interface current directory changed to usr/Desktop</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+<div class="sect2">
+<h3 id="module"><a class="link" href="#module">F.5. Module</a></h3>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>moduleAdd m/CS2103T g/A+</code><br>
+Expected: A module of CS2103T with its grade will be added to the profile tab list</p>
+</li>
+<li>
+<p>Test case: <code>moduleAdd m/CS2103123123T g/A+</code><br>
+Expected: Error message will be thrown with no such module.</p>
+</li>
+<li>
+<p>Test case: <code>moduleAdd m/CS2101</code><br>
+Expected: Module of CS2101 will be added to the profile tab, without a grade.</p>
+</li>
+<li>
+<p>Test case: <code>moduleDel m/CS2103T</code><br>
+Expected: CS2103T module will be deleted</p>
+</li>
+<li>
+<p>Test case: <code>grade m/CS2101 g/A+</code><br>
+Expected: CS2101 grade will be updated to A+</p>
+</li>
+<li>
+<p>Test case: <code>cap</code><br>
+Expected: Calculates your current cap with the modules inputted.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:12:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:28:44 UTC</div></div></div></body></html>

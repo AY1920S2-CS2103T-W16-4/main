@@ -480,90 +480,6 @@ with an alternative way. (The orders of tasks shown are different. Thus, the ind
 </table>
 </div>
 <div class="sect3">
-<h4 id="creating-a-module-task-code-moduletask-code"><a class="link" href="#creating-a-module-task-code-moduletask-code">Creating a module task : <code>moduleTask</code></a></h4>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This command has been covered in Calendar feature already.
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Adds a module task related to certain module you have added before in module book.</p>
-</li>
-<li>
-<p>You need to indicate which module the task is related to, its priority level (how important it is) and also its deadline or scheduled timing.</p>
-</li>
-<li>
-<p>Format: <code>moduleTask desc/DESCRIPTION m/MODULE_CODE date/DEADLINE_OR_SCHEDULED_TIMING pri/PRIORITY</code></p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-The date inputted should be in the format: DD-MM-YYYY.
-</td>
-</tr>
-</table>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>This command allows you to create tasks to certain module you added to the program before.</p>
-</li>
-<li>
-<p>Stores the task added in the module book and automatically adds and shows on the Calender.</p>
-</li>
-<li>
-<p>You will get an updated list of tasks related to that specific module after adding. (shown in command line)</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Example:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>moduleTask desc/essay m/CS2101 date/02-04-2020 pri/3</code><br>
-Add a module task as specified in module book and also shows on calendar.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ModuleTaskProfile.png" alt="ModuleTaskProfile" width="790">
-</div>
-<div class="title">Figure 6. Adding a module task for certain module</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ModuleTaskCalendar.png" alt="ModuleTaskCalendar" width="790">
-</div>
-<div class="title">Figure 7. module task added will also be shown on calendar</div>
-</div>
-</div>
-<div class="sect3">
 <h4 id="listing-all-module-tasks-of-certain-module"><a class="link" href="#listing-all-module-tasks-of-certain-module">Listing all module tasks of certain module</a></h4>
 <div class="admonitionblock tip">
 <table>
@@ -620,7 +536,7 @@ Lists all module tasks of CS2103.</p>
 <div class="content">
 <img src="../images/ListModuleTask.png" alt="ListModuleTask" width="790">
 </div>
-<div class="title">Figure 8. Showing all module tasks related to specified module</div>
+<div class="title">Figure 6. Showing all module tasks related to specified module</div>
 </div>
 </div>
 <div class="sect3">
@@ -696,7 +612,7 @@ Deletes the first module task for CS2103 in module book and Calendar.<br>
 <div class="content">
 <img src="../images/TaskDeleteWirhModuleCode.png" alt="TaskDeleteWirhModuleCode" width="790">
 </div>
-<div class="title">Figure 9. Deleting a module task</div>
+<div class="title">Figure 7. Deleting a module task</div>
 </div>
 </div>
 <div class="sect3">
@@ -771,7 +687,7 @@ Marks the first module task for module cs2103 as done.</p>
 <div class="content">
 <img src="../images/DoneWithModuleCode.png" alt="DoneWithModuleCode" width="790">
 </div>
-<div class="title">Figure 10. Marking a module task as done</div>
+<div class="title">Figure 8. Marking a module task as done</div>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -807,7 +723,7 @@ it refers to the index of list of module tasks shown in the result display panel
 <div class="content">
 <img src="../images/TaskBreakDown.png" alt="TaskBreakDown" width="790">
 </div>
-<div class="title">Figure 11. Show task breakdown</div>
+<div class="title">Figure 9. Show task breakdown</div>
 </div>
 </div>
 <div class="sect3">
@@ -870,7 +786,7 @@ may affect module list (such as add, delete or grade).</p>
 <div class="content">
 <img src="../images/NusModuleClassDiagram.png" alt="NusModuleClassDiagram" width="790">
 </div>
-<div class="title">Figure 12. Class diagram of structure and relations of NusModule, ModuleBook and relevant classes.</div>
+<div class="title">Figure 10. Class diagram of structure and relations of NusModule, ModuleBook and relevant classes.</div>
 </div>
 <div class="ulist">
 <ul>
@@ -919,13 +835,13 @@ And then call method <code>addModule</code> in <code>ModuleBook</code> to create
 <div class="content">
 <img src="../images/ModuleAddSequenceDiagram.png" alt="ModuleAddSequenceDiagram" width="950">
 </div>
-<div class="title">Figure 13. Sequence diagram when moduleAdd command is executed</div>
+<div class="title">Figure 11. Sequence diagram when moduleAdd command is executed</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/PartOfModelClassDiagramForProfile.png" alt="PartOfModelClassDiagramForProfile" width="400">
 </div>
-<div class="title">Figure 14. Relation between ModuleBook and Task</div>
+<div class="title">Figure 12. Relation between ModuleBook and Task</div>
 </div>
 <div class="ulist">
 <ul>
@@ -976,7 +892,7 @@ User can manage their tasks in different ways.
 <div class="content">
 <img src="../images/ListModuleTasksActivityDiagram.png" alt="ListModuleTasksActivityDiagram" width="790">
 </div>
-<div class="title">Figure 15. Activity diagram for list module tasks command</div>
+<div class="title">Figure 13. Activity diagram for list module tasks command</div>
 </div>
 <div class="paragraph">
 <p><strong>Example 2</strong>:<br></p>
@@ -1004,7 +920,7 @@ User can manage their tasks in different ways.
 <div class="content">
 <img src="../images/DoneCommandActivityDiagram.png" alt="DoneCommandActivityDiagram" width="850">
 </div>
-<div class="title">Figure 16. Activity diagram for done command</div>
+<div class="title">Figure 14. Activity diagram for done command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1100,4 +1016,4 @@ to manage their tasks. (as a whole or separately for each module)</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:12:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:28:45 UTC</div></div></div></body></html>
