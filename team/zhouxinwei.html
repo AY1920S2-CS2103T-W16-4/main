@@ -387,6 +387,83 @@ The dots on the calendar will not disappear and will show that there is still ta
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="event-coming-in-v2-0"><a class="link" href="#event-coming-in-v2-0">Event (coming in v2.0)</a></h4>
+<div class="sect4">
+<h5 id="adding-event-code-eventadd-code"><a class="link" href="#adding-event-code-eventadd-code">Adding Event: <code>eventAdd</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Schedules event to the calendar</p>
+</li>
+<li>
+<p>Format: <code>eventAdd</code> desc/DESCRIPTION on/DD-MM-YYYY</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="deleting-event-code-eventdelete-code"><a class="link" href="#deleting-event-code-eventdelete-code">Deleting Event: <code>eventDelete</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes event from list with the given index</p>
+</li>
+<li>
+<p>Format: <code>eventDelete</code> index/INDEX</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="marking-event-as-done-code-done-code"><a class="link" href="#marking-event-as-done-code-done-code">Marking Event as done: <code>done</code></a></h5>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is meant to be an extension of the done command above, hence its implementation will follow said format.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Format: done index/INDEX</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="sorting-events-code-sorteventlist-code"><a class="link" href="#sorting-events-code-sorteventlist-code">Sorting Events: <code>sortEventList</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Sorts events by date (default)</p>
+</li>
+<li>
+<p>Format: <code>sortEventList</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="list-events-code-listevent-code"><a class="link" href="#list-events-code-listevent-code">List Events: <code>listEvent</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Lists scheduled events</p>
+</li>
+<li>
+<p>Format: <code>listEvent</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="notes"><a class="link" href="#notes">Notes</a></h3>
@@ -776,4 +853,4 @@ Using <code>loc/Documents abs/abs</code> will allow the user to access any folde
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 10:50:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:15:41 UTC</div></div></div></body></html>
