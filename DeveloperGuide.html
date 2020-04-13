@@ -398,6 +398,9 @@ may affect module list (such as add, delete or grade).</p>
 <p>As shown in the class diagram above, modules are created by a class called <code>NusModule</code>. Every instance of <code>NusModule</code> contains a <code>ModuleCode</code> object, a
 <code>Grade</code> object (optional) and a list of <code>ModuleTask</code> objects.</p>
 </li>
+<li>
+<p>Grade and Priority are enumerations. Grade contains all possible grades student can get in NUS. Every ModuleTask instance has a Priority attribute which indicates how important it is.</p>
+</li>
 </ul>
 </div>
 <div class="admonitionblock note">
@@ -416,7 +419,7 @@ The module book only accept modules that are provided in NUS and will check the 
 <ul>
 <li>
 <p>All possible actions mentioned above such as creating modules, deleting modules and adding tasks to modules are implemented through
-the <code>ModuleBook</code> class.</p>
+the <code>ModuleBook</code> class by calling corresponding methods of it such as <code>addModule</code>, <code>getModule</code>.</p>
 </li>
 <li>
 <p>The program will automatically save any modification to module book after each command is executed by calling the <code>saveModuleBook</code> method
@@ -1440,4 +1443,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:15:41 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 12:05:21 UTC</div></div></div></body></html>
