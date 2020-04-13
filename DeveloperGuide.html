@@ -23,7 +23,7 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#module-search">3.1. Module Search</a></li>
-<li><a href="#module-planning">3.2. Module Planning</a></li>
+<li><a href="#profile-module-book-feature">3.2. Profile (Module Book) feature</a></li>
 <li><a href="#calendar-feature">3.3. Calendar Feature</a></li>
 <li><a href="#notes-feature">3.4. Notes Feature</a></li>
 <li><a href="#diary">3.5. Diary</a></li>
@@ -351,24 +351,68 @@ This implementation means that a local cache of the added modules will be availa
 </div>
 </div>
 <div class="sect2">
-<h3 id="module-planning"><a class="link" href="#module-planning">3.2. Module Planning</a></h3>
+<h3 id="profile-module-book-feature"><a class="link" href="#profile-module-book-feature">3.2. Profile (Module Book) feature</a></h3>
+<div class="paragraph">
+<p>This profile feature allows users to manage the modules they have taken before or is taking now in NUS.
+In details, users are able to store their module taken into the program with the grades for each module stated if applicable and
+can also store tasks which are related to each module.</p>
+</div>
 <div class="sect3">
-<h4 id="adds-nus-modules"><a class="link" href="#adds-nus-modules">3.2.1. Adds NUS modules</a></h4>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">3.2.1. Implementation</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>This module planning feature enables users to store any module they have taken or are taking now in NUS.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Implementation: Modules are created with <code>moduleAdd</code> command, followed by the module code and grade (if applicable)
-Our program will check if the module code is valid by using the search feature above.</p>
+<p>This feature is implemented using a panel on the main screen of profile tab with a list of modules that is updated with every command that
+may affect module list (such as add, delete or grade).</p>
 </li>
 <li>
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user want to add a module in our program.</p>
+<p>The module book (profile) currently supports following features.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adds in or deletes modules and display the list of modules in profile tab.</p>
+</li>
+<li>
+<p>Updates user&#8217;s grades for each module and get CAP calculated immediately.</p>
+</li>
+<li>
+<p>Manage the tasks related to each module (module tasks) through CLI.</p>
+</li>
+<li>
+<p>Any modification to module tasks will be updated in the Calendar tab and also show messages on the result display above CLI.</p>
+</li>
+</ol>
+</div>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/NusModuleClassDiagram.png" alt="NusModuleClassDiagram" width="790">
+</div>
+<div class="title">Figure 9. Class diagram of structure and relations of NusModule, ModuleBook and relevant classes.</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As shown in the class diagram above, modules are created by a class called <code>NusModule</code>. Every instance of <code>NusModule</code> contains a <code>ModuleCode</code> object, a
+<code>Grade</code> object (optional) and a list of <code>ModuleTask</code> objects.</p>
+</li>
+<li>
+<p>All possible actions mentioned above such as creating modules, deleting modules and adding tasks to modules are implemented through
+the <code>ModuleBook</code> class.</p>
+</li>
+<li>
+<p>The program will automatically save any modification to module book after each command is executed by calling the <code>saveModuleBook</code> method
+in <code>Storage</code>.</p>
+</li>
+<li>
+<p>For example, modules are created with <code>moduleAdd</code> command, followed by the module code and grade. (if applicable)<br>
+Our program will check if the module code is valid by using the search feature above and whether the module has already been added in our module book.
+And then call method <code>addModule</code> in <code>ModuleBook</code> to create the module as required. Finally, it will automatically save the module added just now.</p>
+</li>
+<li>
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user want to add a module in our program.</p>
 </li>
 </ul>
 </div>
@@ -376,65 +420,36 @@ Our program will check if the module code is valid by using the search feature a
 <div class="content">
 <img src="images/ModuleAddSequenceDiagram.png" alt="ModuleAddSequenceDiagram" width="790">
 </div>
+<div class="title">Figure 10. Sequence diagram when moduleAdd command is executed</div>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PartOfModelClassDiagramForProfile.png" alt="PartOfModelClassDiagramForProfile" width="790">
 </div>
-<div class="sect3">
-<h4 id="update-your-grades"><a class="link" href="#update-your-grades">3.2.2. Update your grades</a></h4>
+<div class="title">Figure 11. Relation between ModuleBook and Task</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>For modules that you have taken, users can store their grade in our application.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Implementation: if user didn&#8217;t state their grade for any module when they first add in the module or they need to change their grade,
-Users can use <code>grade</code> command, followed by the module code and the grade in order to update their grade for that module.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="cap-calculation"><a class="link" href="#cap-calculation">3.2.3. CAP calculation</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Based on the grades users have stored, users can get their current CAP immediately.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Implementation: check current CAP using <code>cap</code> command</p>
-</li>
-</ul>
-</div>
+<p>The program will synchronize the modification to module tasks in <code>ModuleBook</code> with that shown in Calendar tab through <code>ModelManager</code> as shown above.
+i.e. Any modification in module tasks will be updated in <code>Task</code> which is the main class Calendar feature depends on. (see more details in Calendar feature)</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="proposed-module-tasks"><a class="link" href="#proposed-module-tasks">3.2.4. [proposed] Module Tasks</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Users can view the tasks related to each module separately.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Implementation:</p>
-</li>
-</ul>
+<h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">3.2.2. Example Use Scenario</a></h4>
+
 </div>
-</li>
-</ul>
-</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.2.3. Design Considerations</a></h4>
+
 </div>
 </div>
 <div class="sect2">
 <h3 id="calendar-feature"><a class="link" href="#calendar-feature">3.3. Calendar Feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">3.3.1. Implementation</a></h4>
+<h4 id="implementation-3"><a class="link" href="#implementation-3">3.3.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The calendar feature allows users to add either a <code>deadline</code> or a <code>Module Task</code> to the calendar.</p>
 </div>
@@ -446,7 +461,7 @@ Users can use <code>grade</code> command, followed by the module code and the gr
 <div class="sect2">
 <h3 id="notes-feature"><a class="link" href="#notes-feature">3.4. Notes Feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">3.4.1. Implementation</a></h4>
+<h4 id="implementation-4"><a class="link" href="#implementation-4">3.4.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The notes feature allow users to access their desktop files and folders with commands.</p>
 </div>
@@ -460,13 +475,13 @@ Users can use <code>grade</code> command, followed by the module code and the gr
 <div class="content">
 <img src="images/NotesList.png" alt="NotesList" width="600">
 </div>
-<div class="title">Figure 9. Notes List Activity Diagram</div>
+<div class="title">Figure 12. Notes List Activity Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/NotesCreation.png" alt="NotesCreation" width="600">
 </div>
-<div class="title">Figure 10. Notes Open Activity Diagram</div>
+<div class="title">Figure 13. Notes Open Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>notesCreate and notesDelete activity diagram works similar to notesOpen.</p>
@@ -491,7 +506,7 @@ Users can use <code>grade</code> command, followed by the module code and the gr
 <div class="content">
 <img src="images/absVSrel.png" alt="absVSrel" width="600">
 </div>
-<div class="title">Figure 11. Notes Pathing Diagram</div>
+<div class="title">Figure 14. Notes Pathing Diagram</div>
 </div>
 <div class="paragraph">
 <p>AbsolutePath will take the path given from <code>usr/</code>.</p>
@@ -1140,4 +1155,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:11:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:25:01 UTC</div></div></div></body></html>
