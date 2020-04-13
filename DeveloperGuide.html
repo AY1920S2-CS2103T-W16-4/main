@@ -23,7 +23,7 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#module-search">3.1. Module Search</a></li>
-<li><a href="#profile-module-book-feature">3.2. Profile (Module Book) feature</a></li>
+<li><a href="#profile-module-book-feature-wangkai">3.2. Profile (Module Book) feature (Wangkai)</a></li>
 <li><a href="#calendar-feature-xinwei">3.3. Calendar Feature (Xinwei)</a></li>
 <li><a href="#notes-feature-xinwei">3.4. Notes Feature (Xinwei)</a></li>
 <li><a href="#diary">3.5. Diary</a></li>
@@ -351,7 +351,7 @@ This implementation means that a local cache of the added modules will be availa
 </div>
 </div>
 <div class="sect2">
-<h3 id="profile-module-book-feature"><a class="link" href="#profile-module-book-feature">3.2. Profile (Module Book) feature</a></h3>
+<h3 id="profile-module-book-feature-wangkai"><a class="link" href="#profile-module-book-feature-wangkai">3.2. Profile (Module Book) feature (Wangkai)</a></h3>
 <div class="paragraph">
 <p>This profile feature allows users to manage the modules they have taken before or is taking now in NUS.
 In details, users are able to store their module taken into the program with the grades for each module stated if applicable and
@@ -379,7 +379,7 @@ may affect module list (such as add, delete or grade).</p>
 <p>Manage the tasks related to each module (module tasks) through CLI.</p>
 </li>
 <li>
-<p>Any modification to module tasks will be updated in the Calendar tab and also show messages on the result display above CLI.</p>
+<p>Any modification to module tasks will be updated in the Calendar tab and also show messages on the result display panel.</p>
 </li>
 </ol>
 </div>
@@ -398,6 +398,22 @@ may affect module list (such as add, delete or grade).</p>
 <p>As shown in the class diagram above, modules are created by a class called <code>NusModule</code>. Every instance of <code>NusModule</code> contains a <code>ModuleCode</code> object, a
 <code>Grade</code> object (optional) and a list of <code>ModuleTask</code> objects.</p>
 </li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The module book only accept modules that are provided in NUS and will check the module code the user want to add is valid or not by using the search feature mentioned above.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>All possible actions mentioned above such as creating modules, deleting modules and adding tasks to modules are implemented through
 the <code>ModuleBook</code> class.</p>
@@ -418,13 +434,13 @@ And then call method <code>addModule</code> in <code>ModuleBook</code> to create
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModuleAddSequenceDiagram.png" alt="ModuleAddSequenceDiagram" width="790">
+<img src="images/ModuleAddSequenceDiagram.png" alt="ModuleAddSequenceDiagram" width="950">
 </div>
 <div class="title">Figure 10. Sequence diagram when moduleAdd command is executed</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/PartOfModelClassDiagramForProfile.png" alt="PartOfModelClassDiagramForProfile" width="790">
+<img src="images/PartOfModelClassDiagramForProfile.png" alt="PartOfModelClassDiagramForProfile" width="400">
 </div>
 <div class="title">Figure 11. Relation between ModuleBook and Task</div>
 </div>
@@ -439,11 +455,165 @@ i.e. Any modification in module tasks will be updated in <code>Task</code> which
 </div>
 <div class="sect3">
 <h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">3.2.2. Example Use Scenario</a></h4>
-
+<div class="paragraph">
+<p>Given below are example usages scenario and how the Module Book feature behaves at each step.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+User can manage their tasks in different ways.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Example 1</strong>:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user execute <code>listModuleTasks</code> command.</p>
+</li>
+<li>
+<p>The program check whether the module code provided has been recorded or not.</p>
+</li>
+<li>
+<p>Display the list of tasks.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Below is an activity diagram describing the events that will happen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ListModuleTasksActivityDiagram.png" alt="ListModuleTasksActivityDiagram" width="790">
+</div>
+<div class="title">Figure 12. Activity diagram for list module tasks command</div>
+</div>
+<div class="paragraph">
+<p><strong>Example 2</strong>:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user execute <code>done</code> command.</p>
+</li>
+<li>
+<p>The program check whether the input is valid or not.</p>
+</li>
+<li>
+<p>The task specified will be deleted accordingly.</p>
+</li>
+<li>
+<p>Synchronize between module book and calendar.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Below is an activity diagram describing the events that will happen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DoneCommandActivityDiagram.png" alt="DoneCommandActivityDiagram" width="850">
+</div>
+<div class="title">Figure 13. Activity diagram for done command</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">3.2.3. Design Considerations</a></h4>
-
+<div class="paragraph">
+<p><strong>Aspect 1</strong>: How the user add in a module into module book for future management ?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current solution</strong>: Only need to provide the module code to add module and it will fetch the information about the module using Module Search feature automatically.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros</strong>: Users don&#8217;t need to provide any other information (such as modular credit of the module) for other functionality such as calculating the CAP.</p>
+</li>
+<li>
+<p><strong>Pros</strong>: The module information will be cached locally after you add the module once and this can used for future development.</p>
+</li>
+<li>
+<p><strong>Cons</strong>: Need Internet connection when you add in certain module for the first time.</p>
+</li>
+<li>
+<p><strong>Cons</strong>: Highly depends on the Module Search feature.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative Solution</strong>: Let the user enter all information required for each module when they add it in. (such as modular credit)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros</strong>: More flexible, not depends on other features.</p>
+</li>
+<li>
+<p><strong>Cons</strong>: Very tedious for users to add in lots of modules.</p>
+</li>
+<li>
+<p><strong>Cons</strong>: Need to ask user to provide new information when more new functionality is added in the future.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Reason for chosen implementation</strong>:<br>
+The current implementation is much more user friendly and have more potential for future development. The implement can become
+very ideal if the Module Search feature works properly.</p>
+</div>
+<div class="paragraph">
+<p><strong>Aspect 2</strong>: How the user manage their tasks for each module?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current solution</strong>: For each module added, it contains a list of <code>ModuleTask</code>. Also update the calendar when add task in.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros</strong>: Users can either view their tasks for each module separately or view all the tasks shown in Calendar tab.</p>
+</li>
+<li>
+<p><strong>Pros</strong>: More nice-looking that the user can view all the deadlines on calendar.</p>
+</li>
+<li>
+<p><strong>Cons</strong>: Prone to bugs during the synchronization of module book and calendar.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative solution</strong>: Only store the list of <code>ModuleTask</code> in module book and do not update in Calendar tab.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pros</strong>: Easier to implement and can avoid some synchronization bugs.</p>
+</li>
+<li>
+<p><strong>Cons</strong>: Users can not gain a view of the whole pictures with all tasks shown on calendar.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Reason for chosen implementation</strong>:<br>
+The current implementation updates the module tasks added in onto the calender and provides the users different ways
+to manage their tasks. (as a whole or separately for each module)</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -469,7 +639,7 @@ i.e. Any modification in module tasks will be updated in <code>Task</code> which
 <div class="content">
 <img src="images/CalenderUIClassDiagram.png" alt="CalenderUIClassDiagram">
 </div>
-<div class="title">Figure 12. Calender UI Class Diagram</div>
+<div class="title">Figure 14. Calender UI Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>Upon initialisation of CalenderPanel, the CalenderPanel would call its 2 methods of <code>setMonth()</code> and <code>setDate()</code> to create <code>CalenderDate</code> instances starting from the first day of the current month.</p>
@@ -503,7 +673,7 @@ i.e. Any modification in module tasks will be updated in <code>Task</code> which
 <div class="content">
 <img src="images/AddTaskSequenceDiagram.png" alt="AddTaskSequenceDiagram">
 </div>
-<div class="title">Figure 13. Add task sequence diagram</div>
+<div class="title">Figure 15. Add task sequence diagram</div>
 </div>
 <div class="paragraph">
 <p>The <code>addDeadlineTask</code> method will modify the <code>ObservableList&lt;Task&gt;</code> supplied to the <code>CalenderListPanel</code>, invoking the <code>updateItem</code> method, causing a change in the user display.</p>
@@ -515,7 +685,7 @@ i.e. Any modification in module tasks will be updated in <code>Task</code> which
 <div class="content">
 <img src="images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram">
 </div>
-<div class="title">Figure 14. Calendar Activity Diagram</div>
+<div class="title">Figure 16. Calendar Activity Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -572,19 +742,19 @@ The current solution is easier to implement as everything is done in the relevan
 <div class="content">
 <img src="images/notesOpenSequenceDiagram.png" alt="notesOpenSequenceDiagram" width="600">
 </div>
-<div class="title">Figure 15. Notes Open Sequence Diagram</div>
+<div class="title">Figure 17. Notes Open Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/NotesList.png" alt="NotesList" width="600">
 </div>
-<div class="title">Figure 16. Notes List Activity Diagram</div>
+<div class="title">Figure 18. Notes List Activity Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/NotesCreation.png" alt="NotesCreation" width="600">
 </div>
-<div class="title">Figure 17. Notes Open Activity Diagram</div>
+<div class="title">Figure 19. Notes Open Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>notesCreate and notesDelete activity diagram works similar to notesOpen.</p>
@@ -609,7 +779,7 @@ The current solution is easier to implement as everything is done in the relevan
 <div class="content">
 <img src="images/absVSrel.png" alt="absVSrel" width="600">
 </div>
-<div class="title">Figure 18. Notes Pathing Diagram</div>
+<div class="title">Figure 20. Notes Pathing Diagram</div>
 </div>
 <div class="paragraph">
 <p>AbsolutePath will take the path given from <code>usr/</code>.</p>
@@ -1108,6 +1278,18 @@ Using <code>loc/Documents abs/abs</code> will allow the user to access any folde
 <dd>
 <p>A contact detail that is not meant to be shared with others</p>
 </dd>
+<dt class="hdlist1"><a id="NUS"></a>NUS</dt>
+<dd>
+<p>National University of Singapore</p>
+</dd>
+<dt class="hdlist1"><a id="CAP"></a>CAP</dt>
+<dd>
+<p>The Cumulative Average Point is the weighted average grade point of the letter grades of all the modules taken by the students, according to NUS&#8217;s grading system.</p>
+</dd>
+<dt class="hdlist1"><a id="CLI"></a>CLI</dt>
+<dd>
+<p>Command Line Interface</p>
+</dd>
 </dl>
 </div>
 </div>
@@ -1258,4 +1440,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:45:05 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:35:29 UTC</div></div></div></body></html>

@@ -1184,7 +1184,7 @@ List of all valid grade: A+, A, A-, B+, B, B-, C+, C, D+, D, F, S and U.
 <p>The calculation strictly follow the grading system of NUS.</p>
 </li>
 <li>
-<p>Shows current CAP in CLI, CAP on UI will only get updated after you restart.</p>
+<p>Shows current CAP in in result display panel, CAP on UI will only get updated after you restart.</p>
 </li>
 </ul>
 </div>
@@ -1378,7 +1378,7 @@ You can also view module tasks in calendar using <code>findModule m/MODULE_CODE<
 <div class="ulist">
 <ul>
 <li>
-<p>Lists all module tasks related to that module in <strong>CLI</strong>.</p>
+<p>Lists all module tasks related to that module in <strong>in result display panel</strong>.</p>
 </li>
 <li>
 <p>Module code inputted must be valid module code you have added in before.</p>
@@ -1441,7 +1441,7 @@ This command is similar to the <code>taskDelete</code> command in Calendar featu
 <p>Deletes the module task at the specified INDEX.</p>
 </li>
 <li>
-<p>The index refers to the index number <strong>shown in the CLI</strong> (you can get that by entering 'listModuleTasks MODULE_CODE')</p>
+<p>The index refers to the index number <strong>shown in result display panel</strong> (you can get that by entering 'listModuleTasks MODULE_CODE')</p>
 </li>
 <li>
 <p>The index must be a positive integer 1, 2, 3, …</p>
@@ -1517,7 +1517,7 @@ This command is similar to the <code>done</code> command in Calendar feature but
 <p>Deletes the module task at the specified INDEX.</p>
 </li>
 <li>
-<p>The index refers to the index number <strong>shown in the CLI</strong> (you can get that by entering 'listModuleTasks MODULE_CODE')</p>
+<p>The index refers to the index number <strong>shown in the in result display panel</strong> (you can get that by entering 'listModuleTasks MODULE_CODE')</p>
 </li>
 <li>
 <p>The index must be a positive integer 1, 2, 3, …</p>
@@ -1533,7 +1533,7 @@ This command is similar to the <code>done</code> command in Calendar feature but
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Only refer to the index of tasks shown in command line when performing this command. (not the one in calendar)
+Only refer to the index of tasks shown in result display panel when performing this command. (not the one in calendar)
 </td>
 </tr>
 </table>
@@ -1559,6 +1559,23 @@ Marks the first module task for module cs2103 as done.</p>
 </div>
 <div class="title">Figure 27. Marking a module task as done</div>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<strong>Clarification for <code>taskDelete</code> and <code>done</code> commands.</strong><br>
+If you did not provide specific module code in the command, the index required refers to the index of list of tasks shown in calendar tab. Otherwise,
+it refers to the index of list of module tasks shown in the result display panel.<br>
+<strong>For example:</strong><br>
+<code>taskDelete m/cs2103 index/1</code> will delete the first task as shown in Figure 26<br>
+<code>taskDelete index/1</code> will delete the first task shown in the task list in calendar tab.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="view-task-breakdown-per-module-code-taskbreakdown-code"><a class="link" href="#view-task-breakdown-per-module-code-taskbreakdown-code">3.6.5. View task breakdown per module : <code>taskBreakdown</code></a></h4>
@@ -1569,9 +1586,6 @@ Marks the first module task for module cs2103 as done.</p>
 </li>
 <li>
 <p>Format: <code>taskBreakdown</code></p>
-</li>
-<li>
-<p>Shows in the command line</p>
 </li>
 </ul>
 </div>
@@ -1976,6 +1990,9 @@ e.g. <code>modreq computer science</code></p>
 <li>
 <p><strong>CAP</strong> : The Cumulative Average Point is the weighted average grade point of the letter grades of all the modules taken by the students, according to NUS&#8217;s grading system.</p>
 </li>
+<li>
+<p><strong>CLI</strong> : Command Line Interface</p>
+</li>
 </ul>
 </div>
 </div>
@@ -1992,4 +2009,4 @@ e.g. <code>modreq computer science</code></p>
 <strong>A</strong>: NusProductivity saves your data of all your modules, grades and tasks after you make changes.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:45:05 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:35:29 UTC</div></div></div></body></html>
