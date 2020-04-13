@@ -78,6 +78,12 @@ public interface Logic {
      */
     ObservableList<Task> getDeadlineTaskList();
 
+    /**
+     *
+     * Returns a list of events
+     */
+    ObservableList<Task> getEventList();
+
 
     //=========== Profile Module ==================================================================================
     ObservableList<NusModule> getModulesListTaken();

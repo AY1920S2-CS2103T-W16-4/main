@@ -13,7 +13,7 @@ import seedu.address.model.nusmodule.ModuleTask;
 
 
 /**
- * Adds a deadline.
+ * Deletes a deadline.
  */
 
 public class DeleteDeadlineCommand extends DeleteTaskCommand {

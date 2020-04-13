@@ -23,6 +23,9 @@ public class Task {
     private static ObservableList<Task> deadlineTaskList;
     private static HashMap<String, ArrayList<Task>> deadlineTaskHashMap = new HashMap<>();
 
+    private static ObservableList<Task> eventList;
+    private static HashMap<String, ArrayList<Task>> eventHashMap = new HashMap<>();
+
     protected boolean isDone;
     private String description;
 
@@ -40,7 +43,7 @@ public class Task {
     /**
      * Return the status of the Task.
      *
-     * @return icon for status (tick or cross) to display if task is completed or not
+     * @return status of task
      */
     public boolean getStatus() {
         return isDone;
@@ -72,6 +75,23 @@ public class Task {
     }
 
     /**
+     * Add Event to the date in the HashMap.
+     *
+     * @param date date of the event, which is the key in the HashMap
+     * @param event Event that is added
+     */
+
+    public static void addEventPerDate(String date, Task event) {
+        if (!eventHashMap.containsKey(date)) {
+            eventHashMap.put(date, new ArrayList<>());
+            eventHashMap.get(date).add(event);
+
+        } else {
+            eventHashMap.get(date).add(event);
+        }
+    }
+
+    /**
      * Remove the task from the date in the HashMap
      *
      * @param date date of the task, which is the key in the HashMap
@@ -83,7 +103,20 @@ public class Task {
         if (deadlineTaskHashMap.get(date).size() <= 0) {
             deadlineTaskHashMap.remove(date);
         }
+    }
 
+    /**
+     * Remove the event from the date in the HashMap
+     *
+     * @param date date of the event, which is the key in the HashMap
+     * @param event Event that is to be removed
+     */
+    public static void removeEventPerDate(String date, Task event) {
+
+        eventHashMap.get(date).remove(event);
+        if (eventHashMap.get(date).size() <= 0) {
+            eventHashMap.remove(date);
+        }
     }
 
     /**
@@ -106,12 +139,40 @@ public class Task {
     }
 
     /**
+     * Returns whether a specific date have any events present.
+     *
+     * @param date Key of the HashMap
+     * @return true if an event is present in the date, false if not
+     */
+    public static boolean isEventPresent(String date) {
+
+        if (!eventHashMap.containsKey(date)) {
+            return false;
+        } else {
+            if (eventHashMap.get(date).size() <= 0) {
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+    /**
      * Adds task to the calendar.
      * @param task
      */
     public static void add(Task task) {
         deadlineTaskList.add(task);
         addTaskPerDate(task.getDate(), task);
+    }
+
+    /**
+     * Adds task to the calendar.
+     * @param event
+     */
+    public static void addEvent(Task event) {
+        eventList.add(event);
+        addEventPerDate(event.getDate(), event);
     }
 
     /**
@@ -123,9 +184,23 @@ public class Task {
         removeTaskPerDate(task.getDate(), task);
     }
 
+    /**
+     * Removes task to the calendar.
+     * @param event
+     */
+    public static void removeEvent(Task event) {
+        deadlineTaskList.remove(event);
+        removeTaskPerDate(event.getDate(), event);
+    }
+
     public static HashMap<String, ArrayList<Task>> getDeadlineTaskHashMap() {
 
         return deadlineTaskHashMap;
+    }
+
+    public static HashMap<String, ArrayList<Task>> getEventHashMap() {
+
+        return eventHashMap;
     }
 
     /**
@@ -169,6 +244,15 @@ public class Task {
     }
 
     /**
+     * Returns the observable list required for the UI.
+     *
+     * @return observable list required for the UI
+     */
+    public static ObservableList<Task> getEventList() {
+        return eventList;
+    }
+
+    /**
      * Sort the deadline task list by value specified, value can be date or priority
      *
      * @param value value specified can be date or priority
@@ -209,6 +293,26 @@ public class Task {
             FXCollections.sort(deadlineTaskList, comparator);
         }
 
+    }
+
+    /**
+     * Sort the event list by date
+     *
+     */
+    public static void sortEventList() {
+
+        SimpleDateFormat dateParser = new SimpleDateFormat("dd-MM-yyyy");
+
+        Comparator<Task> comparator = (Task o1, Task o2) -> {
+            try {
+                return dateParser.parse(o1.getDate()).compareTo(dateParser.parse(o2.getDate()));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            return -1;
+        };
+
+        FXCollections.sort(eventList, comparator);
     }
 
     public String getCategory() {

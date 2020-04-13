@@ -11,6 +11,7 @@ import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 import seedu.address.model.calender.Deadline;
+import seedu.address.model.calender.Event;
 import seedu.address.model.calender.Task;
 import seedu.address.model.calender.ToDo;
 import seedu.address.model.notes.Notes;
@@ -296,7 +297,33 @@ public class ParserUtil {
         return new ToDo(trimmedDescription);
     }
 
+    /**
+     * Parses a {@code String description, @code String date} into an {@code Event}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code date} is invalid.
+     */
+    public static Task parseEvent(String description, String date) throws ParseException {
+        requireNonNull(description, date);
+        String trimmedDescription = description.trim();
+        String trimmedDate = date.trim();
+        if (!Event.isValidDate(trimmedDate)) {
+            throw new ParseException(Event.MESSAGE_CONSTRAINTS);
+        }
+        return new Event(trimmedDescription, trimmedDate, "add");
+    }
 
+    /**
+     * Parses a {@code String description, @code String date} into an {@code Event}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code date} is invalid.
+     */
+    public static Task parseRemoveEvent(String index) throws ParseException {
+        requireNonNull(index);
+        int indexInt = Integer.parseInt(index.trim());
+        return new Event(indexInt, "delete");
+    }
 
 
 }

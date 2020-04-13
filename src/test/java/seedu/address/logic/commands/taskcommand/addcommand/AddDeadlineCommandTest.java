@@ -376,6 +376,41 @@ public class AddDeadlineCommandTest {
         }
 
         @Override
+        public void addEvent(Task deadline) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void sortEventList() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public Task deleteEvent(Task event) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public Task doneEvent(Task event) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public boolean isEmptyEvent(Task event) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public ObservableList<Task> getEventList() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void updateEventList(Predicate<Task> predicate) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public void addToDo(Task todo) {
             throw new AssertionError("This method should not be called.");
         }
