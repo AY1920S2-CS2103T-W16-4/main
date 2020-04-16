@@ -1,0 +1,2507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>NUSProductivity</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+:not(pre)>code.nobreak{word-wrap:normal}
+:not(pre)>code.nowrap{white-space:nowrap}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+table.tableblock{max-width:100%;border-collapse:separate}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h1>NUSProductivity</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>By: <code>Team W16-4</code>      Since: <code>Mar 2020</code>      Licence: <code>MIT</code></p>
+</div>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle"></div>
+<ul class="sectlevel1">
+<li><a href="#_introduction_xinwei">1. Introduction (Xinwei)</a>
+<ul class="sectlevel2">
+<li><a href="#_an_introduction_to_nusproductivity_user_guide">1.1. An Introduction to NUSProductivity User guide</a></li>
+<li><a href="#_commonly_used_symbols">1.2. Commonly Used Symbols</a></li>
+</ul>
+</li>
+<li><a href="#_quick_start">2. Quick Start</a></li>
+<li><a href="#Features">3. Features (Xinwei)</a>
+<ul class="sectlevel2">
+<li><a href="#_general_xinwei">3.1. General (Xinwei)</a>
+<ul class="sectlevel3">
+<li><a href="#_viewing_help_help">3.1.1. Viewing help : <code>help</code></a></li>
+<li><a href="#_exiting_the_program_exit">3.1.2. Exiting the program : <code>exit</code></a></li>
+<li><a href="#_switching_tabs_calendar_diary_modplan_addressbook_notes_profile">3.1.3. Switching Tabs : <code>calendar</code>, <code>diary</code>, <code>modplan</code>, <code>addressbook</code>, <code>notes</code>, <code>profile</code></a></li>
+</ul>
+</li>
+<li><a href="#_calendar_xinwei">3.2. Calendar (Xinwei)</a>
+<ul class="sectlevel3">
+<li><a href="#_priority_levels">3.2.1. Priority Levels</a></li>
+<li><a href="#_deadline">3.2.2. Deadline</a>
+<ul class="sectlevel4">
+<li><a href="#_adding_deadline_deadlineadd">Adding Deadline: <code>deadlineAdd</code></a></li>
+</ul>
+</li>
+<li><a href="#_module_tasks">3.2.3. Module Tasks</a></li>
+<li><a href="#_adding_a_module_task_moduletask">3.2.4. Adding a module task : <code>moduleTask</code></a></li>
+<li><a href="#_shared_functions">3.2.5. Shared Functions</a>
+<ul class="sectlevel4">
+<li><a href="#_marking_a_task_as_done_done">Marking a task as Done: <code>done</code></a></li>
+<li><a href="#_removing_deadline_taskdelete">Removing Deadline: <code>taskDelete</code></a></li>
+<li><a href="#_sorting_the_calendar_sorttask">Sorting the Calendar: <code>sortTask</code></a></li>
+<li><a href="#_finding_specific_tasks_in_the_calendar_findtask">Finding specific tasks in the Calendar: <code>findTask</code></a></li>
+<li><a href="#_listing_back_all_tasks_in_the_calendar_listtask">Listing back all tasks in the Calendar: <code>listTask</code></a></li>
+</ul>
+</li>
+<li><a href="#_event_coming_in_v2_0">3.2.6. Event (coming in v2.0)</a>
+<ul class="sectlevel4">
+<li><a href="#_adding_event_eventadd">Adding Event: <code>eventAdd</code></a></li>
+<li><a href="#_deleting_event_eventdelete">Deleting Event: <code>eventDelete</code></a></li>
+<li><a href="#_marking_event_as_done_done">Marking Event as done: <code>done</code></a></li>
+<li><a href="#_sorting_events_sorteventlist">Sorting Events: <code>sortEventList</code></a></li>
+<li><a href="#_list_events_listevent">List Events: <code>listEvent</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_notes_xinwei">3.3. Notes (Xinwei)</a>
+<ul class="sectlevel3">
+<li><a href="#_pathing">3.3.1. Pathing</a></li>
+<li><a href="#_listing_directory_noteslist">3.3.2. Listing Directory: <code>notesList</code></a></li>
+<li><a href="#_creating_a_note_notescreate">3.3.3. Creating a note: <code>notesCreate</code></a></li>
+<li><a href="#_opening_a_note_notesopen">3.3.4. Opening a note: <code>notesOpen</code></a></li>
+<li><a href="#_deleting_a_note_notesdelete">3.3.5. Deleting a note: <code>notesDelete</code></a></li>
+</ul>
+</li>
+<li><a href="#_address_book">3.4. Address Book</a>
+<ul class="sectlevel3">
+<li><a href="#_adding_a_person_add">3.4.1. Adding a person: <code>add</code></a></li>
+<li><a href="#_listing_all_persons_list">3.4.2. Listing all persons : <code>list</code></a></li>
+<li><a href="#_editing_a_person_edit">3.4.3. Editing a person : <code>edit</code></a></li>
+<li><a href="#_locating_persons_by_name_find">3.4.4. Locating persons by name: find</a></li>
+<li><a href="#_deleting_a_person_delete">3.4.5. Deleting a person : <code>delete</code></a></li>
+<li><a href="#_clearing_all_entries_clear">3.4.6. Clearing all entries : <code>clear</code></a></li>
+</ul>
+</li>
+<li><a href="#_profile_module_book_part_1_manage_your_modules">3.5. Profile / Module Book (Part 1: Manage your modules)</a>
+<ul class="sectlevel3">
+<li><a href="#_adding_a_module_moduleadd">3.5.1. Adding a module : <code>moduleAdd</code></a></li>
+<li><a href="#_deleting_a_module_moduledel">3.5.2. Deleting a module : <code>moduleDel</code></a></li>
+<li><a href="#_editing_the_grade_of_a_module_grade">3.5.3. Editing the grade of a module : <code>grade</code></a></li>
+<li><a href="#_view_current_cap_cap">3.5.4. View current CAP : <code>cap</code></a></li>
+</ul>
+</li>
+<li><a href="#_profile_module_book_part_2_manage_your_tasks_separately_for_each_module">3.6. Profile / Module Book (Part 2: Manage your tasks separately for each module)</a>
+<ul class="sectlevel3">
+<li><a href="#_listing_all_module_tasks_of_certain_module">3.6.1. Listing all module tasks of certain module</a></li>
+<li><a href="#_deleting_a_module_task_taskdelete">3.6.2. Deleting a module task : <code>taskDelete</code></a></li>
+<li><a href="#_marking_a_module_task_as_done_done">3.6.3. Marking a module task as done : <code>done</code></a></li>
+<li><a href="#_view_task_breakdown_per_module_taskbreakdown">3.6.4. View task breakdown per module : <code>taskBreakdown</code></a></li>
+<li><a href="#_states_major_taken_major_coming_in_v2_0">3.6.5. States major taken : <code>major</code> (coming in v2.0)</a></li>
+</ul>
+</li>
+<li><a href="#_module_planning">3.7. Module planning</a>
+<ul class="sectlevel3">
+<li><a href="#_view_module_requirement_modreq_coming_in_v2_0">3.7.1. View module requirement: <code>modreq</code> (coming in v2.0)</a></li>
+<li><a href="#_module_information_search">3.7.2. Module information: <code>search</code></a></li>
+</ul>
+</li>
+<li><a href="#_diary">3.8. Diary</a>
+<ul class="sectlevel3">
+<li><a href="#_adding_an_diary_entry_diaryadd">3.8.1. Adding an diary entry: <code>diaryAdd</code></a></li>
+<li><a href="#_viewing_diary_logs_diarylog">3.8.2. Viewing diary logs: <code>diaryLog</code></a></li>
+<li><a href="#_viewing_diary_entries_with_specified_entry_id_diaryshow">3.8.3. Viewing diary entries with specified entry ID: <code>diaryShow</code></a></li>
+<li><a href="#_viewing_diary_entries_with_specified_date_diaryshow">3.8.4. Viewing diary entries with specified date: <code>diaryShow</code></a></li>
+<li><a href="#_deleting_an_diary_entry_diarydelete">3.8.5. Deleting an diary entry: <code>diaryDelete</code></a></li>
+<li><a href="#_tagging_weather_diaryweather">3.8.6. Tagging weather: <code>diaryWeather</code></a></li>
+<li><a href="#_tagging_mood_diarymood">3.8.7. Tagging mood: <code>diaryMood</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_command_summary">4. Command Summary</a></li>
+<li><a href="#_glossary">5. Glossary</a></li>
+<li><a href="#_faq">6. FAQ</a></li>
+</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction_xinwei">1. Introduction (Xinwei)</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_an_introduction_to_nusproductivity_user_guide">1.1. An Introduction to NUSProductivity User guide</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>NUSProductivity is an application designed for all NUS students to better manage their school work. The app is set out to enhance your productivity in school through 5 main features, module planning, CAP (cumulative average point) tracking, note taking, deadline and task listing, and finally, diary logging. This app is designed only for NUS students for now with the possibility to customise it for students from other universities in the future. More importantly, NUSProductivity is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). Read on to get you started on using the application!</p>
+</li>
+<li>
+<p>The purpose of this document is for you to familiarise yourself with the functions and capabilities of what NUSProductivity can do.</p>
+</li>
+<li>
+<p>The image below shows the different parts of the user interface of NUSProductivity</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/StartupDescription.png" alt="StartupDescription" width="790">
+</div>
+<div class="title">Figure 1. NUSProductivity Introduction</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_commonly_used_symbols">1.2. Commonly Used Symbols</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This symbol indicates something you should take note of.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This symbol indicates a tip that you could use.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Caution</div>
+</td>
+<td class="content">
+This symbol indicates something need be used or followed with caution.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+This symbol indicates something you really need to pay attention to.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quick_start">2. Quick Start</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section allows you to start up NUSProductivity with ease. Detailed steps are listed below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure you have Java <code>11</code> or above installed on your computer, if not you can refer to the guide below</p>
+</li>
+<li>
+<p><a href="https://docs.oracle.com/en/java/javase/11/install/installation-jdk-microsoft-windows-platforms.html#GUID-C11500A9-252C-46FE-BB17-FC5A9528EAEB">Windows</a> <a href="https://docs.oracle.com/en/java/javase/11/install/installation-jdk-macos.html#GUID-2FE451B0-9572-4E38-A1A5-568B77B146DE">Mac</a></p>
+</li>
+<li>
+<p>Download the latest version of <code>NUSProductivity.jar</code> <a href="https://github.com/AY1920S2-CS2103T-W16-4/main/releases">here</a>.</p>
+</li>
+<li>
+<p>Copy the file to the folder you want to use as the home folder for NUSProductivity.</p>
+</li>
+<li>
+<p>Double-click the file to start the app. The GUI should appear in a few seconds (screenshot of GUI shown below).</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui" width="790">
+</div>
+<div class="title">Figure 2. NUSProductivity Start up</div>
+</div>
+</li>
+<li>
+<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
+e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
+</li>
+<li>
+<p>Some example commands you can try:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>search</code></strong><code>CS2103T</code> : searches for the module <code>CS2103T</code></p>
+</li>
+<li>
+<p><strong><code>calendar</code></strong> : Allows you to switch to the calendar tab</p>
+</li>
+<li>
+<p><strong><code>deadlineAdd desc/Finish homework by/30-04-2020 cat/School</code></strong> : schedules a deadline on the calendar for you to finish your homework</p>
+</li>
+<li>
+<p><strong><code>cap</code></strong> : calculates your CAP</p>
+</li>
+<li>
+<p><strong><code>exit</code></strong> : exits the app</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Refer to <a href="#Features">Section 3, &#8220;Features (Xinwei)&#8221;</a> for details of each command.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Features">3. Features (Xinwei)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section shows the detailed list of usable commands.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Command Format</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+</li>
+<li>
+<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
+</li>
+<li>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
+</li>
+<li>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_general_xinwei">3.1. General (Xinwei)</h3>
+<div class="sect3">
+<h4 id="_viewing_help_help">3.1.1. Viewing help : <code>help</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Format: <code>help</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exiting_the_program_exit">3.1.2. Exiting the program : <code>exit</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Exits the program.</p>
+</li>
+<li>
+<p>Format: <code>exit</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_switching_tabs_calendar_diary_modplan_addressbook_notes_profile">3.1.3. Switching Tabs : <code>calendar</code>, <code>diary</code>, <code>modplan</code>, <code>addressbook</code>, <code>notes</code>, <code>profile</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>This command allows you to switch to the tab using the command line instead of clicking on the respective tab.</p>
+</li>
+<li>
+<p>Format: <code>calendar</code>, <code>diary</code>, <code>modplan</code>, <code>addressbook</code>, <code>notes</code>, <code>profile</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/switching_tabs.png" alt="switching tabs" width="790">
+</div>
+<div class="title">Figure 3. Switching tabs</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_calendar_xinwei">3.2. Calendar (Xinwei)</h3>
+<div class="paragraph">
+<p>The calendar feature in the app that allows you to schedule and set deadline for important tasks such as project or assignment deadlines.</p>
+</div>
+<div class="paragraph">
+<p>The application allows you to add 2 type of tasks, <code>deadline</code> and <code>moduleTask</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>moduleTask</code> allows you to tag a module, that you have already inputted in your Profile tab, to the task itself. It allows you to set the priority level of the task.</p>
+</div>
+<div class="paragraph">
+<p><code>deadline</code> allows you to input a deadline event into the calendar without any specified modules attached to it.</p>
+</div>
+<div class="sect3">
+<h4 id="_priority_levels">3.2.1. Priority Levels</h4>
+<div class="paragraph">
+<p>We give you the flexibility to choose and indicate what priority each <code>moduleTask</code> should have. This priority is represented from 1 to 5, with 1 being the lowest priority and 5 being the highest.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/prioritylevels.png" alt="prioritylevels" width="790">
+</div>
+<div class="title">Figure 4. NUSProductivity calendar priority levels</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deadline">3.2.2. Deadline</h4>
+<div class="sect4">
+<h5 id="_adding_deadline_deadlineadd">Adding Deadline: <code>deadlineAdd</code></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Schedules a task tagged with a deadline to the calendar. A dot will be shown to indicate there is a deadline to be met on that day</p>
+</li>
+<li>
+<p>Format: <code>deadlineAdd desc/DESCRIPTION by/DD-MM-YYYY cat/CATEGORY</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/deadlineAdd.png" alt="deadlineAdd" width="790">
+</div>
+<div class="title">Figure 5. Adding Deadlines</div>
+</div>
+<div class="paragraph">
+<p>After invoking the command, the deadline will be added to the calendar as shown in figure 5. The task will be tagged as light grey to signify it is uncompleted yet.</p>
+</div>
+<div class="paragraph">
+<p>Deadline tasks are defaulty tagged with the lowest priority.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_module_tasks">3.2.3. Module Tasks</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_adding_a_module_task_moduletask">3.2.4. Adding a module task : <code>moduleTask</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Format: <code>moduleTask desc/DESCRIPTION m/MODULE_CODE date/DEADLINE_OR_SCHEDULED_TIMING pri/PRIORITY</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Caution</div>
+</td>
+<td class="content">
+The date inputted should be in the format: DD-MM-YYYY.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>This command allows you to create tasks to certain module you added to the program before.</p>
+</li>
+<li>
+<p>Stores the task added in the module book and automatically adds and shows on the Calender.</p>
+</li>
+<li>
+<p>You will get an updated list of tasks related to that specific module after adding. (shown in command line)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>moduleTask desc/essay m/CS2101 date/02-04-2020 pri/3</code><br>
+Add a module task as specified in module book and also shows on calendar.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleTaskProfile.png" alt="ModuleTaskProfile" width="790">
+</div>
+<div class="title">Figure 6. Adding a module task for certain module</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleTaskCalendar.png" alt="ModuleTaskCalendar" width="790">
+</div>
+<div class="title">Figure 7. module task added will also be shown on calendar</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This requires you to add a module under <code>moduleAdd</code> before you can use it
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/moduleTaskAddError.png" alt="moduleTaskAddError" width="790">
+</div>
+<div class="title">Figure 8. Error when adding a module task without adding a module first.</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_shared_functions">3.2.5. Shared Functions</h4>
+<div class="paragraph">
+<p>The commands stated in this section can be used for both moduleTask and deadline tasks.</p>
+</div>
+<div class="sect4">
+<h5 id="_marking_a_task_as_done_done">Marking a task as Done: <code>done</code></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Marks a task as completed, completed task will be shown with a black background while uncompleted task will be shown as a grey background.</p>
+</li>
+<li>
+<p>Format: <code>done index/INDEX</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/taskDone.png" alt="taskDone" width="790">
+</div>
+<div class="title">Figure 9. Completing a task</div>
+</div>
+<div class="paragraph">
+<p>After a task is completed, it will be pushed to the bottom, the dot on the calendar removed and the background of the task is changed to black to signify the task is compelted.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_removing_deadline_taskdelete">Removing Deadline: <code>taskDelete</code></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes a task from the deadline list, marking the task as done</p>
+</li>
+<li>
+<p>Format: <code>taskDelete index/INDEX</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/taskDelete.png" alt="taskDelete" width="790">
+</div>
+<div class="title">Figure 10. Deleting a task</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Tip: delete a task only after the date have passed to make sure everything is completed up to your current date
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_sorting_the_calendar_sorttask">Sorting the Calendar: <code>sortTask</code></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows you to sort the tasks list on the left by either date or priority. This gives you the flexibility to plan ahead, whether you want to complete a more urgent task or to complete a task with the deadline that is earlier</p>
+</li>
+<li>
+<p>Format: <code>sortTask by/SORT</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/taskSort.png" alt="taskSort" width="790">
+</div>
+<div class="title">Figure 11. Sorting tasks by priority</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+SORT can only be either date or priority
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_finding_specific_tasks_in_the_calendar_findtask">Finding specific tasks in the Calendar: <code>findTask</code></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows you to see task at a glance based on what you specified.</p>
+</li>
+<li>
+<p>Format: <code>findTask m/MODULECODE</code> or <code>findTask cat/CATEGORY</code> or <code>findTask date/DD-MM-YYYY</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/findTask.png" alt="findTask" width="790">
+</div>
+<div class="title">Figure 12. Finding task by module Code</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The dots on the calendar will not disappear and will show that there is still task to be completed on that date despite filtering
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_listing_back_all_tasks_in_the_calendar_listtask">Listing back all tasks in the Calendar: <code>listTask</code></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows you to list back all task after you have filtered the list with findTask</p>
+</li>
+<li>
+<p>Format: <code>listTask</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/listTask.png" alt="listTask" width="790">
+</div>
+<div class="title">Figure 13. Listing all tasks</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_event_coming_in_v2_0">3.2.6. Event (coming in v2.0)</h4>
+<div class="sect4">
+<h5 id="_adding_event_eventadd">Adding Event: <code>eventAdd</code></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Schedules event to the calendar</p>
+</li>
+<li>
+<p>Format: <code>eventAdd</code> desc/DESCRIPTION on/DD-MM-YYYY</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_deleting_event_eventdelete">Deleting Event: <code>eventDelete</code></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes event from list with the given index</p>
+</li>
+<li>
+<p>Format: <code>eventDelete</code> index/INDEX</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_marking_event_as_done_done">Marking Event as done: <code>done</code></h5>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This is meant to be an extension of the done command above, hence its implementation will follow said format.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Format: done index/INDEX</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_sorting_events_sorteventlist">Sorting Events: <code>sortEventList</code></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Sorts events by date (default)</p>
+</li>
+<li>
+<p>Format: <code>sortEventList</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_list_events_listevent">List Events: <code>listEvent</code></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Lists scheduled events</p>
+</li>
+<li>
+<p>Format: <code>listEvent</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_notes_xinwei">3.3. Notes (Xinwei)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows you to create notes from the application, making it easier for you to find your files since often time students have a lot of research papers or references opened when writing a report.</p>
+</li>
+<li>
+<p>Allows for users to create documents for notes, organise their notes in folders.
+Default location is set to
+<code>/User/&lt;ACCOUNT NAME&gt;</code> for mac
+<code>C:\Users\&lt;ACCOUNT NAME&gt;</code> for windows</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_pathing">3.3.1. Pathing</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>The notes feature allows you to specify the pathing used to access the file/folder you specify</p>
+</li>
+<li>
+<p>The diagram below shows a comparision between absolute vs relative pathing</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/pathing.png" alt="pathing" width="790">
+</div>
+<div class="title">Figure 14. Pathing Absolute vs Rel</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+if you want to access the Documents folder as shown in figure 13, you can use the absolute pathing and specify loc/Desktop instead of typing loc/../../../Documents
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_listing_directory_noteslist">3.3.2. Listing Directory: <code>notesList</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>List the directory that you supplied. The display will show all folders that is in that directory.</p>
+</li>
+<li>
+<p>Format: <code>notesList loc/PATH pt/PATH TYPE</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/notesListingUG.png" alt="notesListingUG" width="790">
+</div>
+<div class="title">Figure 15. Listing files in directory</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_creating_a_note_notescreate">3.3.3. Creating a note: <code>notesCreate</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Creates a file/directory based on what you specified.</p>
+</li>
+<li>
+<p>Format: <code>notesCreate loc/PATH name/FILE_NAME type/TYPE pt/PATH_TYPE</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The type can only be file or folder
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/notesCreateUG.png" alt="notesCreateUG" width="790">
+</div>
+<div class="title">Figure 16. Creating a file in a specified directory</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_opening_a_note_notesopen">3.3.4. Opening a note: <code>notesOpen</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Opens a file/directory based on what you specified.</p>
+</li>
+<li>
+<p>Format: <code>notesOpen loc/PATH name/FILE_NAME pt/PATH_TYPE</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/notesOpenUG.png" alt="notesOpenUG" width="790">
+</div>
+<div class="title">Figure 17. Opening a file in a specified directory</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deleting_a_note_notesdelete">3.3.5. Deleting a note: <code>notesDelete</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete a file based on what you specified.</p>
+</li>
+<li>
+<p>Format: <code>notesDelete loc/PATH name/FILE_NAME pt/PATH_TYPE</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/notesDeleteUG.png" alt="notesDeleteUG" width="790">
+</div>
+<div class="title">Figure 18. Deleting a file in a specified directory</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This can only be use to delete a file and not a folder
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_address_book">3.4. Address Book</h3>
+<div class="paragraph">
+<p>The address book allows you to add other individuals, such as professors and fellow classmates to your addressbook. Information such as phone number and email of the person will be saved into the address book for easier communication for projects or to schedule consultation relating to the module.</p>
+</div>
+<div class="sect3">
+<h4 id="_adding_a_person_add">3.4.1. Adding a person: <code>add</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a person to the address book.</p>
+</li>
+<li>
+<p>Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]&#8230;&#8203;</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+A person can have any number of tags (including 0)
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Examples:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/John Doe p/98765432 e/johnd@example.com</code></p>
+</li>
+<li>
+<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com p/1234567 t/criminal</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_listing_all_persons_list">3.4.2. Listing all persons : <code>list</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows a list of all persons in the address book.</p>
+</li>
+<li>
+<p>Format: <code>list</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_editing_a_person_edit">3.4.3. Editing a person : <code>edit</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Edits an existing person in the address book.</p>
+</li>
+<li>
+<p>Format: <code>contactEdit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [t/TAG]…</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the person at the specified INDEX. The index refers to the index number shown in the displayed person list. The index must be a positive integer 1, 2, 3, …</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the person will be removed i.e. adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the person’s tags by typing t/ without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Examples:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
+Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+</li>
+<li>
+<p><code>edit 2 n/Betsy Crower t/</code><br>
+Edits the name of the <code>2nd person</code> to be <code>Betsy Crower</code> and clears all existing tags.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_locating_persons_by_name_find">3.4.4. Locating persons by name: find</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Finds persons whose names contain any of the given keywords.</p>
+</li>
+<li>
+<p>Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g. hans will match Hans</p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. Hans Bo will match Bo Hans</p>
+</li>
+<li>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. Han will not match Hans</p>
+</li>
+<li>
+<p>Persons matching at least one keyword will be returned (i.e. OR search). e.g. Hans Bo will return Hans Gruber, Bo Yang</p>
+</li>
+<li>
+<p>After a find operation, use <code>list</code> to get back the original list for address book.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Examples:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find John</code><br>
+Returns <code>john</code> and <code>John Doe</code></p>
+</li>
+<li>
+<p><code>find Betsy Tim John</code><br>
+Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deleting_a_person_delete">3.4.5. Deleting a person : <code>delete</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the specified person from the address book.</p>
+</li>
+<li>
+<p>Format: <code>delete INDEX</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the person at the specified INDEX.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed person list.</p>
+</li>
+<li>
+<p>The index must be a positive integer 1, 2, 3, …</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Examples:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd person in the address book.</p>
+</li>
+<li>
+<p><code>find Betsy</code><br>
+<code>delete 1</code><br>
+Deletes the 1st person in the results of the find command.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_clearing_all_entries_clear">3.4.6. Clearing all entries : <code>clear</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Clears all entries from the address book.</p>
+</li>
+<li>
+<p>Format: <code>clear</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_profile_module_book_part_1_manage_your_modules">3.5. Profile / Module Book (Part 1: Manage your modules)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>This feature allows individuals to see their own profile, their current cap and the all modules that the individual have taken and all the grades gotten.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ProfileMainScreen.png" alt="ProfileMainScreen" width="790">
+</div>
+<div class="title">Figure 19. Main Screen for profile tab</div>
+</div>
+<div class="sect3">
+<h4 id="_adding_a_module_moduleadd">3.5.1. Adding a module : <code>moduleAdd</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a module you have taken before or is taking now and store your grade for each module if you want.</p>
+</li>
+<li>
+<p>Format: <code>moduleAdd m/MODULE_CODE [g/GRADE]</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+The grade field is optional. You can state your grade when you add in modules and
+also can update or add in your grade later.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You can only add in modules which are valid modules that can be taken in NUS.</p>
+</li>
+<li>
+<p>All other module codes inputted will be considered as invalid and the program will not allow you to add in.</p>
+</li>
+<li>
+<p>This requirement is not case sensitive, which means for example, both "CS2103" and "cs2103" are considered valid module code.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+The program checks whether a module code provided is valid or not by using the search function in module planning feature, which fetch information about
+modules online. If the search function fails to fetch any information, the module code will be treated as invalid.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>moduleAdd m/CS2103</code></p>
+</li>
+<li>
+<p><code>moduleAdd m/cs1101s g/A</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddModule.png" alt="AddModule" width="790">
+</div>
+<div class="title">Figure 20. Adding a module</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deleting_a_module_moduledel">3.5.2. Deleting a module : <code>moduleDel</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes a module you have added to the program before from the profile tab.</p>
+</li>
+<li>
+<p>Format: <code>moduleDel MODULE_CODE</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the module specified from the module book (profile)</p>
+</li>
+<li>
+<p>You can only delete the module which you have added into the program before.</p>
+</li>
+<li>
+<p>Module code inputted is not case sensitive ('moduleDel cs2103' is the same as 'moduleDel CS2103')</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>moduleDel CS2103</code><br>
+Delete CS2103 from module book if you have added it before.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteModule.png" alt="DeleteModule" width="790">
+</div>
+<div class="title">Figure 21. Deleting a module</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_editing_the_grade_of_a_module_grade">3.5.3. Editing the grade of a module : <code>grade</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Updates or adds the grade of certain modules you have added to the program.</p>
+</li>
+<li>
+<p>Format: <code>grade m/MODULE_CODE g/GRADE</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Updates the grade of the specified module as the grade you provided now.</p>
+</li>
+<li>
+<p>You can only update the grade of module which you have added into the program before.</p>
+</li>
+<li>
+<p>Grade inputted should be a valid grade in NUS&#8217;s grading system.</p>
+</li>
+<li>
+<p>Both module code and grade inputted is not case sensitive.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+List of all valid grade: A+, A, A-, B+, B, B-, C+, C, D+, D, F, S and U.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>grade m/CS1101S g/S</code></p>
+</li>
+<li>
+<p><code>grade m/CS2103 g/A</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Grade.png" alt="Grade" width="790">
+</div>
+<div class="title">Figure 22. Updating the grade of a module</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_view_current_cap_cap">3.5.4. View current CAP : <code>cap</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows your current cap based on the grades of modules you have stated.</p>
+</li>
+<li>
+<p>Format: <code>cap</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Calculates your current CAP.</p>
+</li>
+<li>
+<p>CAP = Sum (module grade point x modular credits for the module) / Sum (modular credits)</p>
+</li>
+<li>
+<p>The calculation strictly follow the grading system of NUS.</p>
+</li>
+<li>
+<p>Shows current CAP in in result display panel, CAP on UI will only get updated after you restart.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+You don&#8217;t need to indicate the modular credits for each module when you add it in because the program will fetch that infomation online.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Cap.png" alt="Cap" width="790">
+</div>
+<div class="title">Figure 23. View current CAP</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_profile_module_book_part_2_manage_your_tasks_separately_for_each_module">3.6. Profile / Module Book (Part 2: Manage your tasks separately for each module)</h3>
+<div class="paragraph">
+<p>Most of the functionality here has been integrate into the Calendar feature but these commands left here still can be used.
+You can give it a try if you want.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+These tasks related to certain module are called 'module task' from now on.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+All commands that make changes to the module tasks will be synchronous for both module book and the task list in calendar feature.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+For this part, the UI hasn&#8217;t been implemented yet but you are able to see the updated list of module tasks in command line.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Most functionality covered in this part can also be achieved by some commands in Calendar feature above. Just provides users
+with an alternative way. (The orders of tasks shown are different. Thus, the index inputted may be different to achieve the same modification.)
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_listing_all_module_tasks_of_certain_module">3.6.1. Listing all module tasks of certain module</h4>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+You can also view module tasks in calendar using <code>findModule m/MODULE_CODE</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lists all module tasks related to the specific module.</p>
+</li>
+<li>
+<p>Format: <code>listModuleTasks MODULE_CODE</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Lists all module tasks related to that module in <strong>in result display panel</strong>.</p>
+</li>
+<li>
+<p>Module code inputted must be valid module code you have added in before.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listModuleTasks CS2103</code><br>
+Lists all module tasks of CS2103.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ListModuleTask.png" alt="ListModuleTask" width="790">
+</div>
+<div class="title">Figure 24. Showing all module tasks related to specified module</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deleting_a_module_task_taskdelete">3.6.2. Deleting a module task : <code>taskDelete</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the specified module tasks for certain module from the module book and calendar.</p>
+</li>
+<li>
+<p>Format: <code>taskDelete m/MODULE_CODE index/INDEX</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This command is similar to the <code>taskDelete</code> command in Calendar feature but you need to specify the module code.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the module task at the specified INDEX.</p>
+</li>
+<li>
+<p>The index refers to the index number <strong>shown in result display panel</strong> (you can get that by entering 'listModuleTasks MODULE_CODE')</p>
+</li>
+<li>
+<p>The index must be a positive integer 1, 2, 3, …</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Caution</div>
+</td>
+<td class="content">
+Only refer to the index of tasks shown in command line when performing this command. (not the one in calendar)
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>taskDelete m/CS2103 index/1</code><br>
+Deletes the first module task for CS2103 in module book and Calendar.<br>
+<strong>(First task in module book and may not be the first in Calendar even after performing <code>findTask m/cs2103</code>)</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskDeleteWirhModuleCode.png" alt="TaskDeleteWirhModuleCode" width="790">
+</div>
+<div class="title">Figure 25. Deleting a module task</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_marking_a_module_task_as_done_done">3.6.3. Marking a module task as done : <code>done</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Marks the specified module tasks for certain module as done in the module book and calendar.</p>
+</li>
+<li>
+<p>Format: <code>done m/MODULE_CODE index/Index</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This command is similar to the <code>done</code> command in Calendar feature but you need to specify the module code.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the module task at the specified INDEX.</p>
+</li>
+<li>
+<p>The index refers to the index number <strong>shown in the in result display panel</strong> (you can get that by entering 'listModuleTasks MODULE_CODE')</p>
+</li>
+<li>
+<p>The index must be a positive integer 1, 2, 3, …</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Caution</div>
+</td>
+<td class="content">
+Only refer to the index of tasks shown in result display panel when performing this command. (not the one in calendar)
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>done m/cs2103 index/1</code><br>
+Marks the first module task for module cs2103 as done.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DoneWithModuleCode.png" alt="DoneWithModuleCode" width="790">
+</div>
+<div class="title">Figure 26. Marking a module task as done</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<strong>Clarification for <code>taskDelete</code> and <code>done</code> commands.</strong><br>
+If you did not provide specific module code in the command, the index required refers to the index of list of tasks shown in calendar tab. Otherwise,
+it refers to the index of list of module tasks shown in the result display panel.<br>
+<strong>For example:</strong><br>
+<code>taskDelete m/cs2103 index/1</code> will delete the first task as shown in Figure 26<br>
+<code>taskDelete index/1</code> will delete the first task shown in the task list in calendar tab.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_view_task_breakdown_per_module_taskbreakdown">3.6.4. View task breakdown per module : <code>taskBreakdown</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the how many tasks are there in total and how many tasks haven&#8217;t been completed yet for each module.</p>
+</li>
+<li>
+<p>Format: <code>taskBreakdown</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskBreakDown.png" alt="TaskBreakDown" width="790">
+</div>
+<div class="title">Figure 27. Show task breakdown</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_states_major_taken_major_coming_in_v2_0">3.6.5. States major taken : <code>major</code> (coming in v2.0)</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_module_planning">3.7. Module planning</h3>
+<div class="sect3">
+<h4 id="_view_module_requirement_modreq_coming_in_v2_0">3.7.1. View module requirement: <code>modreq</code> (coming in v2.0)</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the modules requirement for the major specified. This function will show the core modules that the individual have to take before graduation but have not taken yet.</p>
+</li>
+<li>
+<p>Format: <code>modreq MAJOR</code></p>
+</li>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>modreq computer science</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_module_information_search">3.7.2. Module information: <code>search</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows basic information about the module, such as time of lecture, tutorial, exam venues and
+professor’s contact associated with the module.</p>
+</li>
+<li>
+<p>Format: <code>search MODULE_CODE</code></p>
+</li>
+<li>
+<p>Example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>search CS2103T</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_diary">3.8. Diary</h3>
+<div class="paragraph">
+<p>The diary feature allows you to jot down any thoughts, be it for your personal life or for school work, or just a concept that you may not understand that you will have to revisit in the future.</p>
+</div>
+<div class="sect3">
+<h4 id="_adding_an_diary_entry_diaryadd">3.8.1. Adding an diary entry: <code>diaryAdd</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds a diary entry to the diary book.</p>
+</li>
+<li>
+<p>Format: <code>diaryAdd ec/ENTRY_CONTENT</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_viewing_diary_logs_diarylog">3.8.2. Viewing diary logs: <code>diaryLog</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows all diary entry IDs.</p>
+</li>
+<li>
+<p>Format: `diaryLog `</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_viewing_diary_entries_with_specified_entry_id_diaryshow">3.8.3. Viewing diary entries with specified entry ID: <code>diaryShow</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the diary entry for the specified entry ID.</p>
+</li>
+<li>
+<p>Format: <code>diaryShow id/ENTRY_ID</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_viewing_diary_entries_with_specified_date_diaryshow">3.8.4. Viewing diary entries with specified date: <code>diaryShow</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the diary entry at the specified date if there is any, date needs to be in DD-MM-YYYY.</p>
+</li>
+<li>
+<p>Format: <code>diaryShow date/DATE</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deleting_an_diary_entry_diarydelete">3.8.5. Deleting an diary entry: <code>diaryDelete</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the specified diary ID’s entry.</p>
+</li>
+<li>
+<p>Format: <code>diaryDelete id/ENTRY_ID</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tagging_weather_diaryweather">3.8.6. Tagging weather: <code>diaryWeather</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Tags the diary with the specific ID with a specific weather (e.g. sunny, cloudy)</p>
+</li>
+<li>
+<p>Format: <code>diaryWeather id/ENTRY_ID w/WEATHER</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tagging_mood_diarymood">3.8.7. Tagging mood: <code>diaryMood</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Tags the diary with the specific ID with a specific mood (e.g. happy, stressed)</p>
+</li>
+<li>
+<p>Format: <code>diaryMood id/ENTRY_ID m/MOOD</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_command_summary">4. Command Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section summarizes the list of commands.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>General</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>calendar</strong>: <code>calendar</code></p>
+</li>
+<li>
+<p><strong>notes</strong>: <code>notes</code></p>
+</li>
+<li>
+<p><strong>modplan</strong>: <code>modplan</code></p>
+</li>
+<li>
+<p><strong>diary</strong>: <code>diary</code></p>
+</li>
+<li>
+<p><strong>profile</strong>: <code>profile</code></p>
+</li>
+<li>
+<p><strong>help</strong>: <code>help</code></p>
+</li>
+<li>
+<p><strong>exit</strong>: <code>exit</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Calendar</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>deadline</strong> : <code>deadlineAdd desc/DESCRIPTION by/DD-MM-YYYY cat/CATEGORY</code>
+e.g. <code>deadlineAdd desc/Do Chores by/30-04-2020 cat/Misc</code></p>
+</li>
+<li>
+<p><strong>moduleTask</strong>: <code>moduleTask desc/DESCRIPTION m/MODULE CODE date/DD-MM-YYYY pri/PRIORITY</code>
+e.g. <code>moduleTask desc/Project Deadline date/30-04-2020 m/CS2103T pri/5</code></p>
+</li>
+<li>
+<p><strong>done</strong>: <code>done index/INDEX</code>
+e.g. <code>done index/1</code></p>
+</li>
+<li>
+<p><strong>taskDelete</strong>: <code>taskDelete index/INDEX</code>
+e.g. <code>taskDelete index/1</code></p>
+</li>
+<li>
+<p><strong>sortTask</strong>: <code>sortTask by/SORTING_PARAM</code>
+e.g. <code>sortTask by/priority</code></p>
+</li>
+<li>
+<p><strong>findTask</strong>: <code>findTask m/MODULECODE</code> or <code>findTask cat/CATEGORY</code> or <code>findTask date/DD-MM-YYYY</code>
+e.g. <code>findTask m/CS2103T</code></p>
+</li>
+<li>
+<p><strong>listTask</strong>: <code>listTask</code>
+e.g. <code>listTask</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Notes</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>notesList</strong> loc/PATH pt/PATH TYPE
+e.g. <code>notesList loc/Desktop pt/abs</code></p>
+</li>
+<li>
+<p><strong>notesOpen</strong> loc/PATH name/FILE_NAME pt/PATH_TYPE
+e.g. <code>notesOpen loc/Desktop name/test.doc pt/abs</code></p>
+</li>
+<li>
+<p><strong>notesCreate</strong> loc/PATH name/FILE_NAME type/TYPE pt/PATH_TYPE
+e.g. <code>notesCreate loc/Desktop/ name/Test.doc type/file pt/abs</code></p>
+</li>
+<li>
+<p><strong>notesDelete</strong> loc/PATH name/FILE_NAME pt/PATH_TYPE
+e.g. <code>notesDelete loc/Desktop/ name/Test.doc pt/abs</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Address Book:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>add  n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…<br>
+e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com t/friend t/colleague</code></p>
+</li>
+<li>
+<p>clear : clear</p>
+</li>
+<li>
+<p>delete : delete INDEX<br>
+e.g. <code>delete 3</code></p>
+</li>
+<li>
+<p>edit : edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG]…<br>
+e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
+</li>
+<li>
+<p>find : find KEYWORD [MORE_KEYWORDS]<br>
+e.g. <code>find James Jake</code></p>
+</li>
+<li>
+<p>list: list</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Profile</strong> (Module Book)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>moduleAdd m/MODULE_CODE [g/GRADE]<br>
+e.g. <code>moduleAdd m/cs2103 g/A</code></p>
+</li>
+<li>
+<p>moduleDel*MODULE_CODE<br>
+e.g. <code>moduleDel CS2103</code></p>
+</li>
+<li>
+<p>grade m/MODULE_CODE g/GRADE<br>
+e.g. <code>grade m/cs2103 g/A</code></p>
+</li>
+<li>
+<p>cap</p>
+</li>
+<li>
+<p>moduleTask desc/DESCRIPTION m/MODULE CODE date/DD-MM-YYYY pri/PRIORITY<br>
+e.g. <code>moduleTask desc/Project m/CS2103T date/30-04-2020 pri/5</code></p>
+</li>
+<li>
+<p>taskDelete m/MODULE_CODE index/INDEX
+e.g. <code>taskDelete m/cs2103 index/1</code></p>
+</li>
+<li>
+<p>done m/MODULE_CODE index/INDEX
+e.g. <code>done m/cs2103 index/1</code></p>
+</li>
+<li>
+<p>listModuleTasks m/MODULE_CODE
+e.g. <code>listModuleTasks m/CS2103</code></p>
+</li>
+<li>
+<p>taskBreakdown</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Diary :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>diary log LIMIT
+e.g. <code>diary log 10</code></p>
+</li>
+<li>
+<p>diary show ENTRY ID
+e.g. <code>diary show 3</code></p>
+</li>
+<li>
+<p>diary show DD-MM-YYYY
+e.g. <code>diary show 30-03-2020</code></p>
+</li>
+<li>
+<p>diary add ENTRY
+e.g. <code>diary add "Today is a good day"</code></p>
+</li>
+<li>
+<p>diary delete ENTRY ID
+e.g. <code>diary delete 1</code></p>
+</li>
+<li>
+<p>diary weather ID WEATHER
+e.g. <code>diary weather 1 SUNNY</code></p>
+</li>
+<li>
+<p>diary emotion ID EMOTION
+e.g. <code>diary emotion 1 HAPPY</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Mod Plan:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>search MODULE_CODE<br>
+e.g. <code>search CS2103T</code></p>
+</li>
+<li>
+<p>mymodplan: mymodplan (coming in v2.0)</p>
+</li>
+<li>
+<p>mymodplan add MODULE CODE
+e.g. <code>mymodplan add CS2103T</code> (coming in v2.0)</p>
+</li>
+<li>
+<p>mymodplan done MODULE CODE
+e.g. <code>mymodplan done CS2103T</code> (coming in v2.0)</p>
+</li>
+<li>
+<p>modreq : modreq {\MAJOR} + (coming in v2.0)
+e.g. <code>modreq computer science</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_glossary">5. Glossary</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>NUS</strong> : National University of Singapore</p>
+</li>
+<li>
+<p><strong>CAP</strong> : The Cumulative Average Point is the weighted average grade point of the letter grades of all the modules taken by the students, according to NUS&#8217;s grading system.</p>
+</li>
+<li>
+<p><strong>CLI</strong> : Command Line Interface</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_faq">6. FAQ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous fitness log book folder.</p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: How do I save my data in my own PC?<br>
+<strong>A</strong>: NusProductivity saves your data of all your modules, grades and tasks after you make changes.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-04-13 20:43:30 +0800
+</div>
+</div>
+</body>
+</html>

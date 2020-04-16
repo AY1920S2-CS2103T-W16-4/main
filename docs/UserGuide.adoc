@@ -1,4 +1,4 @@
-= NUSProductivity
+= NUSProductivity - User Guide
 :site-section: UserGuide
 :toc:
 :toclevels: 4

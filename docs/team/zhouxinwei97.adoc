@@ -31,7 +31,8 @@ NUSProductivity is a desktop application for NUS students. The user interacts wi
 
 * *Minor enhancement*: Added all functionality to the user interface.
 
-* *Code contributed*: [https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=zhouxinwei97&sort=groupTitle&sortWithin=title&since=2020-02-14&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false[Functional code]]
+* *Code contributed*: link:https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=zhouxinwei97&sort=groupTitle&sortWithin=title&since=2020-02-14&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false[Functional code and Test code]
+
 * *Other contributions*:
 
 ** Project management:
